@@ -13,7 +13,11 @@ class OtsukaisController extends Controller
      */
     public function index()
     {
-        //
+        if (\Auth::check()) {
+            return view('otsukais.index');
+        } else {
+            return view('welcome');
+        }
     }
 
     /**
