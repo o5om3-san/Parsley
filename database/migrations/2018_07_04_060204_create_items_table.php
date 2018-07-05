@@ -18,6 +18,10 @@ class CreateItemsTable extends Migration
             $table->string('name',191);
             $table->integer('price');
             $table->timestamps();
+            $table->integer('shop_id')->unsigned()->index();
+            
+            //foreign key setting 
+            $table->foreign('shop_id')->references('id')->on('shops');
         });
     }
 

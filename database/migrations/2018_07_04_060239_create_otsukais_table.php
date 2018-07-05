@@ -16,7 +16,7 @@ class CreateOtsukaisTable extends Migration
         Schema::create('otsukais', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
-            $table->integer('store_id')->unsigned()->index();
+            $table->integer('shop_id')->unsigned()->index();
             $table->integer('capacity');
             $table->dateTime('deadline');
             $table->string('deliverPlace',191);
@@ -24,7 +24,8 @@ class CreateOtsukaisTable extends Migration
             
             //foreign key setting 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('store_id')->references('id')->on('stores');
+            $table->foreign('shop_id')->references('id')->on('shops');
+        
         });
     }
 
