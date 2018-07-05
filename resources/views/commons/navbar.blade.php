@@ -13,7 +13,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
-                        <li><a href="#">Go Shopping</a></li>
+                        <li><a href="{{ route('otsukais.create') }}">Go Shopping</a></li>
                         <li><a href="#">My Page</a></li>
                         <li><a href="{{ route('logout.get') }}">Logout</a></li>
                     @else

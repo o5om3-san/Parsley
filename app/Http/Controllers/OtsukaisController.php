@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests;
+
+use App\Otsukai;
+
 class OtsukaisController extends Controller
 {
     /**
@@ -27,7 +31,10 @@ class OtsukaisController extends Controller
      */
     public function create()
     {
-        //
+        $otsukai = new Otsukai;
+        return view('otsukais.create',[
+                'otsukai' => $otsukai,
+        ]);
     }
 
     /**
@@ -38,7 +45,21 @@ class OtsukaisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'deadline' => 'required',
+            'shop_id' => 'required|max:191',
+            'capacity' => 'required|max:191',
+            'deliverPlace' => 'required|max:191',
+        ]);
+
+        $request->user()->otsukais()->create([
+            'deadline' => $request->deadline,
+            'shop_id' => $request->shop_id,
+            'capacity' => $request->capacity,
+            'deliverPlace' => $request->deliverPlace,
+        ]);
+
+        return redirect('/');
     }
 
     /**
