@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// OtsukaisController
+Route::get('/', 'OtsukaisController@index');
+Route::resource('otsukais', 'OtsukaisController');
 
+// ItemsController
+
+// ShopsController
+
+// UsersController
+
+
+// Authentication
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
