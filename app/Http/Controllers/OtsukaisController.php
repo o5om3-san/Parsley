@@ -18,7 +18,18 @@ class OtsukaisController extends Controller
     public function index()
     {
         if (\Auth::check()) {
-            return view('otsukais.index');
+
+            $otsukai = new Otsukai();
+            $otsukais = $otsukai->orderBy('deadline', 'asc')->paginate(10);
+
+            $data = [
+                'otsukais' => $otsukais,
+            ];
+            
+            return view('otsukais.index', [
+                'otsukais' => $otsukais,
+            ]);
+            
         } else {
             return view('welcome');
         }
