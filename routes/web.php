@@ -13,7 +13,9 @@
 
 // OtsukaisController
 Route::get('/', 'OtsukaisController@index');
+Route::get('otsukais/request','OtsukaisController@request');
 Route::resource('otsukais', 'OtsukaisController');
+
 
 // ItemsController
 

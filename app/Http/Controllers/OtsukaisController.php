@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Otsukai;
 
+use App\Users;
+
 class OtsukaisController extends Controller
 {
     /**
@@ -16,13 +18,17 @@ class OtsukaisController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
+        
         if (\Auth::check()) {
+        ;
             return view('otsukais.index');
-        } else {
+        }else {
             return view('welcome');
         }
-    }
+    }   
+    
+        
 
     /**
      * Show the form for creating a new resource.
@@ -106,4 +112,19 @@ class OtsukaisController extends Controller
     {
         //
     }
+    
+    public function request()
+    {       
+        $data = [];
+            
+            $user = \Auth::user();
+            $items = 
+    
+            $data = [
+                'user'=>$user,
+                'items'=>$items,
+            ];
+            return view('otsukais.request', $data);
+        }
+        
 }
