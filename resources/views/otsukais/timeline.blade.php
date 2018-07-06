@@ -3,16 +3,18 @@
     <?php $user = $otsukai->user; ?>
     <li class="media">
         <div class="media-left">
-            <img class="media-object img-rounded" src="https://www.google.co.jp/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi2jZiNqIncAhUKzbwKHZRZBR4QjRx6BAgBEAU&url=https%3A%2F%2Fevent.rakuten.co.jp%2Fgroup%2Fpandafullife%2F&psig=AOvVaw0A1QYiXb5aO8MY1wXlKKZ0&ust=1530926585770840" alt="">
+            <img class="media-object img-rounded" src="https://stamp-mato.me/wp-content/uploads/2016/10/okaimono-panda_c.jpg" height='15%' alt="">
+            {{ $otsukai->user->name }}
         </div>
         <div class="media-body">
             <div>
-                <span class="text-muted">posted at {{ $otsukai->deadline }}</span>
+                <span class="text-muted">Deadline: {{ $otsukai->deadline }}</span><br>
+                <span class="text-muted">Shop: {{ $otsukai->shop->name }}</span><br>
+                <span class="text-muted">Capacity: {{ $otsukai->capacity }}</span><br>
+                <span class="text-muted">Place: {{ $otsukai->deliverPlace }}</span><br>
             </div>
             <div>
-                <p>{!! nl2br(e($otsukai->content)) !!}</p>
-            </div>
-            <div>
+                {!! link_to_route('otsukais.request', 'Request', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                 @if (Auth::user()->id == $otsukai->user_id)
                     {!! Form::open(['route' => ['otsukais.destroy', $otsukai->id], 'method' => 'delete']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}

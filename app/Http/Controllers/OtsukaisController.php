@@ -90,6 +90,12 @@ class OtsukaisController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     
+    public function request($id)
+    {
+        //
+    }
+ 
     public function edit($id)
     {
         //
@@ -115,6 +121,11 @@ class OtsukaisController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $otsukai = \App\Otsukai::find($id);
+
+        if (\Auth::user()->id === $otsukai->user_id) {
+            $otsukai->delete();
+        }
+        return redirect('/');
     }
 }
