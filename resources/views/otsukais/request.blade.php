@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-     
+    
      <h1>注文画面</h1>
      
                 {!! Form::model( ['route' => 'otsukais.store']) !!}
@@ -10,8 +10,20 @@
                 
                 
                 <div class="form-group">
+                    
                     {!! Form::label('name', '商品名:') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                    {!! Form::select('amount',$names, null, ['class' => 'form-control']) !!}
+                
+                <tbody>
+                @foreach ($items as $item)
+                <tr>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->price }}</td>
+                </tr>
+                @endforeach
+                </tbody>
+                
+                
                 </div>
                     
                 <div class="form-group">
@@ -28,12 +40,6 @@
                     {!! Form::submit('request', ['class' => 'btn btn-primary']) !!}
                     
                 {!! Form::close() !!}
-                
-                @foreach ($items as $item)
-                    <tr>{{ $item->name }}</tr>
-                    <tr>{{ $item->price }}</tr>
-                    
-                @endforeach
-                
+               
 
 @endsection
