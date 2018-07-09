@@ -6,7 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Item;
+
 use App\Otsukai;
+
+use App\Shop;
+
+use App\User;
 
 class OtsukaisController extends Controller
 {
@@ -21,14 +27,12 @@ class OtsukaisController extends Controller
 
             $otsukai = new Otsukai();
             $otsukais = $otsukai->orderBy('deadline', 'asc')->paginate(10);
-
+            
             $data = [
                 'otsukais' => $otsukais,
             ];
             
-            return view('otsukais.index', [
-                'otsukais' => $otsukais,
-            ]);
+            return view('otsukais.index', $data);
             
         } else {
             return view('welcome');
@@ -43,8 +47,12 @@ class OtsukaisController extends Controller
     public function create()
     {
         $otsukai = new Otsukai;
+        
+        $shops = Shop::all();
+        
         return view('otsukais.create',[
                 'otsukai' => $otsukai,
+                'shops' => $shops
         ]);
     }
 
@@ -62,7 +70,7 @@ class OtsukaisController extends Controller
             'capacity' => 'required|max:191',
             'deliverPlace' => 'required|max:191',
         ]);
-
+        // var_dump($request->shop_id);
         $request->user()->otsukais()->create([
             'deadline' => $request->deadline,
             'shop_id' => $request->shop_id,
