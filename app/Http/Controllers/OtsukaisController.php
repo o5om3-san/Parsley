@@ -121,12 +121,10 @@ class OtsukaisController extends Controller
     public function request()
     {    
         $items = Item::all();
-        $names = $items->name;
-        $prices = $items->price;
+        $names =$items->name;
         
         return view('otsukais.request',[
                 'names' => $names,
-                'prices' => $price
         ]);
         
         

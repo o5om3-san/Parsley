@@ -7,22 +7,14 @@
      
                 {!! Form::model( ['route' => 'otsukais.store']) !!}
                 
-                
-                
                 <div class="form-group">
                     
                     {!! Form::label('name', '商品名:') !!}
-                    {!! Form::select('amount',$names, null, ['class' => 'form-control']) !!}
-                
-                <tbody>
-                @foreach ($items as $item)
-                <tr>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->price }}</td>
-                </tr>
-                @endforeach
-                </tbody>
-                
+                    <selsect name='names'>
+                        @foreach ($names as $name)
+                            <option value={{$name->id}}> {{$name->name}} </option>
+                        @endforeach
+                    </selsect>
                 
                 </div>
                     
