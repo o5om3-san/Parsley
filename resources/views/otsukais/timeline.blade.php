@@ -14,7 +14,10 @@
                 <span class="text-muted">Place: {{ $otsukai->deliverPlace }}</span><br>
             </div>
             <div>
-                {!! link_to_route('otsukais.request', 'Request', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                @if (Auth::user()->id != $otsukai->user_id)
+                    {!! link_to_route('otsukais.request', 'Request', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                @endif
+                
                 @if (Auth::user()->id == $otsukai->user_id)
                     {!! Form::open(['route' => ['otsukais.destroy', $otsukai->id], 'method' => 'delete']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}

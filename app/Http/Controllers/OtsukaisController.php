@@ -75,7 +75,7 @@ class OtsukaisController extends Controller
             'capacity' => 'required|max:191',
             'deliverPlace' => 'required|max:191',
         ]);
-        // var_dump($request->shop_id);
+      
         $request->user()->otsukai()->create([
             'deadline' => $request->deadline,
             'shop_id' => $request->shop_id,

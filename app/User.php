@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-    public function otsukais()
+    public function otsukai()
     {
         return $this->hasMany(Otsukai::class);
     }
