@@ -121,20 +121,30 @@ class OtsukaisController extends Controller
     public function request()
     {    
         $items = Item::all();
-        $names = [];
-        $prices= [];
+        $names = $items->name;
+        $prices = $items->price;
         
-        foreach($items as $item){
-            array_push($names, $item->name);
-            array_push($prices, $item->price);
-        }
+        return view('otsukais.request',[
+                'names' => $names,
+                'prices' => $price
+        ]);
+        
+        
+        // $items = Item::all();
+        // $names = [];
+        // $prices= [];
+        
+        // foreach($items as $item){
+        //     array_push($names, $item->name);
+        //     array_push($prices, $item->price);
+        // }
 
 
-        foreach($prices as $price){
-            ["price"=>$price];
-        }
+        // foreach($prices as $price){
+        //     ["price"=>$price];
+        // }
         
-        return view('otsukais.request');
+        // return view('otsukais.request');
         
         
         
