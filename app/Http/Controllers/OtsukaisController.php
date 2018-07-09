@@ -118,13 +118,22 @@ class OtsukaisController extends Controller
         //
     }
     
-    public function request()
+    public function request($id)
     {    
-        $items = Item::all();
-        $names =$items->name;
+        
+        $otsukai = Otsukai::find($id);
+        
+        var_dump($otsukai);
+        exit;
+        $shop = $otsukai->shop();
+        $items =$otsukai->shop()->item();
+        $user = $otsukai->user();
         
         return view('otsukais.request',[
-                'names' => $names,
+                'items' => $items,
+                'shop' => $shop,
+                'otsukai' =>$otsukai,
+                'user' =>$user,
         ]);
         
         

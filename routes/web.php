@@ -13,7 +13,7 @@
 
 // OtsukaisController
 Route::get('/', 'OtsukaisController@index');
-Route::get('otsukais/request','OtsukaisController@request');
+Route::get('otsukais/request/{id}','OtsukaisController@request');
 Route::resource('otsukais', 'OtsukaisController');
 
 
