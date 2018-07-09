@@ -8,7 +8,12 @@ use App\Http\Requests;
 
 use App\Otsukai;
 
-use App\Users;
+use App\User;
+
+use App\Item;
+
+use App\Shop;
+
 
 class OtsukaisController extends Controller
 {
@@ -114,17 +119,35 @@ class OtsukaisController extends Controller
     }
     
     public function request()
-    {       
-        $data = [];
+    {    
+        $items = Item::all();
+        $names = [];
+        $prices= [];
+        
+        foreach($items as $item){
+            array_push($names, $item->name);
+            array_push($prices, $item->price);
+        }
+
+
+        foreach($prices as $price){
+            ["price"=>$price];
+        }
+        
+        return view('otsukais.request');
+        
+        
+        
+        // $data = [];
             
-            $user = \Auth::user();
-            $items = 
+        //     $user = \Auth::user();
+        //     $items = 
     
-            $data = [
-                'user'=>$user,
-                'items'=>$items,
-            ];
-            return view('otsukais.request', $data);
+        //     $data = [
+        //         'user'=>$user,
+        //         'items'=>$items,
+        //     ];
+        //     return view('otsukais.request', $data);
         }
         
 }
