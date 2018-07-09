@@ -15,7 +15,13 @@
                     
       <div class="form-group">
         {!! Form::label('shop_id', 'Shop:') !!}
-        {!! Form::text('shop_id', null, ['class' => 'form-control']) !!}
+          <select name="shop_id">
+            @foreach ($shops as $shop)
+              <option value={{$shop->id}}> {{$shop->name}} </option>
+            @endforeach
+          </select>    
+      
+      
       </div>
       
       <div class="form-group">
