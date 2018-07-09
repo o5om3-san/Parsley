@@ -12,8 +12,6 @@ use App\Otsukai;
 
 use App\User;
 
-use App\Item;
-
 use App\Shop;
 
 
@@ -68,6 +66,7 @@ class OtsukaisController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -77,11 +76,26 @@ class OtsukaisController extends Controller
             'deliverPlace' => 'required|max:191',
         ]);
         // var_dump($request->shop_id);
-        $request->user()->otsukais()->create([
+        $request->user()->otsukai()->create([
             'deadline' => $request->deadline,
             'shop_id' => $request->shop_id,
             'capacity' => $request->capacity,
             'deliverPlace' => $request->deliverPlace,
+        ]);
+
+        return redirect('/');
+    }
+    
+    public function store_request(Request $request)
+    {
+        $this->validate($request, [
+            'item' => 'required|max:191',
+            'amount' => 'required|max:191',
+        ]);
+        // var_dump($request->shop_id);
+        $request->user()->otsukai()->request([
+            'item' => $request->item,
+            'amount' => $request->amount,
         ]);
 
         return redirect('/');
@@ -105,11 +119,6 @@ class OtsukaisController extends Controller
      * @return \Illuminate\Http\Response
      */
      
-    public function request($id)
-    {
-        //
-    }
- 
     public function edit($id)
     {
         //
@@ -143,44 +152,19 @@ class OtsukaisController extends Controller
         return redirect('/');
     }
     
-    public function request()
+    public function request($id)
     {    
-        $items = Item::all();
-        $names =$items->name;
+        $otsukai = Otsukai::find($id);
+        $shop = $otsukai->shop;
+        $items =$otsukai->shop->item;
+        $user = $otsukai->user;
         
         return view('otsukais.request',[
-                'names' => $names,
+                'items' => $items,
+                'shop' => $shop,
+                'otsukai' =>$otsukai,
+                'user' =>$user,
         ]);
-        
-        
-        // $items = Item::all();
-        // $names = [];
-        // $prices= [];
-        
-        // foreach($items as $item){
-        //     array_push($names, $item->name);
-        //     array_push($prices, $item->price);
-        // }
-
-
-        // foreach($prices as $price){
-        //     ["price"=>$price];
-        // }
-        
-        // return view('otsukais.request');
-        
-        
-        
-        // $data = [];
-            
-        //     $user = \Auth::user();
-        //     $items = 
-    
-        //     $data = [
-        //         'user'=>$user,
-        //         'items'=>$items,
-        //     ];
-        //     return view('otsukais.request', $data);
         }
         
 }
