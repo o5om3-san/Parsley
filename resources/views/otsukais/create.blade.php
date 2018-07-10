@@ -10,10 +10,6 @@
             
       <div class="form-group">
         {!! Form::label('deadline', 'Deadline:') !!}
-        // <?php
-        // $dt = new DateTime();
-        // echo $dt->format('Y-m-d');
-        // ?>
         {{Form::selectRange('from_hour', 8, 22, '', ['placeholder' => ''])}}時
         {{Form::selectRange('from_minutes', 00, 59, '', ['placeholder' => ''])}}分
       </div>
