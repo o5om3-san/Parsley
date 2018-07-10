@@ -17,4 +17,13 @@ use App\Shop;
 
 class OtsukaiGiantController extends Controller
 {
+    public function request($otsukai)
+    {
+        \Auth::user()->request($otsukai);
+        
+        var_dump($_POST);
+        exit;
+        return redirect('/');
+    }
+    
 }
