@@ -8,7 +8,8 @@
         </div>
         <div class="media-body">
             <div>
-                <span class="text-muted">Deadline: {{ $otsukai->deadline }}</span><br>
+                
+                <span class="text-muted">Deadline: {{ $otsukai->deadline}}</span><br>
                 <span class="text-muted">Shop: {{ $otsukai->shop->name }}</span><br>
                 <span class="text-muted">Capacity: {{ $otsukai->capacity }}</span><br>
                 <span class="text-muted">Place: {{ $otsukai->deliverPlace }}</span><br>
