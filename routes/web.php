@@ -23,7 +23,7 @@ Route::get('otsukais/request/{id}', 'OtsukaisController@request')->name('otsukai
 // UsersController
 
 // OtsukaiGiantController
-Route::post('request/{id}', 'OtsukaiGiantController@request')->name('otsukai_giant.request');
+Route::post('otsukais/request/{id}', 'OtsukaiGiantController@request')->name('otsukai_giant.request');
 
 
 // Authentication

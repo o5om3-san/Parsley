@@ -30,7 +30,7 @@
                     {!! Form::textarea('comment',null)!!}
                 </div>
        　　　　　　　
-                    {{$user->name}}<a>さんに</a>
+                    <a href="#">{{$user->name}}</a>さんに
                     {!! Form::submit('request', ['class' => 'btn btn-primary']) !!}
                     
                     
