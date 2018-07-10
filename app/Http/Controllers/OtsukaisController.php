@@ -76,7 +76,7 @@ class OtsukaisController extends Controller
             'deliverPlace' => 'required|max:191',
         ]);
       
-        $request->user()->otsukai()->create([
+        $request->user()->otsukai_nobita()->create([
             'deadline' => $request->deadline,
             'shop_id' => $request->shop_id,
             'capacity' => $request->capacity,
@@ -92,8 +92,8 @@ class OtsukaisController extends Controller
             'item' => 'required|max:191',
             'amount' => 'required|max:191',
         ]);
-        // var_dump($request->shop_id);
-        $request->user()->otsukai()->request([
+
+        $request->user()->otsukai_giant()->request([
             'item' => $request->item,
             'amount' => $request->amount,
         ]);
