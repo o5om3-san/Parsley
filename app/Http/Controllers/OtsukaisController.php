@@ -3,17 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use App\Item;
-
 use App\Otsukai;
-
-use App\Shop;
-
 use App\User;
-
+use App\Shop;
 use DateTime;
 
 class OtsukaisController extends Controller
@@ -24,7 +18,8 @@ class OtsukaisController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
+        
         if (\Auth::check()) {
 
             $otsukai = new Otsukai();
@@ -38,9 +33,12 @@ class OtsukaisController extends Controller
             return view('otsukais.index', $data);
             
         } else {
+
             return view('welcome');
         }
-    }
+    }   
+    
+        
 
     /**
      * Show the form for creating a new resource.
@@ -144,4 +142,25 @@ class OtsukaisController extends Controller
         }
         return redirect('/');
     }
+    
+    public function request($id)
+    {    
+        
+        $otsukai = Otsukai::find($id);
+        
+        var_dump($otsukai);
+        exit;
+        $shop = $otsukai->shop();
+        $items =$otsukai->shop()->item();
+        $user = $otsukai->user();
+        
+        return view('otsukais.request',[
+                'items' => $items,
+                'shop' => $shop,
+                'otsukai' =>$otsukai,
+                'user' =>$user,
+        ]);
+        
+        }
+        
 }
