@@ -17,12 +17,15 @@ use App\Shop;
 
 class OtsukaiGiantController extends Controller
 {
-    public function request($otsukai)
+    public function request(Request $request)
     {
-        \Auth::user()->request($otsukai);
+        // print '<pre>';
+        // print $request->id;
+        // return print $request;
         
-        var_dump($_POST);
-        exit;
+        // \Auth::user()->request($request->id, $request->names, $request->amount, $request->comment);
+        \Auth::user()->request($request->id, 17 , $request->amount, $request->comment);
+    
         return redirect('/');
     }
     

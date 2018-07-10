@@ -20,7 +20,7 @@
                     
                 <div class="form-group">
                     {!! Form::label('amount', '注文数:') !!}
-                    {!! Form::select('amount',['' => 'Select', '0' => '1', '1' => '2', '2' => '3', '3' => '4', '4' => '5', '5' => '6', '6' => '7', '7' => '8', '8' => '9', '9' => '10'], null, ['class' => 'form-control']) !!}
+                    {!! Form::selectRange('amount',1,10, null, ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class='form-group'>
@@ -28,7 +28,8 @@
                     {!! Form::textarea('comment',null)!!}
                 </div>
        　　　　　　　
-                    {{$user->name}}<a>さんに</a>
+                    {{$user->name}}
+                    <a>さんに</a>
                     {!! Form::submit('request', ['class' => 'btn btn-primary']) !!}
                     
                     

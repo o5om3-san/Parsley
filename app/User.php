@@ -29,12 +29,12 @@ class User extends Authenticatable
     
     public function otsukai()
     {
-        return $this->belongsToMany(Otsukai::class, 'otsukai_giant', 'otsukai_id', 'user_id')->withPivot('item_id','amount','comment');
+        return $this->belongsToMany(Otsukai::class,'otsukai_giant','user_id','otsukai_id')->withPivot('item_id','amount','comment');
     }
     
-    public function request($otsukaiId)
+    public function request($otsukaiId, $itemId, $amount, $comment)
     {   
-        $this->otsukai()->attach($otsukaiId,['item_id','amount','comment']);
+        $this->otsukai()->attach($otsukaiId,['item_id'=> $itemId,'amount' => $amount,'comment' => $comment]);
     }
     
 }
