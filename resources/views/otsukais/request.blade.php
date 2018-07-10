@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -6,6 +5,9 @@
      <h1>注文画面</h1>
      
                 {!! Form::model( ['route' => 'otsukai_giant.request','method' => 'post']) !!}
+                
+                
+                
                 
                 <div class="form-group">
                     
@@ -28,8 +30,7 @@
                     {!! Form::textarea('comment',null)!!}
                 </div>
        　　　　　　　
-                    {{$user->name}}
-                    <a>さんに</a>
+                    {{$user->name}}<a>さんに</a>
                     {!! Form::submit('request', ['class' => 'btn btn-primary']) !!}
                     
                     

@@ -13,10 +13,9 @@
 
 // OtsukaisController
 Route::get('/', 'OtsukaisController@index');
-
 Route::resource('otsukais', 'OtsukaisController');
+Route::get('otsukais/request/{id}', 'OtsukaisController@request')->name('otsukais.request');
 
-Route::get('/request/{id}', 'OtsukaisController@request')->name('otsukais.request');
 // ItemsController
 
 // ShopsController

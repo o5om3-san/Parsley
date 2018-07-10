@@ -1,23 +1,27 @@
+<link href="css/style.css" rel="stylesheet" type="text/css">
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    一番最初のページ
-                    welcome.blade.phpです
-                </div>
+    @if (Auth::check())
+        <div class="row">
+            <aside class="col-md-4">
+            </aside>
+            <div class="col-xs-8">
+                @if (count($otsukais) > 0)
+                    @include('otsukais.index', ['otsukais' => $otsukais])
+                @endif
             </div>
         </div>
-    </div>
-</div>
+    @else
+        <div class="center jumbotron">
+            <aside class="col-md-4">
+            </aside>
+            <div class="text-center">
+                <h1>Parsley</h1>
+                {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-success']) !!}
+                <img src="images/parsley2.png" width="1200" height="800" alt="" class="img-responsive">
+
+            </div>
+        </div>
+    @endif
 @endsection
