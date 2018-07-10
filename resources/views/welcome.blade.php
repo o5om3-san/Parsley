@@ -1,3 +1,4 @@
+<link href="css/style.css" rel="stylesheet" type="text/css">
 @extends('layouts.app')
 
 @section('content')
@@ -13,10 +14,13 @@
         </div>
     @else
         <div class="center jumbotron">
+            <aside class="col-md-4">
+            </aside>
             <div class="text-center">
                 <h1>Parsley</h1>
-                <img class="parsley" src="images/parsley.jpg" alt="parsley">
-                {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-primary']) !!}
+                {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-success']) !!}
+                <img src="images/parsley2.png" width="1200" height="800" alt="" class="img-responsive">
+
             </div>
         </div>
     @endif
