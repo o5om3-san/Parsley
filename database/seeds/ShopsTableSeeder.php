@@ -13,21 +13,26 @@ class ShopsTableSeeder extends Seeder
     {
      DB::table('shops')->insert([
         [
-          'shop_name' => 'CH_9F_ConvenienceStore',
+          'name' => 'CH_9F_ConvenienceStore',
           'address' => 'Crimson House 9F',
         ],
+        
         [
-          'shop_name' => 'CH_22F_ConvenienceStore',
+          'name' => 'CH_22F_ConvenienceStore',
           'address' => 'Crimson House 22F',
         ],
+        
         [
-          'shop_name' => 'CH_9F_RakutenCafe',
+          'name' => 'CH_9F_RakutenCafe',
           'address' => 'Crimson House 9F',
         ],
+        
         [
-          'shop_name' => 'CH_22F_RakutenCafe',
+          'name' => 'CH_22F_RakutenCafe',
           'address' => 'Crimson House 22F',
-        ],
-      ]);
+        ]
+        ]);
+        
+
     }
 }
