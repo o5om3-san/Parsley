@@ -6,7 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Item;
+
 use App\Otsukai;
+
+use App\Shop;
+
+use App\User;
+
+use DateTime;
 
 class OtsukaisController extends Controller
 {
@@ -18,7 +26,16 @@ class OtsukaisController extends Controller
     public function index()
     {
         if (\Auth::check()) {
-            return view('otsukais.index');
+
+            $otsukai = new Otsukai();
+            $otsukais = $otsukai->orderBy('deadline', 'asc')->paginate(10);
+            
+            $data = [
+                'otsukais' => $otsukais,
+            ];
+            
+            return view('otsukais.index', $data);
+            
         } else {
             return view('welcome');
         }
@@ -32,8 +49,15 @@ class OtsukaisController extends Controller
     public function create()
     {
         $otsukai = new Otsukai;
+        
+        $shops = Shop::all();
+        
+        $dt = new DateTime();
+        
         return view('otsukais.create',[
                 'otsukai' => $otsukai,
+                'shops' => $shops,
+                'dt' => $dt,
         ]);
     }
 
@@ -46,14 +70,16 @@ class OtsukaisController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'deadline' => 'required',
             'shop_id' => 'required|max:191',
             'capacity' => 'required|max:191',
             'deliverPlace' => 'required|max:191',
         ]);
-
+        
+        $dt = new DateTime();
+        $time = $dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00';
+       
         $request->user()->otsukais()->create([
-            'deadline' => $request->deadline,
+            'deadline' => $time,
             'shop_id' => $request->shop_id,
             'capacity' => $request->capacity,
             'deliverPlace' => $request->deliverPlace,
@@ -79,6 +105,12 @@ class OtsukaisController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     
+    public function request($id)
+    {
+        //
+    }
+ 
     public function edit($id)
     {
         //
@@ -104,6 +136,11 @@ class OtsukaisController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $otsukai = \App\Otsukai::find($id);
+
+        if (\Auth::user()->id === $otsukai->user_id) {
+            $otsukai->delete();
+        }
+        return redirect('/');
     }
 }
