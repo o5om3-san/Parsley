@@ -12,8 +12,8 @@
 */
 
 // OtsukaisController
-Route::get('/', 'OtsukaisController@index');
 Route::resource('otsukais', 'OtsukaisController');
+Route::get('/', 'OtsukaisController@index');
 Route::get('otsukais/request/{id}', 'OtsukaisController@request')->name('otsukais.request');
 
 // ItemsController
@@ -33,4 +33,4 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('otsukais', 'OtsukaisController');
     Route::resource('user', 'UsersController');
- });
+});
