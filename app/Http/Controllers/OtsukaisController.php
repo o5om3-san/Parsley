@@ -14,6 +14,8 @@ use App\Shop;
 
 use App\User;
 
+use DateTime;
+
 class OtsukaisController extends Controller
 {
     /**
@@ -50,9 +52,12 @@ class OtsukaisController extends Controller
         
         $shops = Shop::all();
         
+        $dt = new DateTime();
+        
         return view('otsukais.create',[
                 'otsukai' => $otsukai,
-                'shops' => $shops
+                'shops' => $shops,
+                'dt' => $dt,
         ]);
     }
 
@@ -65,14 +70,16 @@ class OtsukaisController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'deadline' => 'required',
             'shop_id' => 'required|max:191',
             'capacity' => 'required|max:191',
             'deliverPlace' => 'required|max:191',
         ]);
-        // var_dump($request->shop_id);
+        
+        $dt = new DateTime();
+        $time = $dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00';
+       
         $request->user()->otsukais()->create([
-            'deadline' => $request->deadline,
+            'deadline' => $time,
             'shop_id' => $request->shop_id,
             'capacity' => $request->capacity,
             'deliverPlace' => $request->deliverPlace,
