@@ -10,17 +10,29 @@
             
       <div class="form-group">
         {!! Form::label('deadline', 'Deadline:') !!}
-        {!! Form::dateTime('deadline', null, ['class' => 'form-control']) !!}
+        {{Form::selectRange('from_hour', 8, 22, '', ['placeholder' => ''])}}時
+        <select name="from_minutes">
+            @for ($i = 0; $i < 12; $i++)
+              <option value={{$i*5}}> {{$i*5}} </option>
+            @endfor
+        </select>
       </div>
                     
       <div class="form-group">
         {!! Form::label('shop_id', 'Shop:') !!}
-        {!! Form::text('shop_id', null, ['class' => 'form-control']) !!}
+          <select name="shop_id">
+            @foreach ($shops as $shop)
+              <option value={{$shop->id}}> {{$shop->name}} </option>
+            @endforeach
+          </select>    
+      
+      
       </div>
       
       <div class="form-group">
         {!! Form::label('capacity', 'Capacity:') !!}
-        {!! Form::text('capacity', null, ['class' => 'form-control']) !!}
+        {{Form::selectRange('capacity', 1, 10, '', ['placeholder' => ''])}}個
+        
       </div>
       
       <div class="form-group">
