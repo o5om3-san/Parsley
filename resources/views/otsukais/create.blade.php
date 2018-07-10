@@ -11,7 +11,11 @@
       <div class="form-group">
         {!! Form::label('deadline', 'Deadline:') !!}
         {{Form::selectRange('from_hour', 8, 22, '', ['placeholder' => ''])}}時
-        {{Form::selectRange('from_minutes', 00, 59, '', ['placeholder' => ''])}}分
+        <select name="from_minutes">
+            @for ($i = 0; $i < 12; $i++)
+              <option value={{$i*5}}> {{$i*5}} </option>
+            @endfor
+        </select>
       </div>
                     
       <div class="form-group">

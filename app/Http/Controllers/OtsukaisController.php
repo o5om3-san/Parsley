@@ -29,8 +29,8 @@ class OtsukaisController extends Controller
 
             $otsukai = new Otsukai();
             $dt = new DateTime();
-            $otsukais = $otsukai->where(format($dt))->orderBy('deadline', 'asc')->paginate(10);
-            
+            $otsukais = $otsukai->orderBy('deadline', 'asc')->paginate(10);
+           
             $data = [
                 'otsukais' => $otsukais,
             ];
