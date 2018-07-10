@@ -18,7 +18,7 @@
             </aside>
             <div class="text-center">
                 <h1>Parsley</h1>
-                {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-success']) !!}
+                {!! link_to_route('register', 'Sign up now!', null, ['class' => 'btn btn-lg btn-success']) !!}
                 <img src="images/parsley2.png" width="1200" height="800" alt="" class="img-responsive">
 
             </div>
