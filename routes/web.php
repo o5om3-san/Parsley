@@ -13,9 +13,7 @@
 
 // OtsukaisController
 Route::get('/', 'OtsukaisController@index');
-
 Route::resource('otsukais', 'OtsukaisController');
-
 Route::get('otsukais/request/{id}', 'OtsukaisController@request')->name('otsukais.request');
 
 // ItemsController
@@ -23,6 +21,9 @@ Route::get('otsukais/request/{id}', 'OtsukaisController@request')->name('otsukai
 // ShopsController
 
 // UsersController
+
+// OtsukaiGiantController
+Route::post('request/{id}', 'OtsukaiGiantController@request')->name('otsukai_giant.request');
 
 
 // Authentication
