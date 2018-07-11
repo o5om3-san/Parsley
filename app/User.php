@@ -27,8 +27,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-    public function otsukais()
+    public function otsukai_nobita()
     {
         return $this->hasMany(Otsukai::class);
     }
+    
+    public function otsukai_giant()
+    {
+        return $this->belongsToMany(Otsukai::class,'otsukai_giant','user_id','otsukai_id')->withPivot('item_id','amount','comment');
+    }
+    
+    public function request($otsukaiId, $itemId, $amount, $comment)
+    {   
+        $this->otsukai_giant()->attach($otsukaiId,['item_id'=> $itemId,'amount' => $amount,'comment' => $comment]);
+    }
+    
 }
