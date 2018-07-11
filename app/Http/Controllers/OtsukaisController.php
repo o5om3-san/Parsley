@@ -80,7 +80,14 @@ class OtsukaisController extends Controller
 
     public function show($id)
     {
-        //
+        $otsukai = Otsukai::find($id);
+        $otsukai_giants = $otsukai->user_giant;
+        // exit;
+        
+            return view('otsukais.show', [
+                'otsukai' => $otsukai,
+                'otsukai_giants' => $otsukai_giants,
+            ]);
     }
 
     public function edit($id)
