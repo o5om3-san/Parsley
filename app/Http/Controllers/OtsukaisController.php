@@ -116,18 +116,12 @@ class OtsukaisController extends Controller
         
         if (\Auth::user()->id === $otsukai->user_id){
         
-        $otsukai->deadline = $time;
-        $otsukai->shop_id = $request->shop_id;
-        $otsukai->capacity = $request->capacity;
-        $otsukai->deliverPlace = $request->deliverPlace;
-        $otsukai->save();
-        
-        // $request->user()->otsukai_nobita()->create([
-        //     'deadline' => $time,
-        //     'shop_id' => $request->shop_id,
-        //     'capacity' => $request->capacity,
-        //     'deliverPlace' => $request->deliverPlace,
-        //     ]);
+        $request->user()->otsukai_nobita()->update([
+            'deadline' => $time,
+            'shop_id' => $request->shop_id,
+            'capacity' => $request->capacity,
+            'deliverPlace' => $request->deliverPlace,
+            ]);
         }            
         return redirect('/');
         
