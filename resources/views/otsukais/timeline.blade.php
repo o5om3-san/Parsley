@@ -19,6 +19,7 @@
                 <span class="text-muted">Place: {{ $otsukai->deliverPlace }}</span><br>
             </div>
             <div>
+                    {!! link_to_route('otsukais.show', 'Show', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                 @if (Auth::user()->id != $otsukai->user_id)
                     {!! link_to_route('otsukais.request', 'Request', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                 @endif

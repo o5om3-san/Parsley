@@ -80,17 +80,59 @@ class OtsukaisController extends Controller
 
     public function show($id)
     {
-        //
+        $otsukai = Otsukai::find($id);
+        $otsukai_giants = $otsukai->user_giant;
+        // exit;
+        
+            return view('otsukais.show', [
+                'otsukai' => $otsukai,
+                'otsukai_giants' => $otsukai_giants,
+            ]);
     }
 
     public function edit($id)
     {
-        //
+        $otsukai = Otsukai::find($id);
+        $shops = Shop::all();
+        
+        // var_dump($shops);
+        // exit;
+        
+        if (\Auth::user()->id === $otsukai->user_id){
+            
+            return view('otsukais.edit', [
+            'otsukai' => $otsukai,
+            'shops' => $shops,
+        ]);
+        }
+        
+        else {
+            return redirect('/');
+        }
     }
 
     public function update(Request $request, $id)
     {
-        //
+       $this->validate($request, [
+            'deliverPlace' => 'required|max:191',
+        ]);
+        
+        $otsukai = \App\Otsukai::find($id);
+        $dt = new DateTime();
+        $time = $dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00';
+        
+        if (\Auth::user()->id === $otsukai->user_id){
+        
+        $request->user()->otsukai_nobita()->update([
+            'deadline' => $time,
+            'shop_id' => $request->shop_id,
+            'capacity' => $request->capacity,
+            'deliverPlace' => $request->deliverPlace,
+            ]);
+        }            
+        return redirect('/');
+        
+ 
     }
 
     public function destroy($id)
