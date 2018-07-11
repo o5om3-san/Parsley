@@ -84,14 +84,10 @@ class OtsukaisController extends Controller
         $otsukai_giants = $otsukai->user_giant;
         // exit;
         
-        if ($otsukai != null && \Auth::user()->id === $otsukai->user_id){
             return view('otsukais.show', [
                 'otsukai' => $otsukai,
                 'otsukai_giants' => $otsukai_giants,
             ]);
-        }else{
-            return redirect('/');
-        }
     }
 
     public function edit($id)
@@ -128,19 +124,4 @@ class OtsukaisController extends Controller
                 'user' =>$user,
         ]);
     }
-    
-    public function requesting_user($id)
-    {
-        $requesting_users = $otsukai->user->name;
-
-        $data = [
-            'user' => $user,
-            'users' => $followings,
-        ];
-
-        $data += $this->counts($user);
-
-        return view('users.followings', $data);
-    }
-    
 }
