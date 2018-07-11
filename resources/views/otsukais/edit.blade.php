@@ -7,7 +7,7 @@
             <div class="form-group">
                 <?php $dt = new DateTime(); ?>
                 {!! Form::label('deadline', 'Deadline:') !!}
-                {{Form::selectRange('from_hour', $dt->format('H'), 24, '', ['placeholder' => ''])}}時
+                {{Form::selectRange('from_hour', $dt->format('H'), 23, '', ['placeholder' => ''])}}時
                 <select name="from_minutes">
                     @for ($i = 0; $i < 12; $i++)
                       <option value={{$i*5}}> {{$i*5}} </option>

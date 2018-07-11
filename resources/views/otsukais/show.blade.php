@@ -19,7 +19,7 @@
         <tr>
             <th>giant</th>
             @foreach ($otsukai_giants as $otsukai_giant)
-                <td>{{ $otsukai_giant->user->name }}/{{ $otsukai_giant->item->name }}</td>
+                <td>{{ $otsukai_giant->user->name }}　→　{{ $otsukai_giant->item->name }}<br>>>{{ $otsukai_giant->comment }}</td>
             @endforeach
         </tr>
         <tr>
