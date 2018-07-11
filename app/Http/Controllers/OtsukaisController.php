@@ -106,7 +106,32 @@ class OtsukaisController extends Controller
 
     public function update(Request $request, $id)
     {
+       $this->validate($request, [
+            'deliverPlace' => 'required|max:191',
+        ]);
         
+        $otsukai = \App\Otsukai::find($id);
+        $dt = new DateTime();
+        $time = $dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00';
+        
+        if (\Auth::user()->id === $otsukai->user_id){
+        
+        $otsukai->deadline = $time;
+        $otsukai->shop_id = $request->shop_id;
+        $otsukai->capacity = $request->capacity;
+        $otsukai->deliverPlace = $request->deliverPlace;
+        $otsukai->save();
+        
+        // $request->user()->otsukai_nobita()->create([
+        //     'deadline' => $time,
+        //     'shop_id' => $request->shop_id,
+        //     'capacity' => $request->capacity,
+        //     'deliverPlace' => $request->deliverPlace,
+        //     ]);
+        }            
+        return redirect('/');
+        
+ 
     }
 
     public function destroy($id)
