@@ -86,11 +86,16 @@ class OtsukaisController extends Controller
     public function edit($id)
     {
         $otsukai = Otsukai::find($id);
+        $shops = Shop::all();
+        
+        // var_dump($shops);
+        // exit;
         
         if (\Auth::user()->id === $otsukai->user_id){
             
             return view('otsukais.edit', [
             'otsukai' => $otsukai,
+            'shops' => $shops,
         ]);
         }
         
@@ -101,24 +106,7 @@ class OtsukaisController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'shop_id' => 'required|max:191',
-            'capacity' => 'required|max:191',
-            'deliverPlace' => 'required|max:191',
-        ]);
         
-        $otsukai = \App\Otsukai::find($id);
-        
-        if (\Auth::user()->id === $otsukai->user_id){
-        
-        $request->user()->otsukai_nobita()->create([
-            'deadline' => $time,
-            'shop_id' => $request->shop_id,
-            'capacity' => $request->capacity,
-            'deliverPlace' => $request->deliverPlace,
-            ]);
-        }            
-        return redirect('/');
     }
 
     public function destroy($id)

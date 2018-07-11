@@ -25,6 +25,11 @@
             </div>
             
             <div class="form-group">
+                {!! Form::label('capacity', 'Capacity:') !!}
+                {{Form::selectRange('capacity', 1, 10, '', ['placeholder' => ''])}}個
+            </div>
+            
+            <div class="form-group">
                 {!! Form::label('deliverPlace', 'DeliverPlace:') !!}
                 {!! Form::text('deliverPlace', null, ['class' => 'form-control']) !!}
             </div>
