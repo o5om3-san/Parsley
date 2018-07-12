@@ -16,42 +16,41 @@ class OtsukaisController extends Controller
     { 
         
         if (\Auth::check()) {
-
             $otsukai = new Otsukai();
-            $dt = new DateTime();
             $otsukais = $otsukai->orderBy('deadline', 'asc')->paginate(10);
-           
-            $data = [
-                'otsukais' => $otsukais,
-            ];
+            $data = ['otsukais' => $otsukais];
+            
             return view('otsukais.index', $data);
         } else {
             return view('welcome');
         }
     }   
     
-    public function create()
+    /*のび太(N)の機能*/
+    public function create_otsukai()
     {
-        $otsukai = new Otsukai;
+        $otsukai = new Otsukai();
         $shops = Shop::all();
         $dt = new DateTime();
+        $data = [
+            'otsukai' => $otsukai,
+            'shops' => $shops,
+            'dt' => $dt,
+        ];
         
-        return view('otsukais.create',[
-                'otsukai' => $otsukai,
-                'shops' => $shops,
-                'dt' => $dt,
-        ]);
+        return view('otsukais.create_otsukai', $data);
     }
 
-    public function store(Request $request)
+    public function store_otsukai(Request $request)
     {
+        $dt = new DateTime();
+        $time = $dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00';
+        
         $this->validate($request, [
             'shop_id' => 'required|max:191',
             'capacity' => 'required|max:191',
             'deliverPlace' => 'required|max:191',
         ]);
-        $dt = new DateTime();
-        $time = $dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00';
        
         $request->user()->otsukai_nobita()->create([
             'deadline' => $time,
@@ -62,100 +61,141 @@ class OtsukaisController extends Controller
 
         return redirect('/');
     }
-    
-    public function store_request(Request $request)
-    {
-        $this->validate($request, [
-            'item' => 'required|max:191',
-            'amount' => 'required|max:191',
-        ]);
 
-        $request->user()->otsukai_giant()->request([
-            'item' => $request->item,
-            'amount' => $request->amount,
-        ]);
-
-        return redirect('/');
-    }
-
-    public function show($id)
+    public function show_otsukai($id)
     {
         $otsukai = Otsukai::find($id);
         $otsukai_giants = $otsukai->user_giant;
+        $data = [
+            'otsukai' => $otsukai,
+            'otsukai_giants' => $otsukai_giants,
+        ];
         
-            return view('otsukais.show', [
-                'otsukai' => $otsukai,
-                'otsukai_giants' => $otsukai_giants,
-            ]);
+        return view('otsukais.show_otsukai', $data);
     }
 
-    public function edit($id)
+    public function edit_otsukai($id)
     {
         $otsukai = Otsukai::find($id);
         $shops = Shop::all();
-        
-        // var_dump($shops);
-        // exit;
-        
-        if (\Auth::user()->id === $otsukai->user_id){
-            
-            return view('otsukais.edit', [
+        $data = [
             'otsukai' => $otsukai,
-            'shops' => $shops,
-        ]);
-        }
+            'shops' => $shops
+        ];
         
+        if (\Auth::user()->id === $otsukai->user_id) {
+            return view('otsukais.edit_otsukai', $data);
+        }
         else {
             return redirect('/');
         }
     }
 
-    public function update(Request $request, $id)
+    public function update_otsukai(Request $request, $id)
     {
-       $this->validate($request, [
-            'deliverPlace' => 'required|max:191',
-        ]);
-        
-        $otsukai = \App\Otsukai::find($id);
+        $otsukai = Otsukai::find($id);
         $dt = new DateTime();
         $time = $dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00';
         
-        if (\Auth::user()->id === $otsukai->user_id){
+        $this->validate($request, [
+            'deliverPlace' => 'required|max:191',
+        ]);
         
-        $request->user()->otsukai_nobita()->update([
-            'deadline' => $time,
-            'shop_id' => $request->shop_id,
-            'capacity' => $request->capacity,
-            'deliverPlace' => $request->deliverPlace,
+        if (\Auth::user()->id === $otsukai->user_id) {
+            $request->user()->otsukai_nobita()->update([
+                'deadline' => $time,
+                'shop_id' => $request->shop_id,
+                'capacity' => $request->capacity,
+                'deliverPlace' => $request->deliverPlace,
             ]);
-        }            
-        return redirect('/');
+        }
         
- 
+        return redirect('/');
     }
 
-    public function destroy($id)
+    public function destroy_otsukai($id)
     {
-        $otsukai = \App\Otsukai::find($id);
+        $otsukai = Otsukai::find($id);
 
         if (\Auth::user()->id === $otsukai->user_id) {
             $otsukai->delete();
         }
+        
         return redirect('/');
     }
     
-    public function request($id)
+    /*ジャイアン(G)の機能*/
+    public function create_request($id)
     {    
         $otsukai = Otsukai::find($id);
         $shop = $otsukai->shop;
-        $items =$otsukai->shop->item;
+        $items = $otsukai->shop->item;
         $user = $otsukai->user;
+        $data = [
+            'otsukai' => $otsukai,
+            'shop' => $shop,
+            'items' => $items,
+            'user' => $user
+        ];
         
-        return view('otsukais.request',[
-                'items' => $items,
-                'shop' => $shop,
-                'otsukai' =>$otsukai,
-                'user' =>$user,
-        ]);
+        
+        return view('requests.create_request', $data);
+    }
+    
+    public function store_request(Request $request)
+    {
+        \Auth::user()->request($request->id, $request->names, $request->amount, $request->comment);
+        return redirect('/');
+    }
+    
+    public function edit_request($id)
+    {
+        // $request = OtsukaiGiant::find($id);
+        
+        // $data = [
+        //     'otsukai' => $otsukai,
+        //     'shops' => $shops
+        // ];
+        
+        // if (\Auth::user()->id === $otsukai->user_id) {
+        //     return view('otsukais.edit', $data);
+        // }
+        // else {
+        //     return redirect('/');
+        // }
+    }
+    
+    public function update_request(Request $request, $id)
+    {
+        // //otsukaiのコピペなう
+        // $otsukai = Otsukai::find($id);
+        // $dt = new DateTime();
+        // $time = $dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00';
+        
+        // $this->validate($request, [
+        //     'deliverPlace' => 'required|max:191',
+        // ]);
+        
+        // if (\Auth::user()->id === $otsukai->user_id) {
+        //     $request->user()->otsukai_nobita()->update([
+        //         'deadline' => $time,
+        //         'shop_id' => $request->shop_id,
+        //         'capacity' => $request->capacity,
+        //         'deliverPlace' => $request->deliverPlace,
+        //     ]);
+        // }
+        
+        // return redirect('/');
+    }
+    
+    public function destroy_request($id)
+    {
+        $request = OtsukaiGiant::find($id);
+
+        if (\Auth::user()->id === $request->user_id) {
+            $request->delete();
+        }
+        
+        return redirect('/');
     }
 }

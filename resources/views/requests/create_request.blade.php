@@ -4,7 +4,7 @@
 
 <h1>注文画面</h1>
 
-{!! Form::model( ['route' => 'otsukai_giant.request','method' => 'post']) !!}
+{!! Form::open( ['route' => ['requests.store', $otsukai->id], 'method' => 'post']) !!}
 
     <div class="form-group">
         {!! Form::label('name', '商品名:') !!}
