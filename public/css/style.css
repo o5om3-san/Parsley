@@ -16,3 +16,9 @@ footer {
     margin-top: 5px;
     height: 40px;
 }
+
+/*show_otsukai*/
+.row .buttons form{
+    display: inline-block;
+    margin: 0 5px;
+}
