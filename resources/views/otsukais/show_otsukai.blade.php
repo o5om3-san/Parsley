@@ -18,11 +18,11 @@
         </tr>
         <tr>
             <th>giant</th>
-            @foreach ($otsukai_giants as $otsukai_giant)
+            @foreach ($requests as $request)
                 <td>
-                    {{ $otsukai_giant->user->name }}　→　{{ $otsukai_giant->item->name }}<br>
-                    >>{{ $otsukai_giant->comment }}<br>
-                    {!! link_to_route('otsukais.edit', '編集', ['id' => $otsukai->id], ['class' => 'btn btn-default']) !!}
+                    {{ $request->user->name }}　→　{{ $request->item->name }}<br>
+                    >>{{ $request->comment }}<br>
+                    {!! link_to_route('requests.edit', '編集', ['id' => $request->id], ['class' => 'btn btn-default']) !!}
                 </td>
             @endforeach
         </tr>

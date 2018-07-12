@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Item;
 use App\Otsukai;
+use App\OtsukaiGiant;
 use App\User;
 use App\Shop;
 use DateTime;
@@ -14,7 +15,6 @@ class OtsukaisController extends Controller
 {
     public function index()
     { 
-        
         if (\Auth::check()) {
             $otsukai = new Otsukai();
             $otsukais = $otsukai->orderBy('deadline', 'asc')->paginate(10);
@@ -65,10 +65,10 @@ class OtsukaisController extends Controller
     public function show_otsukai($id)
     {
         $otsukai = Otsukai::find($id);
-        $otsukai_giants = $otsukai->user_giant;
+        $requests = $otsukai->request;
         $data = [
             'otsukai' => $otsukai,
-            'otsukai_giants' => $otsukai_giants,
+            'requests' => $requests,
         ];
         
         return view('otsukais.show_otsukai', $data);
@@ -150,19 +150,24 @@ class OtsukaisController extends Controller
     
     public function edit_request($id)
     {
-        // $request = OtsukaiGiant::find($id);
+        $request = OtsukaiGiant::find($id);
+        $shop = $request->otsukai->shop;
+        $items = $request->otsukai->shop->item;
+        $user = $request->otsukai->user;
         
-        // $data = [
-        //     'otsukai' => $otsukai,
-        //     'shops' => $shops
-        // ];
+        $data = [
+            'request' => $request,
+            'shop' => $shop,
+            'items' => $items,
+            'user' => $user
+        ];
         
-        // if (\Auth::user()->id === $otsukai->user_id) {
-        //     return view('otsukais.edit', $data);
-        // }
-        // else {
-        //     return redirect('/');
-        // }
+        if (\Auth::user()->id === $request->otsukai->user_id) {
+            return view('requests.edit_request', $data);
+        }
+        else {
+            return redirect('/');
+        }
     }
     
     public function update_request(Request $request, $id)

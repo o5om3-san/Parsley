@@ -1,12 +1,12 @@
 <?php
 /* OtsukaisController */
 // otsukai
-Route::get('/', 'OtsukaisController@index');
+Route::get('/', 'OtsukaisController@index')->name('otsukais.index');
 Route::get('otsukais/create/', 'OtsukaisController@create_otsukai')->name('otsukais.create');
 Route::post('otsukais/', 'OtsukaisController@store_otsukai')->name('otsukais.store');
 Route::get('otsukais/{otsukai}/', 'OtsukaisController@show_otsukai')->name('otsukais.show');
 Route::get('otsukais/{otsukai}/edit/', 'OtsukaisController@edit_otsukai')->name('otsukais.edit');
-Route::put('/otsukais/otsukai/', 'OtsukaisController@update_otsukai')->name('otsukais.update');
+Route::put('/otsukais/{otsukai}/', 'OtsukaisController@update_otsukai')->name('otsukais.update');
 Route::delete('otsukais/{otsukai}/', 'OtsukaisController@store_otsukai')->name('otsukais.destroy');
 
 // request
