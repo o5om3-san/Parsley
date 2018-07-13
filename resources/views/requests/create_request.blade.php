@@ -10,7 +10,7 @@
         {!! Form::label('name', '商品名:') !!}
         <select name='item'>
             @foreach ($items as $item)
-                <option value={{$item->id}}> {{$item->name}} </option>
+                <option value={{$item->id}}> {{ $item->name }} </option>
             @endforeach
         </select>
     </div>
@@ -22,11 +22,11 @@
                 
     <div class='form-group'>
         {!! Form::label('comment', 'コメント欄:') !!}
-        {!! Form::textarea('comment',null)!!}
+        {!! Form::textarea('comment', null, ['size' => '50x2']) !!}
     </div>
     
-    <a href="#">{{$user->name}}</a>さんに
-    {!! Form::submit('request', ['class' => 'btn btn-primary']) !!}
+    <a href="#">{{ $user->name }}</a>さんに
+    {!! Form::submit('おつかいを頼む', ['class' => 'btn btn-success']) !!}
 
 {!! Form::close() !!}
 

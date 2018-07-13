@@ -1,19 +1,35 @@
 @charset "utf-8";
 /* body */
 body {
-    background: #f2f2f2;
+    background: #CCFFCC;
+    font-family: "Rounded Mplus 1c";
 }
 footer {
     margin-top: 40px;
+    
 }
 /* navbar */
 .navbar {
-    background-color: #fff;
+    background-color: #66CC99;
+    color:blue;
 }
 .navbar-header img {
-    margin-top: 5px;
-    height: 40px;
+    margin-top: 10px;
+    height: 600px;
+    width: 15px;
 }
+
+/* body-footer */
+.footer {
+    background-color: #66CC99;
+}
+
+.footer-header img {
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+
 /*show_otsukai*/
 .row .buttons form{
     display: inline-block;
