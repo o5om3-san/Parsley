@@ -13,7 +13,7 @@ class Otsukai extends Model
         return $this->belongsTo(User::class);
     }
     
-    public function user_giant()
+    public function request()
     {
         return $this->hasMany(OtsukaiGiant::class);
     }    

@@ -1,27 +1,28 @@
 <?php
 /* OtsukaisController */
 // otsukai
-Route::get('/', 'OtsukaisController@index');
+Route::get('/', 'OtsukaisController@index')->name('otsukais.index');
 Route::get('otsukais/create/', 'OtsukaisController@create_otsukai')->name('otsukais.create');
 Route::post('otsukais/', 'OtsukaisController@store_otsukai')->name('otsukais.store');
-Route::get('otsukais/{otsukai}/', 'OtsukaisController@show_otsukai')->name('otsukais.show');
-Route::get('otsukais/{otsukai}/edit/', 'OtsukaisController@edit_otsukai')->name('otsukais.edit');
-Route::put('/otsukais/otsukai/', 'OtsukaisController@update_otsukai')->name('otsukais.update');
-Route::delete('otsukais/{otsukai}/', 'OtsukaisController@store_otsukai')->name('otsukais.destroy');
+Route::get('otsukais/{id}/', 'OtsukaisController@show_otsukai')->name('otsukais.show');
+Route::get('otsukais/{id}/edit/', 'OtsukaisController@edit_otsukai')->name('otsukais.edit');
+Route::put('/otsukais/{id}/', 'OtsukaisController@update_otsukai')->name('otsukais.update');
+Route::delete('otsukais/{id}/delete', 'OtsukaisController@destroy_otsukai')->name('otsukais.destroy');
 
 // request
 Route::get('otsukais/{id}/request/create/', 'OtsukaisController@create_request')->name('requests.create');
 Route::post('otsukais/request/{id}/', 'OtsukaisController@store_request')->name('requests.store');
-Route::get('otsukais/request/{request}/', 'OtsukaisController@show_request')->name('requests.show');
-Route::get('otsukais/request/{request}/edit/', 'OtsukaisController@edit_request')->name('requests.edit');
-Route::put('otsukais/request/{request}/', 'OtsukaisController@update_request')->name('requests.update');
-Route::delete('otsukais/request/{request}', 'OtsukaisController@store_request')->name('requests.destroy');
+Route::get('otsukais/request/{id}/', 'OtsukaisController@show_request')->name('requests.show');
+Route::get('otsukais/request/{id}/edit/', 'OtsukaisController@edit_request')->name('requests.edit');
+Route::put('otsukais/request/{id}/', 'OtsukaisController@update_request')->name('requests.update');
+Route::delete('otsukais/request/{id}/delete', 'OtsukaisController@destroy_request')->name('requests.destroy');
 
 /* ItemsController */
 
 /* ShopsController */
 
 /* UsersController */
+Route::get('user/{id}', 'UsersController@show')->name('users.show');
 
 /* Authentication */
 Auth::routes();
