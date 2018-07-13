@@ -18,6 +18,12 @@ footer {
     height: 600px;
     width: 15px;
 }
+/*kanban*/
+.kanban img {
+    display: inline-block;
+    
+}
+
 
 /* body-footer */
 .footer {
@@ -28,6 +34,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: 100px;
+
 }
 
 /*show_otsukai*/
@@ -67,3 +74,4 @@ table.type06 td {
 table.type06 .media-left{
    text-align: center; 
 }
+
