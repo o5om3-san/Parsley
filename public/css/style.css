@@ -18,6 +18,12 @@ footer {
     height: 60px;
     width: 15px;
 }
+/*kanban*/
+.kanban img {
+    display: inline-block;
+    
+}
+
 
 /* body-footer */
 .footer {
@@ -30,3 +36,4 @@ footer {
     height: 100px;
     
 }
+
