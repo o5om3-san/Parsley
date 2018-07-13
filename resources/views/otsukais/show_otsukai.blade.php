@@ -3,8 +3,6 @@
 @section('content')
     <div class="row">
         <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-            
-<<<<<<< HEAD
             <h1>{{ $otsukai->user->name }} のおつかい詳細</h1>
             <table class="table table-bordered">
                 <tr>
@@ -27,7 +25,7 @@
                                 @if (Auth::user()->id == $onegai->user_id)
                                     {!! link_to_route('requests.edit', '編集', ['id' => $onegai->id], ['class' => 'btn btn-default btn-xs']) !!}
                                     {!! Form::open(['route' => ['requests.destroy', $onegai->id], 'method' => 'delete']) !!}
-                                        {!! Form::submit('Delee', ['class' => 'btn btn-danger btn-xs']) !!}
+                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                                     {!! Form::close() !!}
                                 @endif
                             </div>
@@ -47,7 +45,10 @@
                         {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
                 @endif
-                {!! link_to_route('otsukais.index', '戻る', [], ['class' => 'btn btn-success']) !!}
+                @if (Auth::user()->id != $otsukai->user_id)
+                    {!! link_to_route('requests.create', '注文する', ['id' => $otsukai->id], ['class' => 'btn btn-success']) !!}
+                @endif
+                {!! link_to_route('otsukais.index', '戻る', [], ['class' => 'btn btn-default']) !!}
             </div>
         </div>
     </div>

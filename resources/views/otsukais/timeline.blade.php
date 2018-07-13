@@ -23,7 +23,7 @@
         <td><?php echo date("H:i", strtotime($otsukai->deadline)); ?></td>
         <td>{{ $otsukai->shop->name }}</td>
         <td>{{ $otsukai->capacity }}</td>
-        <td>{{ $otsukai->deliverPlace }}</td>
+        <td>Cabinet {{ $otsukai->deliverPlace }}</td>
         <td>
             
             @if (Auth::user()->id != $otsukai->user_id)
