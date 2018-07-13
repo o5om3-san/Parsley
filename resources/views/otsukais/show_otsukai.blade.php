@@ -33,17 +33,19 @@
             </tr>
         </table>
 
-        <div class="buttons">    
+        <div class="buttons">
+            {!! link_to_route('otsukais.index', '戻る', ['id' => $otsukai->id], ['class' => 'btn btn-default']) !!}    
             @if (Auth::user()->id == $otsukai->user_id)
                 {!! link_to_route('otsukais.edit', '編集', ['id' => $otsukai->id], ['class' => 'btn btn-default']) !!}
                 {!! Form::model($otsukai, ['route' => ['otsukais.destroy', $otsukai->id], 'method' => 'delete']) !!}
                 {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}
             @endif
+        </div>
+        <div class="requestbutton">
             @if (Auth::user()->id != $otsukai->user_id)
-                {!! link_to_route('requests.create', '注文する', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                {!! link_to_route('requests.create', '注文する', ['id' => $otsukai->id], ['class' => 'btn btn-success btn-m']) !!}
             @endif
-            {!! link_to_route('otsukais.index', '戻る', ['id' => $otsukai->id], ['class' => 'btn btn-success']) !!}
         </div>
     </div>     
 </div>

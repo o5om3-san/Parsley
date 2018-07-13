@@ -36,6 +36,11 @@ footer {
     margin: 0 5px;
 }
 
+.row .requestbutton{
+    text-align: right;
+    margin: 0 5px;
+}
+
 /*timeline*/
 table, th, td {
   text-align: center;

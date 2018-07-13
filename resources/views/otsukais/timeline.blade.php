@@ -1,7 +1,7 @@
 <table class="medialist">
 　<thead>
     <tr>
-    　<th>ユーザー</th>
+    　<th>ショッパー</th>
       <th>受け入れ期限</th>
       <th>お店</th>
     　<th>最大個数</th>
