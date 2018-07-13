@@ -25,7 +25,7 @@ class CreateOtsukaiGiantTable extends Migration
             //foreign key settings
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('item_id')->references('id')->on('items');
-            $table->foreign('otsukai_id')->references('id')->on('otsukais');
+            $table->foreign('otsukai_id')->references('id')->on('otsukais')->onDelete('cascade');
         });
     }
 

@@ -1,21 +1,21 @@
 @charset "utf-8";
-
 /* body */
 body {
     background: #CCFFCC;
+    font-family: "Rounded Mplus 1c";
 }
 footer {
     margin-top: 40px;
     
 }
-
 /* navbar */
 .navbar {
     background-color: #66CC99;
+    color:blue;
 }
 .navbar-header img {
     margin-top: 10px;
-    height: 60px;
+    height: 600px;
     width: 15px;
 }
 

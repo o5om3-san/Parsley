@@ -2,23 +2,21 @@
     <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="footer-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                　　<span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand" href="/"></a>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            
                 <ul class="nav navbar-nav navbar-left">
                     @if (Auth::check())
-                        <li>{!! link_to_route('otsukais.create', 'Go Shopping') !!}</li>
+                    
+                        <li>{!! link_to_route('users.show','MyPage',['id' => Auth::id()]) !!}</li>
+                        <li>{!! link_to_route('otsukais.create','買い物に行く') !!}</li>
+                        <li>{!! link_to_route('otsukais.index','おつかいの一覧') !!}</li>
+                        <li>{!! link_to_route('logout.get','Logout') !!}</li>
                     @else
-                       
+                        <li>{!! link_to_route('login', 'ログイン') !!}</li>
+                        <li>{!! link_to_route('register', '登録') !!}</li>
                     @endif
                 </ul>
-            </div>
         </div>
     </nav>
 </header>
