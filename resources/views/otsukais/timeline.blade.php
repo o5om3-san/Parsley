@@ -1,4 +1,4 @@
-<table class="media-list">
+<table class="medialist">
 　<thead>
     <tr>
     　<th>ユーザー</th>
@@ -25,14 +25,13 @@
         <td>{{ $otsukai->capacity }}</td>
         <td>{{ $otsukai->deliverPlace }}</td>
         <td>
-            {!! link_to_route('otsukais.show', 'Show', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+            
             @if (Auth::user()->id != $otsukai->user_id)
-                {!! link_to_route('requests.create', 'Request', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                {!! link_to_route('otsukais.show', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
             @endif
+            
             @if (Auth::user()->id == $otsukai->user_id)
-                {!! Form::open(['route' => ['otsukais.destroy', $otsukai->id], 'method' => 'delete']) !!}
-                {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                {!! Form::close() !!}
+                {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
             @endif
         </td>
 

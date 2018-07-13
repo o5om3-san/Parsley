@@ -40,6 +40,9 @@
                 {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}
             @endif
+            @if (Auth::user()->id != $otsukai->user_id)
+                {!! link_to_route('requests.create', '注文する', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+            @endif
             {!! link_to_route('otsukais.index', '戻る', ['id' => $otsukai->id], ['class' => 'btn btn-success']) !!}
         </div>
     </div>     
