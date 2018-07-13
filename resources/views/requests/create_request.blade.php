@@ -17,16 +17,16 @@
                     
     <div class="form-group">
         {!! Form::label('amount', '注文数:') !!}
-        {!! Form::selectRange('amount',1,10, null, ['class' => 'form-control']) !!}
+        {!! Form::selectRange('amount',1,10, null) !!}
     </div>
                 
     <div class='form-group'>
         {!! Form::label('comment', 'コメント欄:') !!}
-        {!! Form::textarea('comment',null)!!}
+        {!! Form::text('comment',null)!!}
     </div>
     
     <a href="#">{{$user->name}}</a>さんに
-    {!! Form::submit('request', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('おつかいを頼む', ['class' => 'btn btn-success']) !!}
 
 {!! Form::close() !!}
 
