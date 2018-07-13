@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1>注文画面</h1>
+<h1>編集</h1>
 
-{!! Form::open( ['route' => ['requests.store', $otsukai->id], 'method' => 'post']) !!}
+{!! Form::open( ['route' => ['requests.update', $onegai->id], 'method' => 'put']) !!}
 
     <div class="form-group">
         {!! Form::label('name', '商品名:') !!}
@@ -17,16 +17,16 @@
                     
     <div class="form-group">
         {!! Form::label('amount', '注文数:') !!}
-        {!! Form::selectRange('amount',1,10, null) !!}
+        {!! Form::selectRange('amount',1,10, null, ['class' => 'form-control']) !!}
     </div>
                 
     <div class='form-group'>
         {!! Form::label('comment', 'コメント欄:') !!}
-        {!! Form::text('comment',null)!!}
+        {!! Form::textarea('comment',null)!!}
     </div>
     
     <a href="#">{{$user->name}}</a>さんに
-    {!! Form::submit('おつかいを頼む', ['class' => 'btn btn-success']) !!}
+    {!! Form::submit('request', ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}
 

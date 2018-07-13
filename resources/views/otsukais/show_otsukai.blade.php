@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row">
-    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-          
+    <div class="row">
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+            
             <h1>{{ $otsukai->user->name }} のおつかい詳細ページ</h1>
         
         <table class="table table-bordered">
@@ -46,7 +46,7 @@
             @if (Auth::user()->id != $otsukai->user_id)
                 {!! link_to_route('requests.create', '注文する', ['id' => $otsukai->id], ['class' => 'btn btn-success btn-m']) !!}
             @endif
+
         </div>
-    </div>     
-</div>
+    </div>
 @endsection
