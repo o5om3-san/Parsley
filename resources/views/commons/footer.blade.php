@@ -15,8 +15,7 @@
                     @if (Auth::check())
                         <li>{!! link_to_route('otsukais.create', 'Go Shopping') !!}</li>
                     @else
-                        <li>{!! link_to_route('login', 'Login') !!}</li>
-                        <li>{!! link_to_route('register', 'Sign up') !!}</li>
+                       
                     @endif
                 </ul>
             </div>

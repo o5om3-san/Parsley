@@ -14,8 +14,9 @@ footer {
     background-color: #66CC99;
 }
 .navbar-header img {
-    margin-top: 5px;
-    height: 40px;
+    margin-top: 10px;
+    height: 60px;
+    width: 15px;
 }
 
 /* body-footer */
