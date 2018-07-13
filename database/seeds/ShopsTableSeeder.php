@@ -14,12 +14,12 @@ class ShopsTableSeeder extends Seeder
     DB::table('shops')->insert([
        
         [
-          'name' => 'CH_9F_RakutenCafe',
+          'name' => '9F 楽天カフェ',
           'address' => 'Crimson House 9F',
         ],
         
         [
-          'name' => 'CH_22F_RakutenCafe',
+          'name' => '22F 楽天カフェ',
           'address' => 'Crimson House 22F',
         ]
     ]);

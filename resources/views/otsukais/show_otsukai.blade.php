@@ -18,15 +18,17 @@
                     <th>依頼者</th>
                     @foreach ($onegais as $onegai)
                         <td>
-                            {{ $onegai->user->name }}　→　{{ $onegai->item->name }}<br>
-                            >>{{ $onegai->comment }}<br>
+                            名前：{{ $onegai->user->name }}<br>
+                            商品：{{ $onegai->item->name }}<br>
+                            数量：{{ $onegai->amount }}<br>
+                            コメント：{{ $onegai->comment }}<br>
                             <div class="editbutton" text-center>
-                            @if (Auth::user()->id == $onegai->user_id)    
-                                {!! link_to_route('requests.edit', '編集', ['id' => $onegai->id], ['class' => 'btn btn-default btn-xs']) !!}
-                                {!! Form::open(['route' => ['requests.destroy', $onegai->id], 'method' => 'delete']) !!}
-                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                                {!! Form::close() !!}
-                            @endif
+                                @if (Auth::user()->id == $onegai->user_id)
+                                    {!! link_to_route('requests.edit', '編集', ['id' => $onegai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                                    {!! Form::open(['route' => ['requests.destroy', $onegai->id], 'method' => 'delete']) !!}
+                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                                    {!! Form::close() !!}
+                                @endif
                             </div>
                         </td>
                     @endforeach

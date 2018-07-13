@@ -19,7 +19,7 @@ class CreateOtsukaiGiantTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->integer('item_id')->unsigned()->index();
             $table->integer('amount');
-            $table->string('comment',191);
+            $table->string('comment',191)->nullable();
             $table->timestamps();
             
             //foreign key settings
