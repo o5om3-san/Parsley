@@ -21,7 +21,7 @@
             <div>
                     {!! link_to_route('otsukais.show', 'Show', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                 @if (Auth::user()->id != $otsukai->user_id)
-                    {!! link_to_route('otsukais.request', 'Request', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                    {!! link_to_route('requests.create', 'Request', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                 @endif
                 @if (Auth::user()->id == $otsukai->user_id)
                     {!! Form::open(['route' => ['otsukais.destroy', $otsukai->id], 'method' => 'delete']) !!}

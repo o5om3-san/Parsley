@@ -4,7 +4,7 @@
 
 <h1>注文画面</h1>
 
-{!! Form::model( ['route' => 'otsukai_giant.request','method' => 'post']) !!}
+{!! Form::open( ['route' => ['requests.store', $otsukai->id], 'method' => 'post']) !!}
 
     <div class="form-group">
         {!! Form::label('name', '商品名:') !!}
@@ -17,16 +17,16 @@
                     
     <div class="form-group">
         {!! Form::label('amount', '注文数:') !!}
-        {!! Form::selectRange('amount',1,10, null, ['class' => 'form-control']) !!}
+        {!! Form::selectRange('amount',1,10, null) !!}
     </div>
                 
     <div class='form-group'>
         {!! Form::label('comment', 'コメント欄:') !!}
-        {!! Form::textarea('comment',null)!!}
+        {!! Form::text('comment',null)!!}
     </div>
     
     <a href="#">{{$user->name}}</a>さんに
-    {!! Form::submit('request', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('おつかいを頼む', ['class' => 'btn btn-success']) !!}
 
 {!! Form::close() !!}
 

@@ -19,7 +19,11 @@
         <tr>
             <th>giant</th>
             @foreach ($otsukai_giants as $otsukai_giant)
-                <td>{{ $otsukai_giant->user->name }}　→　{{ $otsukai_giant->item->name }}<br>>>{{ $otsukai_giant->comment }}</td>
+                <td>
+                    {{ $otsukai_giant->user->name }}　→　{{ $otsukai_giant->item->name }}<br>
+                    >>{{ $otsukai_giant->comment }}<br>
+                    {!! link_to_route('otsukais.edit', '編集', ['id' => $otsukai->id], ['class' => 'btn btn-default']) !!}
+                </td>
             @endforeach
         </tr>
         <tr>
@@ -28,10 +32,12 @@
         </tr>
     </table>
 
-    {!! link_to_route('otsukais.edit', '編集', ['id' => $otsukai->id], ['class' => 'btn btn-default']) !!}
-    {!! Form::model($otsukai, ['route' => ['otsukais.destroy', $otsukai->id], 'method' => 'delete']) !!}
-     {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
-    {!! Form::close() !!}
+    @if (Auth::user()->id == $otsukai->user_id)
+        {!! link_to_route('otsukais.edit', '編集', ['id' => $otsukai->id], ['class' => 'btn btn-default']) !!}
+        {!! Form::model($otsukai, ['route' => ['otsukais.destroy', $otsukai->id], 'method' => 'delete']) !!}
+        {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
+        {!! Form::close() !!}
+    @endif
 </div>
 @endsection
  </div>
