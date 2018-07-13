@@ -22,6 +22,7 @@ Route::delete('otsukais/request/{request}', 'OtsukaisController@store_request')-
 /* ShopsController */
 
 /* UsersController */
+Route::get('user/{id}', 'UsersController@show')->name('users.show');
 
 /* Authentication */
 Auth::routes();
