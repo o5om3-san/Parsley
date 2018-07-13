@@ -8,7 +8,7 @@
 
     <div class="form-group">
         {!! Form::label('name', '商品名:') !!}
-        <select name='names'>
+        <select name='item'>
             @foreach ($items as $item)
                 <option value={{$item->id}}> {{$item->name}} </option>
             @endforeach

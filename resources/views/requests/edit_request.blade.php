@@ -4,11 +4,11 @@
 
 <h1>編集</h1>
 
-{!! Form::open( ['route' => ['requests.update', $request->id], 'method' => 'post']) !!}
+{!! Form::open( ['route' => ['requests.update', $onegai->id], 'method' => 'put']) !!}
 
     <div class="form-group">
         {!! Form::label('name', '商品名:') !!}
-        <select name='names'>
+        <select name='item'>
             @foreach ($items as $item)
                 <option value={{$item->id}}> {{$item->name}} </option>
             @endforeach
