@@ -8,7 +8,7 @@
                 　　<span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Parsley</a>
+                <a class="navbar-brand" href="/">Parsley <i class="fab fa-product-hunt fa-lg fa-spin"></i></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
