@@ -14,13 +14,21 @@
                     <td>{{ $otsukai->shop->name }}</td>
                 </tr>
                 <tr>
+                    <th>受け渡し場所</th>
+                    <td>キャビネット{{ $otsukai->deliverPlace }}</td>
+                </tr>
+            </table>
+            <table class="table table-bordered">
+                <tr>
                     <th>依頼者</th>
                     @foreach ($onegais as $onegai)
                         <td>
-                            名前：{{ $onegai->user->name }}<br>
-                            商品：{{ $onegai->item->name }}<br>
-                            数量：{{ $onegai->amount }}<br>
-                            コメント：{{ $onegai->comment }}<br>
+                            <div class="iraisha">
+                                名前：{{ $onegai->user->name }}<br>
+                                商品：{{ $onegai->item->name }}<br>
+                                数量：{{ $onegai->amount }}<br>
+                                コメント：{{ $onegai->comment }}<br>
+                            </div>
                             <div class="editbutton" text-center>
                                 @if (Auth::user()->id == $onegai->user_id)
                                     {!! link_to_route('requests.edit', '編集', ['id' => $onegai->id], ['class' => 'btn btn-default btn-xs']) !!}
@@ -31,10 +39,6 @@
                             </div>
                         </td>
                     @endforeach
-                </tr>
-                <tr>
-                    <th>受け渡し場所</th>
-                    <td>キャビネット{{ $otsukai->deliverPlace }}</td>
                 </tr>
             </table>
             

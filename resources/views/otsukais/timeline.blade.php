@@ -28,7 +28,7 @@
         <td>
             
             @if (Auth::user()->id != $otsukai->user_id)
-                {!! link_to_route('otsukais.show', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                {!! link_to_route('otsukais.show', 'おつかいを頼む/確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
             @endif
             
             @if (Auth::user()->id == $otsukai->user_id)
