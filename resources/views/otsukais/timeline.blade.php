@@ -17,7 +17,7 @@
   
         <td>
             <div class="media-left">
-                <img class="media-object img-rounded" src="https://stamp-mato.me/wp-content/uploads/2016/10/okaimono-panda_c.jpg"  alt="">
+                <img class="media-object img-rounded" src="images/532.png"  alt="">
                 {{ $otsukai->user->name }}
             </div>
         </td>
