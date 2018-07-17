@@ -103,7 +103,7 @@ class OtsukaisController extends Controller
         ]);
         
         if (\Auth::user()->id === $otsukai->user_id) {
-            $request->user()->otsukai_nobita()->update([
+            $request->user()->otsukai_nobita()->where('id', $id)->update([
                 'deadline' => $time,
                 'shop_id' => $request->shop_id,
                 'capacity' => $request->capacity,
