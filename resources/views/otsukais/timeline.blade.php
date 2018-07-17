@@ -26,7 +26,10 @@
         <td>Cabinet {{ $otsukai->deliverPlace }}</td>
         <td>
             @if (Auth::user()->id != $otsukai->user_id)
-                {!! link_to_route('otsukais.show', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                @if ($otsukai->capacity - $amounts[$key] != 0)
+                    {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                @endif
+                {!! link_to_route('otsukais.show', '詳細を見る', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
             @endif
             
             @if (Auth::user()->id == $otsukai->user_id)

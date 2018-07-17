@@ -159,6 +159,7 @@ class OtsukaisController extends Controller
     public function edit_request($id)
     {
         $onegai = OtsukaiGiant::find($id);
+        $otsukai = Otsukai::find($onegai->otsukai_id);
         $shop = $onegai->otsukai->shop;
         $items = $onegai->otsukai->shop->item;
         $user = $onegai->otsukai->user;
@@ -166,6 +167,7 @@ class OtsukaisController extends Controller
         
         $data = [
             'onegai' => $onegai,
+            'otsukai' => $otsukai,
             'shop' => $shop,
             'items' => $items,
             'user' => $user,
