@@ -1,4 +1,4 @@
-<table class="medialist">
+<table class="table-hover">
 　<thead>
     <tr>
     　<th>ショッパー</th>
@@ -6,6 +6,7 @@
       <th>お店</th>
     　<th>最大個数</th>
     　<th>受け渡し場所</th>
+    　<th> </th>
     </tr>
 　</thead>
 　
@@ -16,14 +17,14 @@
   
         <td>
             <div class="media-left">
-                <img class="media-object img-rounded" src="https://stamp-mato.me/wp-content/uploads/2016/10/okaimono-panda_c.jpg" height='15%' alt="">
+                <img class="media-object img-rounded" src="images/532.png"  alt="">
                 {{ $otsukai->user->name }}
             </div>
         </td>
         <td><?php echo date("H:i", strtotime($otsukai->deadline)); ?></td>
         <td>{{ $otsukai->shop->name }}</td>
         <td>{{ $otsukai->capacity }}</td>
-        <td>{{ $otsukai->deliverPlace }}</td>
+        <td>Cabinet {{ $otsukai->deliverPlace }}</td>
         <td>
             
             @if (Auth::user()->id != $otsukai->user_id)
