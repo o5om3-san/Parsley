@@ -48,6 +48,17 @@ footer {
     margin: 0 5px;
 }
 
+table.table-bordered th{
+    background: #C0C0C0;
+    color: #ffffff;
+}
+.iraisha{
+    text-align: left;
+}
+
+
+
+
 /*timeline*/
 table, th, td {
     text-align: center;
@@ -76,7 +87,4 @@ table.type06 td {
     height: 100px;
     width: 100px;
 }
-
-
-
 
