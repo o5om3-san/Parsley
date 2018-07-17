@@ -2,7 +2,10 @@
 
 /* body */
 body {
-    background: #f2f2f2;
+    background: #CCFFCC;
+    font-family: "Rounded Mplus 1c";
+    text-align:center;
+    top:0px;
 }
 footer {
     margin-top: 40px;
@@ -12,7 +15,57 @@ footer {
 .navbar {
     background-color: #fff;
 }
-.navbar-header img {
-    margin-top: 5px;
-    height: 40px;
+
+/*kanban*/
+.kanban img {
+    top: 0px;
+    margin: 70px;
+    display: inline-block;
+    
 }
+
+
+
+/* body-footer */
+.footer {
+    background-color: #66CC99;
+}
+
+/*show_otsukai*/
+.row .buttons form{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.row .requestbutton{
+    text-align: right;
+    margin: 0 5px;
+}
+
+/*timeline*/
+table, th, td {
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+}
+
+table.medialist th {
+  text-align: center;
+  width: 150px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  background: #C0C0C0;
+  color: #ffffff;
+}
+table.type06 td {
+  text-align: center;
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+}
+table.type06 .media-left{
+   text-align: center; 
+}
+

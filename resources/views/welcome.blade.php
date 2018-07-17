@@ -19,8 +19,11 @@
             <div class="text-center">
                 <h1>Parsley</h1>
                 {!! link_to_route('register', 'Sign up now!', null, ['class' => 'btn btn-lg btn-success']) !!}
-                <img src="images/parsley2.png" width="1200" height="800" alt="" class="img-responsive">
-
+                <img src="images/parsley.png" alt="" class="img-responsive">
+            </div>
+            <div class="kanban">
+                <a href="/"><img src="images/kanbantanomu.png" width=250 alt="おつかいを頼む" class="img-responsive"></a>
+                <a href="otsukais/create/"><img src="images/kanbaniku.png" width=250 alt="おつかいに行く" class="img-responsive"></a>
             </div>
         </div>
     @endif
