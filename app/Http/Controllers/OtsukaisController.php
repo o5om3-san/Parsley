@@ -46,7 +46,7 @@ class OtsukaisController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'shop_id' => 'required|max:191',
+            'shop_id' => 'required|max:191', 
             'capacity' => 'required|max:191',
             'deliverPlace' => 'required|max:191',
         ]);
@@ -72,7 +72,7 @@ class OtsukaisController extends Controller
 
         $request->user()->otsukai_giant()->request([
             'item' => $request->item,
-            'amount' => $request->amount,
+     jh yubh       'amount' => $request->amount,
         ]);
 
         return redirect('/');
