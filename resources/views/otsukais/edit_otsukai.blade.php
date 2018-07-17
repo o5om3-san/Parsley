@@ -31,7 +31,7 @@
             
             <div class="form-group">
                 {!! Form::label('deliverPlace', '受け渡し場所：') !!}
-                キャビネット{{Form::selectRange('deliverPlace', 1, 11, ['selected' => ' '])}}
+                Cabinet{{Form::selectRange('deliverPlace', 1, 11, ['selected' => ' '])}}
             </div>
 
             {!! Form::submit('更新', ['class' => 'btn btn-default']) !!}

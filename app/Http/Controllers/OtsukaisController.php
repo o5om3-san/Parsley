@@ -19,7 +19,11 @@ class OtsukaisController extends Controller
             $dt = new DateTime();
             $otsukai = new Otsukai();
             $otsukais = $otsukai->where('deadline','>',$dt)->orderBy('deadline', 'asc')->paginate(10);
-            $data = ['otsukais' => $otsukais];
+            $amounts = $this->count_amounts($otsukais);
+            $data = [
+                'otsukais' => $otsukais,
+                'amounts' => $amounts,
+            ];
             
             return view('otsukais.index', $data);
         } else {
@@ -132,11 +136,14 @@ class OtsukaisController extends Controller
         $shop = $otsukai->shop;
         $items = $otsukai->shop->item;
         $user = $otsukai->user;
+        $amount = $this->count_amount($otsukai);
+        
         $data = [
             'otsukai' => $otsukai,
             'shop' => $shop,
             'items' => $items,
-            'user' => $user
+            'user' => $user,
+            'amount' => $amount
         ];
         
         
@@ -155,12 +162,14 @@ class OtsukaisController extends Controller
         $shop = $onegai->otsukai->shop;
         $items = $onegai->otsukai->shop->item;
         $user = $onegai->otsukai->user;
+        $amount = $this->count_amount($otsukai);
         
         $data = [
             'onegai' => $onegai,
             'shop' => $shop,
             'items' => $items,
-            'user' => $user
+            'user' => $user,
+            'amount' => $amount
         ];
         
         if (\Auth::user()->id === $onegai->user_id) {
