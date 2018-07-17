@@ -72,7 +72,7 @@ class OtsukaisController extends Controller
 
         $request->user()->otsukai_giant()->request([
             'item' => $request->item,
-     jh yubh       'amount' => $request->amount,
+            'amount' => $request->amount,
         ]);
 
         return redirect('/');
