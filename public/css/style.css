@@ -50,28 +50,32 @@ footer {
 
 /*timeline*/
 table, th, td {
-  text-align: center;
-  border-collapse: collapse;
-  border: 1px solid #ccc;
-  line-height: 1.5;
+    text-align: center;
+    border-collapse: collapse;
+    line-height: 1.5;
 }
 
-table.medialist th {
-  text-align: center;
-  width: 150px;
-  padding: 10px;
-  font-weight: bold;
-  vertical-align: top;
-  background: #C0C0C0;
-  color: #ffffff;
+table.table-hover th {
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    background: #C0C0C0;
+    color: #ffffff;
 }
+
 table.type06 td {
-  text-align: center;
-  width: 350px;
-  padding: 10px;
-  vertical-align: top;
+    text-align: center;
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
 }
-table.type06 .media-left{
-   text-align: center; 
+
+.media-object{
+    height: 100px;
+    width: 100px;
 }
+
+
 
