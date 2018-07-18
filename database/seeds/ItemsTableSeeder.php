@@ -13,65 +13,65 @@ class ItemsTableSeeder extends Seeder
     {
     DB::table('items')->insert([
         [
-          'name' => 'Coffee S / Iced',
+          'name' => 'アイスコーヒーS',
           'price' => '140',
           'shop_id' => '1', 
         ],
         [
-          'name' => 'Coffee M / Iced',
+          'name' => 'アイスコーヒーM',
           'price' => '180',
           'shop_id' => '1', 
         ],
         [
-          'name' => 'Coffee L / Iced',
+          'name' => 'アイスコーヒーL',
           'price' => '220',
           'shop_id' => '1', 
         ],
         [
-          'name' => 'Coffee S / Hot',
+          'name' => 'ホットコーヒーS',
           'price' => '130',
           'shop_id' => '1', 
         ],
         [
-          'name' => 'Coffee M / Hot',
+          'name' => 'ホットコーヒーM',
           'price' => '170',
           'shop_id' => '1', 
         ],
         [
-          'name' => 'Coffee L / Hot',
+          'name' => 'ホットコーヒーL',
           'price' => '210',
           'shop_id' => '1', 
         ],
         [
-          'name' => 'Coffee S / Iced',
+          'name' => 'アイスコーヒーS',
           'price' => '140',
           'shop_id' => '2', 
         ],
         [
-          'name' => 'Coffee M / Iced',
+          'name' => 'アイスコーヒーM',
           'price' => '180',
           'shop_id' => '2', 
         ],
         [
-          'name' => 'Coffee L / Iced',
+          'name' => 'アイスコーヒーL',
           'price' => '220',
           'shop_id' => '2', 
         ],
         [
-          'name' => 'Coffee S / Hot',
+          'name' => 'ホットコーヒーS',
           'price' => '130',
           'shop_id' => '2', 
         ],
         [
-          'name' => 'Coffee M / Hot',
+          'name' => 'ホットコーヒーM',
           'price' => '170',
           'shop_id' => '2', 
         ],
         [
-          'name' => 'Coffee L / Hot',
+          'name' => 'ホットコーヒーL',
           'price' => '210',
           'shop_id' => '2', 
-        ],
+        ]
     ]);
     
     }

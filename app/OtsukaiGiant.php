@@ -8,6 +8,11 @@ class OtsukaiGiant extends Model
 {
     protected $table = 'otsukai_giant';
     
+    public function otsukai()
+    {
+        return $this->belongsTo(Otsukai::class);
+    }
+    
     public function user()
     {
         return $this->belongsTo(User::class);

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            おつかい一覧
+            <h1>おつかい一覧</h1>
             
             @include('otsukais.timeline', ['otsukais' => $otsukais])    
             
