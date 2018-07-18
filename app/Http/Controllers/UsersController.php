@@ -56,7 +56,8 @@ class UsersController extends Controller
 
         $data = [
             'user' => $user,
-            'otsukai' => $otsukai
+            'otsukais' => $otsukais,
+            'otsukai_giants' => $otsukai_giants
         ];
         
         return view('users.show', $data);
