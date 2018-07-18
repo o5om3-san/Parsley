@@ -19,7 +19,11 @@ class OtsukaisController extends Controller
             $dt = new DateTime();
             $otsukai = new Otsukai();
             $otsukais = $otsukai->where('deadline','>',$dt)->orderBy('deadline', 'asc')->paginate(10);
-            $data = ['otsukais' => $otsukais];
+            $amounts = $this->count_amounts($otsukais);
+            $data = [
+                'otsukais' => $otsukais,
+                'amounts' => $amounts,
+            ];
             
             return view('otsukais.index', $data);
         } else {
@@ -103,7 +107,7 @@ class OtsukaisController extends Controller
         ]);
         
         if (\Auth::user()->id === $otsukai->user_id) {
-            $request->user()->otsukai_nobita()->update([
+            $request->user()->otsukai_nobita()->where('id', $id)->update([
                 'deadline' => $time,
                 'shop_id' => $request->shop_id,
                 'capacity' => $request->capacity,
@@ -132,11 +136,14 @@ class OtsukaisController extends Controller
         $shop = $otsukai->shop;
         $items = $otsukai->shop->item;
         $user = $otsukai->user;
+        $amount = $this->count_amount($otsukai);
+        
         $data = [
             'otsukai' => $otsukai,
             'shop' => $shop,
             'items' => $items,
-            'user' => $user
+            'user' => $user,
+            'amount' => $amount
         ];
         
         
@@ -152,15 +159,19 @@ class OtsukaisController extends Controller
     public function edit_request($id)
     {
         $onegai = OtsukaiGiant::find($id);
+        $otsukai = Otsukai::find($onegai->otsukai_id);
         $shop = $onegai->otsukai->shop;
         $items = $onegai->otsukai->shop->item;
         $user = $onegai->otsukai->user;
+        $amount = $this->count_amount($otsukai);
         
         $data = [
             'onegai' => $onegai,
+            'otsukai' => $otsukai,
             'shop' => $shop,
             'items' => $items,
-            'user' => $user
+            'user' => $user,
+            'amount' => $amount
         ];
         
         if (\Auth::user()->id === $onegai->user_id) {
@@ -193,5 +204,18 @@ class OtsukaisController extends Controller
         }
         
         return redirect('/');
+    }
+    
+        public function mypage()
+    { 
+        if (\Auth::check()) {
+            $otsukai = new Otsukai();
+            $otsukais = $otsukai->where('user_id', '=', Auth::id())->orderBy('deadline', 'asc')->paginate(10);
+            $data = ['otsukais' => $otsukais];
+            
+            return view('otsukais.index', $data);
+        } else {
+            return view('welcome');
+        }
     }
 }

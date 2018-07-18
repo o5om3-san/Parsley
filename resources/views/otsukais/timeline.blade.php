@@ -10,7 +10,7 @@
     </tr>
 　</thead>
 　
-@foreach ($otsukais as $otsukai)
+@foreach ($otsukais as $key => $otsukai)
     <?php $user = $otsukai->user; ?>
         
 　　<tbody="type06">
@@ -26,7 +26,6 @@
         <td>{{ $otsukai->capacity }}</td>
         <td>キャビネット {{ $otsukai->deliverPlace }}</td>
         <td>
-            
             @if (Auth::user()->id != $otsukai->user_id)
                 {!! link_to_route('otsukais.show', 'おつかいを頼む/確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
             @endif

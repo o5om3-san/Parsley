@@ -17,7 +17,7 @@
                     
     <div class="form-group">
         {!! Form::label('amount', '注文数:') !!}
-        {!! Form::selectRange('amount', 1, $otsukai->capacity, null, ['class' => 'form-control']) !!}
+        {!! Form::selectRange('amount', 1, $otsukai->capacity-$amount, null, ['class' => 'form-control']) !!}
     </div>
                 
     <div class='form-group'>
