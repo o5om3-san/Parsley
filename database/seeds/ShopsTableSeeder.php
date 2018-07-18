@@ -11,28 +11,18 @@ class ShopsTableSeeder extends Seeder
      */
     public function run()
     {
-     DB::table('shops')->insert([
+    DB::table('shops')->insert([
+       
         [
-          'name' => 'CH_9F_ConvenienceStore',
+          'name' => '9F 楽天カフェ',
           'address' => 'Crimson House 9F',
         ],
         
         [
-          'name' => 'CH_22F_ConvenienceStore',
-          'address' => 'Crimson House 22F',
-        ],
-        
-        [
-          'name' => 'CH_9F_RakutenCafe',
-          'address' => 'Crimson House 9F',
-        ],
-        
-        [
-          'name' => 'CH_22F_RakutenCafe',
+          'name' => '22F 楽天カフェ',
           'address' => 'Crimson House 22F',
         ]
-        ]);
+    ]);
         
-
     }
 }
