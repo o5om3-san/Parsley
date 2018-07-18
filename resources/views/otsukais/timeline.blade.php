@@ -10,25 +10,29 @@
     </tr>
 　</thead>
 　
-@foreach ($otsukais as $otsukai)
+@foreach ($otsukais as $key => $otsukai)
     <?php $user = $otsukai->user; ?>
         
 　　<tbody="type06">
   
         <td>
-            <div class="media-left">
-                <img class="media-object img-rounded" src="images/532.png"  alt="">
-                {{ $otsukai->user->name }}
-            </div>
+            <a href='user/<?= $otsukai->user->id ?>'>
+                <div class="media-left">
+                    <img class="media-object img-rounded" src="images/532.png"  alt="">
+                    {{ $otsukai->user->name }}
+                </div>
+            </a>
         </td>
         <td><?php echo date("H:i", strtotime($otsukai->deadline)); ?></td>
         <td>{{ $otsukai->shop->name }}</td>
-        <td>{{ $otsukai->capacity }}</td>
-        <td>Cabinet {{ $otsukai->deliverPlace }}</td>
+        <td>{{ $amounts[$key] }}／{{ $otsukai->capacity }}</td>
+        <td>キャビネット {{ $otsukai->deliverPlace }}</td>
         <td>
-            
             @if (Auth::user()->id != $otsukai->user_id)
-                {!! link_to_route('otsukais.show', 'おつかいを頼む/確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                {!! link_to_route('otsukais.show', 'おつかいを頼む／確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                @if ($otsukai->capacity-$amounts[$key] > 0)
+                    {!! link_to_route('requests.create', '今すぐおつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                @endif
             @endif
             
             @if (Auth::user()->id == $otsukai->user_id)

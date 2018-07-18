@@ -31,11 +31,11 @@
             
             <div class="form-group">
                 {!! Form::label('capacity', '最大：') !!}
-                {{Form::selectRange('capacity', 1, 7, '', ['placeholder' => ''])}}個
+                {{Form::selectRange('capacity', 1, 10, '', ['placeholder' => ''])}}個
             </div>
             <div class="form-group">
                 {!! Form::label('deliverPlace', '受け渡し場所：') !!}
-                キャビネット{{Form::selectRange('deliverPlace', 1, 11, ['selected' => ' '])}}
+                Cabinet{{Form::selectRange('deliverPlace', 1, 11, ['selected' => ' '])}}
             </div>
             
             {!! Form::submit('登録', ['class' => 'btn btn-success']) !!}
