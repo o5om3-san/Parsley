@@ -206,7 +206,7 @@ class OtsukaisController extends Controller
         return redirect('/');
     }
     
-        public function mypage()
+    public function mypage()
     { 
         if (\Auth::check()) {
             $otsukai = new Otsukai();
@@ -214,8 +214,27 @@ class OtsukaisController extends Controller
             $data = ['otsukais' => $otsukais];
             
             return view('otsukais.index', $data);
-        } else {
+        }
+        else {
             return view('welcome');
         }
+    }
+    
+    public function pay($id)
+    {
+        $user = \Auth::id();
+        $otsukai = new Otsukai();
+        $otsukais = $otsukai->where('user_id', '=', \Auth::id())->orderBy('deadline', 'asc')->paginate(10);
+
+        $otsukai_giant = new OtsukaiGiant();
+        $otsukai_giants = $otsukai_giant->where('user_id', '=', \Auth::id())->orderBy('created_at', 'asc')->paginate(10);
+
+        $data = [
+            'user' => $user,
+            'otsukais' => $otsukais,
+            'otsukai_giants' => $otsukai_giants
+        ];
+        
+        return view('requests.pay_request', $data);
     }
 }
