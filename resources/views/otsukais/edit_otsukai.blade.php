@@ -30,8 +30,8 @@
             </div>
             
             <div class="form-group">
-                {!! Form::label('deliverPlace', 'DeliverPlace:') !!}
-                {!! Form::text('deliverPlace', null, ['class' => 'form-control']) !!}
+                {!! Form::label('deliverPlace', '受け渡し場所：') !!}
+                Cabinet{{Form::selectRange('deliverPlace', 1, 11, ['selected' => ' '])}}
             </div>
 
             {!! Form::submit('更新', ['class' => 'btn btn-default']) !!}
