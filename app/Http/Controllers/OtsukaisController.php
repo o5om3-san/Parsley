@@ -218,4 +218,23 @@ class OtsukaisController extends Controller
             return view('welcome');
         }
     }
+    
+    public function confirm(){
+        
+        $user = \Auth::id();
+        $otsukai = new Otsukai();
+        $otsukais = $otsukai->where('user_id', '=', \Auth::id())->orderBy('deadline', 'asc')->paginate(10);
+
+        $otsukai_giant = new OtsukaiGiant();
+        $otsukai_giants = $otsukai_giant->where('user_id', '=', \Auth::id())->orderBy('created_at', 'asc')->paginate(10);
+
+        $data = [
+            'user' => $user,
+            'otsukais' => $otsukais,
+            'otsukai_giants' => $otsukai_giants
+        ];
+    
+        return view('requests.confirm_request');
+    
+    }
 }
