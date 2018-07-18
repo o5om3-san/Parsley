@@ -39,7 +39,7 @@ class User extends Authenticatable
     
     public function request($otsukaiId, $itemId, $amount, $comment)
     {   
-        $this->otsukai_giant()->attach($otsukaiId,['item_id'=> $itemId,'amount' => $amount,'comment' => $comment]);
+        $this->otsukai_giant()->attach($otsukaiId, ['item_id'=> $itemId,'amount' => $amount,'comment' => $comment]);
     }
     
 }

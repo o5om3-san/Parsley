@@ -13,6 +13,11 @@ class Otsukai extends Model
         return $this->belongsTo(User::class);
     }
     
+    public function request()
+    {
+        return $this->hasMany(OtsukaiGiant::class);
+    }    
+    
     public function shop()
     {
         return $this->belongsTo(Shop::class);
