@@ -30,8 +30,6 @@ footer {
     display: inline-block;
 }
 
-
-
 /* body-footer */
 footer {
     font-family: "Rounded Mplus 1c";
@@ -70,9 +68,6 @@ table.table-bordered th{
     text-align: left;
 }
 
-
-
-
 /*timeline*/
 table, th, td {
     text-align: center;
@@ -101,4 +96,3 @@ table.type06 td {
     height: 100px;
     width: 100px;
 }
-
