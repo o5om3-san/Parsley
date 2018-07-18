@@ -194,4 +194,17 @@ class OtsukaisController extends Controller
         
         return redirect('/');
     }
+    
+        public function mypage()
+    { 
+        if (\Auth::check()) {
+            $otsukai = new Otsukai();
+            $otsukais = $otsukai->where('user_id', '=', Auth::id())->orderBy('deadline', 'asc')->paginate(10);
+            $data = ['otsukais' => $otsukais];
+            
+            return view('otsukais.index', $data);
+        } else {
+            return view('welcome');
+        }
+    }
 }
