@@ -25,7 +25,7 @@
         </td>
         <td><?php echo date("H:i", strtotime($otsukai->deadline)); ?></td>
         <td>{{ $otsukai->shop->name }}</td>
-        <td>{{ $otsukai->capacity }}</td>
+        <td>{{ $amounts[$key] }}／{{ $otsukai->capacity }}</td>
         <td>キャビネット {{ $otsukai->deliverPlace }}</td>
         <td>
             @if (Auth::user()->id != $otsukai->user_id)
