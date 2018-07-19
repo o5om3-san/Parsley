@@ -1,21 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="user-profile">
-        <div class="icon text-center">
-            <img src="images/parsley2.png" class="img-circle">
+    <div class="mypagenav">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a href="#tab1" class="nav-link navbar-default active" data-toggle="tab">リクエスト履歴</a>
+            </li>
+            <li class="nav-item">
+                <a href="#tab2" class="nav-link navbar-default" data-toggle="tab">おつかい履歴</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div id="tab1" class="tab-pane active tab-box">
+            @include('users.giant', ['otsukai_giants' => $otsukai_giants])
         </div>
-        <div class="name text-center">
-            <h1>マイページ</h1>
-            <h1>{{ $user->name }}</h1>
-            <h>リクエスト履歴</h>
-             @include('users.giant', ['otsukai_giants' => $otsukai_giants])
-            <h>おつかい履歴</h>             
-             @include('users.nobita', ['otsukais' => $otsukais])
-        </div>
-        <div class="status text-center">
-            <ul>
-            </ul>
+        <div id="tab2" class="tab-pane tab-box">
+            @include('users.nobita', ['otsukais' => $otsukais])
         </div>
     </div>
 @endsection
