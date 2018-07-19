@@ -3,7 +3,6 @@
 body {
     background: #fff;
     font-family: "Rounded Mplus 1c";
-    text-align:center;
     top:0px;
 }
 
@@ -12,35 +11,18 @@ footer {
 }
 /* navbar */
 .navbar {
-    background-color: #66CC99;
-}
-
-/*kanban*/
-.kanban img {
-    top: 0px;
-    margin: 30px;
+    background-color: #ffffff;
 }
 
 .navbar-default{
-    border-color:green;
+    border-color:white;
 }
 
-/*kanban*/
-.kanban img {
-    display: inline-block;
+.name{
+    font-size:250%;
 }
-
-
-
 /* body-footer */
-footer {
-    font-family: "Rounded Mplus 1c";
-    background-color: #66CC99;
-    position: fixed;
-    bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 50px;}
+
 
 .nav.navbar-nav.navbar-left li  {
     color:blue;
@@ -101,38 +83,46 @@ table.type06 td {
     height: 100px;
     width: 100px;
 }
-/*welcome スライドショー*/
-.slide {
-  position   : relative;
-  overflow   : hidden;
-                    /* 画像のサイズに合わせて変更ください */
-  width      : 1300px;
-  height     : 900px;
-  margin     : auto;      /* サンプルは中央寄せの背景：白 */
-  background : #fff;
-}
- 
- /*=== 画像の設定 ======================================= */
-.slide img {
-  display    : block;
-  position   : absolute;
- /* 画像のサイズを表示エリアに合せる */
-  width      : inherit;
-  height     : inherit;
-  opacity    : 0;
-  animation  : slideAnime 15s ease infinite;
-}
- 
- /*=== スライドのアニメーションを段差で開始する ========= */
-.slide img:nth-of-type(1) { animation-delay: 0s }
-.slide img:nth-of-type(2) { animation-delay: 6s }
-.slide img:nth-of-type(3) { animation-delay: 11s }
 
- /*=== スライドのアニメーション ========================= */
-@keyframes slideAnime{
-   0% { opacity: 0; transform: scale(1, 1)}
-   5% { opacity: 1; transform: scale(1, 1)  }
-  50% { opacity: 1; transform: scale(1, 1)  }
-  70% { opacity: 0; transform: scale(2, 2)  }
- 90% { opacity: 0; transform: scale(2, 2)  }
+
+/*welcome スライドショー*/
+div.slide-show {
+    width: 1000px; /* スライドショーの幅 */
+    max-width: 100%; /* スマホで表示が欠けないように */
+    margin: 10px auto; /* 中央揃え */
+    position: relative;
 }
+ 
+.slide-show img { 
+    animation: show 16s infinite; /* 16秒のスライドショーを繰り返し */
+    max-width: 100%;
+    height: auto;
+    opacity: 0;
+    position: absolute; /* 画像を重ねて表示 */
+    left: 0;
+    top: 0;
+}
+ 
+@keyframes show {
+    0% {opacity: 0}
+    17% {opacity: 1}
+    33% {opacity: 1}
+    50% {opacity: 0}
+}
+ 
+.slide-show img:nth-of-type(1) {
+    position: relative;
+}
+ 
+.slide-show img:nth-of-type(2) {
+    animation-delay: 0s;
+}
+ 
+.slide-show img:nth-of-type(3) {
+    animation-delay: 6s;
+}
+ 
+.slide-show img:nth-of-type(4) {
+    animation-delay: 10s;
+}
+

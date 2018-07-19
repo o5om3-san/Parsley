@@ -2,10 +2,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="slide" id="makeImg">
-  <img src="/images/kainiikenai.png">
-  <img src="/images/tanomaretabunn.png">
-  <img src="/images/winwin.png">
-</div>
-
+  <div class="slide-show">
+    <img src="/images/kainiikenai.png" /> <!-- スペーサー画像のURL -->
+    <img src="/images/kainiikenai.png" /> <!-- 1枚目の画像のURL -->
+    <img src="/images/tanomaretabunn.png" /> <!-- 2枚目の画像のURL -->
+    <img src="/images/winwin.png" /> <!-- 3枚目の画像のURL -->
+  </div>
+  
 @endsection
