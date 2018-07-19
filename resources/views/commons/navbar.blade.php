@@ -20,8 +20,8 @@
                             <li>{!! link_to_route('otsukais.index','一覧',null,['class' => 'fas fa-list-alt fa-lg']) !!}</li>
                             <li>{!! link_to_route('logout.get','Logout',null,['class' => 'fas fa-sign-out-alt fa-lg']) !!}</li>
                     @else
-                        <li><a href="/login"><img src="images/midorilogin.png" width=280 alt="signup" class="img-responsive"></a></li>
-                        <li><a href="/register"><img src="images/midorisignup.png" width=300 alt="signup" class="img-responsive"></a></li>
+                        <li><a href="/login"><img src="images/parsleylogin.png" width=280 alt="signup" class="img-responsive"></a></li>
+                        <li><a href="/register"><img src="images/parsleysignup.png" width=300 alt="signup" class="img-responsive"></a></li>
                     @endif
                 </ul>
             </div>
