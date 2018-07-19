@@ -98,6 +98,12 @@ a.btn:active {
 .new-card{
   width:150px;
 }
+.card_buttons{
+  margin-left: 46px;
+}
+.card_button{
+  margin-left: 115px;
+}
 /*.new-create-card{*/
 /*  background:#DAA520;*/
 /*}*/
