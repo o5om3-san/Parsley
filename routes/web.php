@@ -14,7 +14,10 @@ Route::get('otsukais/{id}/request/create/', 'OtsukaisController@create_request')
 Route::post('otsukais/request/{id}/', 'OtsukaisController@store_request')->name('requests.store');
 Route::get('otsukais/request/{id}/', 'OtsukaisController@show_request')->name('requests.show');
 Route::get('otsukais/request/{id}/edit/', 'OtsukaisController@edit_request')->name('requests.edit');
+Route::post('otsukais/request/{id}/edit/confirm/', 'OtsukaisController@confirm_edit_request')->name('requests.confirm_edit_request');
+Route::post('otsukais/request/{id}/confirm/', 'OtsukaisController@confirm_create_request')->name('requests.confirm_create_request');
 Route::put('otsukais/request/{id}/', 'OtsukaisController@update_request')->name('requests.update');
+Route::get('otsukais/request/{id}/pay/','OtsukaisController@pay')->name('requests.pay');
 Route::delete('otsukais/request/{id}/delete', 'OtsukaisController@destroy_request')->name('requests.destroy');
 
 /* ItemsController */
