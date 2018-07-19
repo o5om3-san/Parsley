@@ -4,7 +4,7 @@
 
 <h1>注文画面</h1>
 
-{!! Form::open( ['route' => ['requests.confirm', $otsukai->id]]) !!}
+{!! Form::open( ['route' => ['requests.confirm_create_request', $otsukai->id]]) !!}
 
     <div class="form-group">
         {!! Form::label('name', '商品名:') !!}

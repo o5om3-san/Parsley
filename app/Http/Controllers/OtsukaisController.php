@@ -238,7 +238,7 @@ class OtsukaisController extends Controller
         return view('requests.pay_request', $data);
     }
     
-    public function confirm(request $request, $id)
+    public function confirm_create_request(request $request, $id)
     {
         $otsukai = Otsukai::find($id);
         $item_id = $request->item;
@@ -251,9 +251,29 @@ class OtsukaisController extends Controller
             'item' => $item,  
             'amount' =>$amount,
             'comment' =>$comment,
-            'item_id' =>$item_id
+            'item_id' =>$item_id,
          ];
-        return view('requests.confirm_request', $data);
+        return view('requests.confirm_create_request', $data);
+    
+    }
+    
+    public function confirm_edit_request(request $request, $id)
+    {
+        $onegai = OtsukaiGiant::find($id);
+        $item_id = $request->item;
+        $amount = $request->amount;
+        $comment = $request->comment;
+        $item = Item::find($item_id);
+        
+        $data = [
+            'onegai' => $onegai,
+            'item' => $item,  
+            'amount' =>$amount,
+            'comment' =>$comment,
+            'item_id' =>$item_id,
+         ];
+         
+        return view('requests.confirm_edit_request', $data);
     
     }
 }
