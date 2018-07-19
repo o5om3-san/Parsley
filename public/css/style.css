@@ -97,6 +97,7 @@ table.type06 td {
     width: 100px;
 }
 
+/*mypage*/
 .tab-box{
     padding: 20px;
     border: 1px solid #DDD;
@@ -104,6 +105,11 @@ table.type06 td {
 }
 
 .tab-content{
-    position: relative;
+    width: 100%;
+    text-align: center;
     margin: auto;
+}
+
+.table-hover{
+    margin: 0 auto;
 }
