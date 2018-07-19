@@ -9,7 +9,7 @@
     </tr>
 　</thead>
 @foreach ($otsukai_giants as $otsukai_giant)　
-　<tbody>
+　<tbody="type05">
 　    <td>{{ $otsukai_giant->otsukai->user->name }}</td>
 　    <td>{{ $otsukai_giant->otsukai->deadline }}</td>
 　    <td>{{ $otsukai_giant->item->name }}</td>

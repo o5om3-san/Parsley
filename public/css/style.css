@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* body */
 body {
+    background: #EEEEEE;
     background: #fff;
     font-family: "Rounded Mplus 1c";
     top:0px;
@@ -11,6 +12,18 @@ footer {
 }
 /* navbar */
 .navbar {
+    background-color: #008D56;
+}
+
+/*kanban*/
+.kanban img {
+    top: 0px;
+    margin: 30px;
+}
+
+.navbar-default .navbar-brand{
+    border-color:green;
+    color: #fff;
     background-color: #ffffff;
 }
 
@@ -21,10 +34,17 @@ footer {
 .name{
     font-size:250%;
 }
+
 /* body-footer */
 
 .nav.navbar-nav.navbar-left li  {
     color:blue;
+
+/* body-footer */
+
+
+.navbar-default .navbar-right  {
+    color:#fff;
 }
 
 .nav {
@@ -64,8 +84,8 @@ table.table-hover th {
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
-    background: #C0C0C0;
-    color: #ffffff;
+    background: #008D56;
+    color: #fff;
 }
 
 table.type06 td {
@@ -79,7 +99,6 @@ table.type06 td {
     height: 100px;
     width: 100px;
 }
-
 
 /*welcome スライドショー*/
 div.slide-show {
@@ -138,4 +157,9 @@ div.slide-show {
 
 .table-hover{
     margin: 0 auto;
+
+}
+
+.type05 td{
+    height: 100px;
 }

@@ -12,7 +12,7 @@
 　
     @foreach ($otsukais as $otsukai)
         <?php $user = $otsukai->user; ?>
-    　　<tbody="type06">
+    　　<tbody="type05">
             <td>
             <div>{{ $otsukai->user->name }}</td>
             <td>{{ $otsukai->deadline }}</td>
