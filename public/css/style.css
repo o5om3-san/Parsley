@@ -21,6 +21,10 @@ footer {
 .name{
     font-size:250%;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 068357afcf5f67511a76da8f8e51059db0ceebd6
 /* body-footer */
 
 
@@ -52,9 +56,6 @@ table.table-bordered th{
     text-align: left;
 }
 
-
-
-
 /*timeline*/
 table, th, td {
     text-align: center;
@@ -84,6 +85,7 @@ table.type06 td {
     width: 100px;
 }
 
+<<<<<<< HEAD
 
 /*welcome スライドショー*/
 div.slide-show {
@@ -126,3 +128,21 @@ div.slide-show {
     animation-delay: 10s;
 }
 
+=======
+/*mypage*/
+.tab-box{
+    padding: 20px;
+    border: 1px solid #DDD;
+    border-top: 0;
+}
+
+.tab-content{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.table-hover{
+    margin: 0 auto;
+}
+>>>>>>> 068357afcf5f67511a76da8f8e51059db0ceebd6

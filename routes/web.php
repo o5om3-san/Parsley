@@ -18,8 +18,10 @@ Route::put('otsukais/request/{id}/', 'OtsukaisController@update_request')->name(
 Route::delete('otsukais/request/{id}/delete', 'OtsukaisController@destroy_request')->name('requests.destroy');
 
 /* ItemsController */
+Route::resource('items', 'ItemsController');
 
 /* ShopsController */
+Route::resource('shops', 'ShopsController');
 
 /* UsersController */
 Route::get('user/{id}', 'UsersController@show')->name('users.show');
@@ -31,3 +33,6 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 Route::group(['middleware' => 'auth'], function () {
     
 });
+
+/* LINE Notify */
+Route::get('{id}/notify', 'LineNotifyController@notify')->name('line.notify');
