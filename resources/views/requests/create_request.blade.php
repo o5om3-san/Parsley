@@ -26,7 +26,7 @@
     </div>
     
     <a href="#">{{ $user->name }}</a>さんに
-    {!! Form::submit('おつかいを頼む', ['class' => 'btn btn-success']) !!}
+    {!! Form::submit('注文確認', ['class' => 'btn btn-success']) !!}
 
 {!! Form::close() !!}
 

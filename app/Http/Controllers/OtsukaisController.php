@@ -238,18 +238,20 @@ class OtsukaisController extends Controller
         return view('requests.pay_request', $data);
     }
     
-    public function confirm(request $request)
+    public function confirm(request $request, $id)
     {
+        $otsukai = Otsukai::find($id);
         $item_id = $request->item;
-        
         $amount = $request->amount;
         $comment = $request->comment;
         $item = Item::find($item_id);
         
         $data = [
+            'otsukai' => $otsukai,
             'item' => $item,  
             'amount' =>$amount,
             'comment' =>$comment,
+            'item_id' =>$item_id
          ];
         return view('requests.confirm_request', $data);
     
