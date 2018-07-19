@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* body */
 body {
-    background: #CCFFCC;
+    background: #EEEEEE;
     font-family: "Rounded Mplus 1c";
     text-align:center;
     top:0px;
@@ -12,7 +12,7 @@ footer {
 }
 /* navbar */
 .navbar {
-    background-color: #66CC99;
+    background-color: #008D56;
 }
 
 /*kanban*/
@@ -21,8 +21,9 @@ footer {
     margin: 30px;
 }
 
-.navbar-default{
+.navbar-default .navbar-brand{
     border-color:green;
+    color: #fff;
 }
 
 /*kanban*/
@@ -40,8 +41,8 @@ footer {
 	width: 100%;
 	height: 50px;}
 
-.nav.navbar-nav.navbar-left li  {
-    color:blue;
+.navbar-default .navbar-right  {
+    color:#fff;
 }
 
 .nav {
@@ -81,8 +82,8 @@ table.table-hover th {
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
-    background: #C0C0C0;
-    color: #ffffff;
+    background: #008D56;
+    color: #fff;
 }
 
 table.type06 td {
@@ -112,4 +113,8 @@ table.type06 td {
 
 .table-hover{
     margin: 0 auto;
+}
+
+.type05 td{
+    height: 100px;
 }
