@@ -35,4 +35,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 /* LINE Notify */
-Route::get('/{id}/notify', 'LineNotifyController@notify')->name('line.notify');
+Route::get('{id}/notify', 'LineNotifyController@notify')->name('line.notify');
