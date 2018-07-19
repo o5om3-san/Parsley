@@ -237,4 +237,21 @@ class OtsukaisController extends Controller
         
         return view('requests.pay_request', $data);
     }
+    
+    public function confirm(request $request)
+    {
+        $item_id = $request->item;
+        
+        $amount = $request->amount;
+        $comment = $request->comment;
+        $item = Item::find($item_id);
+        
+        $data = [
+            'item' => $item,  
+            'amount' =>$amount,
+            'comment' =>$comment,
+         ];
+        return view('requests.confirm_request', $data);
+    
+    }
 }
