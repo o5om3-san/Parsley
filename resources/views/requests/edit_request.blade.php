@@ -4,7 +4,7 @@
 
 <h1>編集</h1>
 
-{!! Form::open( ['route' => ['requests.update', $onegai->id], 'method' => 'put']) !!}
+{!! Form::open( ['route' => ['requests.confirm_edit_request', $onegai->id]]) !!}
 
      <div class="form-group">
         {!! Form::label('name', '商品名:') !!}
