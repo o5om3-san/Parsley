@@ -9,4 +9,8 @@
     <img src="/images/winwin.png" /> <!-- 3枚目の画像のURL -->
   </div>
   
+  <div class="parsley-button">
+    <a href="/login"><img src="images/midorilogin.png" width=280 alt="signup" class="img-responsive"></a>
+    <a href="/register"><img src="images/midorisignup.png" width=320 alt="signup" class="img-responsive"></a>
+  </div>
 @endsection

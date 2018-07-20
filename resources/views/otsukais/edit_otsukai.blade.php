@@ -58,14 +58,12 @@
                 <div class="row card_buttons">
                     {!! Form::submit('更新', ['class' => 'btn btn-success', 'onclick' => 'clickEvent()']) !!}
                 </div>
-            
-            
-            
+                
+            <div class="form-group">
+                {!! Form::label('capacity', 'Capacity:') !!}
+                {{Form::selectRange('capacity', 1, 10, $otsukai->capacity)}}個
+            </div>
             
          </div>   
-
-
-
-        
-            {!! Form::close() !!}
+    {!! Form::close() !!}
 @endsection

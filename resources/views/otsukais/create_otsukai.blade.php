@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-
     {!! Form::model($otsukai, ['route' => 'otsukais.store']) !!}
     <div class='col-sm-4'>    
         <div class='row shopWrapper new-create-card'>
@@ -59,64 +58,10 @@
                 <div class="row card_buttons">
                     {!! Form::submit('登録', ['class' => 'btn btn-success', 'onclick' => 'clickEvent()']) !!}
                 </div>
-            
-            
-            
-            
-         </div>   
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <!--<div class="form-group">-->
-            
-            <!--    {!! Form::label('deadline', '受け入れ期限：') !!}-->
-            <!--    {{Form::selectRange('from_hour', $dt->format('H'), 23, ['placeholder' => ''])}}時-->
-            <!--    <select name="from_minutes">-->
-            <!--        @for ($i = 0; $i < 12; $i++)-->
-            <!--          <option value={{$i*5}}> {{$i*5}} </option>-->
-            <!--        @endfor-->
-            <!--    </select>-->
-            <!--    分-->
-            <!--</div>-->
-            
-            <!--<div class="form-group">-->
-            <!--    {!! Form::label('shop_id', 'お店：') !!}-->
-            <!--    <select name="shop_id">-->
-            <!--        @foreach ($shops as $shop)-->
-            <!--          <option value={{$shop->id}}> {{$shop->name}} </option>-->
-            <!--        @endforeach-->
-            <!--    </select>-->
-            <!--</div>-->
-            
-            <!--<div class="form-group">-->
-            <!--    {!! Form::label('capacity', '最大：') !!}-->
-            <!--    {{Form::selectRange('capacity', 1, 10, '', ['placeholder' => ''])}}個-->
-            <!--</div>-->
-            <!--<div class="form-group">-->
-            <!--    {!! Form::label('deliverPlace', '受け渡し場所：') !!}-->
-            <!--    Cabinet{{Form::selectRange('deliverPlace', 1, 11, ['selected' => ' '])}}-->
-            <!--</div>-->
-            
-            <!--{!! Form::submit('登録', ['class' => 'btn btn-success', 'onclick' => 'clickEvent()']) !!}-->
+        </div>   
             <script>
                 function clickEvent() {
                     alert('おつかいを作成しました');
                 }
             </script>            
-            {!! Form::close() !!}
-        </div>
-    </div>
-</body>
 @endsection
