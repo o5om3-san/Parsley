@@ -26,6 +26,14 @@ body {
 .navbar-default .navbar-nav>li>a{
     color: #fff;
 }
+
+.navbar-default .navbar-brand:hover{
+    color: #FFC7AF;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+    color: #FFC7AF;
+}
 .name{
     font-size:250%;
 }
@@ -107,6 +115,16 @@ div.slide-show {
 .slide-show img:nth-of-type(4) {
     animation-delay: 10s;
 }
+
+/*welcome*/
+.parsley-button{
+    text-align: center;
+}
+.parsley-button a {
+    display: inline-block;
+    margin: 40px;
+}
+
 /*mypage*/
 .tab-box{
     padding: 20px;
