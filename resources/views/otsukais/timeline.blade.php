@@ -21,7 +21,7 @@
                     </div>
                 </div>                 
                 
-                <div class='row'>                    
+                <div class='row order_card'>                    
                     <table>
                         <tr>
                             <td class='d_left'>受付期限：</td>
