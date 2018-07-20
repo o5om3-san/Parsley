@@ -40,6 +40,14 @@ body {
     border-color:white;
 }
 
+.navbar-default .navbar-brand:hover{
+    color: #FFC7AF;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+    color: #FFC7AF;
+}
+
 .name{
     font-size:250%;
 }
@@ -154,6 +162,15 @@ div.slide-show {
     animation-delay: 10s;
 }
 
+/*welcome*/
+.parsley-button{
+    text-align: center;
+}
+.parsley-button a {
+    display: inline-block;
+    margin: 40px;
+}
+
 /*mypage*/
 .tab-box{
     padding: 20px;
@@ -173,4 +190,10 @@ div.slide-show {
 
 .type05 td{
     height: 100px;
+
 }
+.confirm-button form{
+    display: inline-block;
+    margin: 0 5px;
+}
+
