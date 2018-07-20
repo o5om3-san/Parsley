@@ -92,9 +92,9 @@
             </table>    
         </div>
         <div class="row card_button">
-            {!! link_to_route('otsukais.create', 'つくる', ['class' => 'btn btn-default btn-xs']) !!}
+            {!! link_to_route('otsukais.create', 'つくる', null, ['class' => 'btn btn-default btn-xs']) !!}
         </div>
-    </div>>
+    </div>
 </div>
 
 {!! $otsukais->render() !!}
