@@ -38,7 +38,6 @@ body {
     color: #fff;
 }
 
-
 .navbar-default{
     border-color:white;
 }
@@ -62,7 +61,6 @@ body {
     margin: 0 5px;
 }
 
-w
 .row .editbutton form{
     display: inline-block;
     margin: 0 5px;
@@ -81,6 +79,24 @@ table.table-bordered th{
     text-align: left;
 }
 
+table.table-hover th {
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    background: #008D56;
+    color: #fff;
+}
+table.type06 td {
+  text-align: center;
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+}
+table.type06 .media-left{
+   text-align: center; 
+}
 /*welcome スライドショー*/
 div.slide-show {
     width: 1000px; /* スライドショーの幅 */

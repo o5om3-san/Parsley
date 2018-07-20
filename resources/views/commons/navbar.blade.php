@@ -22,7 +22,6 @@
                                 <li>{!! link_to_route('logout.get','ログアウト',null) !!}</li>
                             </ul>
                         </li>
-
                     @else
                         <li>{!! link_to_route('register', 'Signup') !!}</li>
                         <li>{!! link_to_route('login', 'Login') !!}</li>
