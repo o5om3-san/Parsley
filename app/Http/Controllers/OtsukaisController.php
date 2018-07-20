@@ -45,6 +45,25 @@ class OtsukaisController extends Controller
         
         return view('otsukais.create_otsukai', $data);
     }
+    
+    public function confirm_create_otsukai(request $request)
+    {
+        $otsukai = new Otsukai();
+        $shop = Shop::find($request->shop_id);
+        $shop_id = $request->shop_id;
+        $dt = new DateTime();
+        $time = $dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00';
+        
+        $data = [
+            'otsukai' => $otsukai,
+            'shop' => $shop,
+            'time' => $time,
+            'request' => $request,
+            'shop_id' => $shop_id,
+        ];
+        
+        return view('otsukais.confirm_create_otsukai', $data);
+    }
 
     public function store_otsukai(Request $request)
     {
