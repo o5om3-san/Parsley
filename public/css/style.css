@@ -11,6 +11,7 @@ body {
 .navbar {
     background-color: #008D56;
     bottom:5px;
+    
 }
 
 .navbar-default{
@@ -37,6 +38,7 @@ body {
     color: #fff;
 }
 
+
 .navbar-default{
     border-color:white;
 }
@@ -48,6 +50,7 @@ body {
 .navbar-default .navbar-nav>li>a:hover{
     color: #FFC7AF;
 }
+
 
 .name{
     font-size:25px;
@@ -65,8 +68,15 @@ body {
 }
 
 
+
 /*show_otsukai*/
 .row .buttons form{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+w
+.row .editbutton form{
     display: inline-block;
     margin: 0 5px;
 }
@@ -101,7 +111,6 @@ table.medialist th {
   background: #C0C0C0;
   color: #ffffff;
 }
-
 table.table-hover th {
     text-align: center;
     width: 150px;
@@ -160,7 +169,7 @@ div.slide-show {
 }
  
 .slide-show img:nth-of-type(4) {
-    animation-delay: 10s;
+    animation-delay: 9s;
 }
 
 /*welcome*/
@@ -193,6 +202,7 @@ div.slide-show {
     height: 100px;
 
 }
+
 .confirm-button form{
     display: inline-block;
     margin: 0 5px;
