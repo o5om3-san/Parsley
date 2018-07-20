@@ -50,7 +50,9 @@
                     {!! Form::close() !!}
                 @endif
                 @if (Auth::user()->id != $otsukai->user_id)
-                    {!! link_to_route('requests.create', '注文する', ['id' => $otsukai->id], ['class' => 'btn btn-success']) !!}
+                    @if ($otsukai->capacity-$amount > 0)
+                        {!! link_to_route('requests.create', '注文する', ['id' => $otsukai->id], ['class' => 'btn btn-success']) !!}
+                    @endif
                 @endif
                 {!! link_to_route('otsukais.index', '戻る', [], ['class' => 'btn btn-default']) !!}
             </div>
