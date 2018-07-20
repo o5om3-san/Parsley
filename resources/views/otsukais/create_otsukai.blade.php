@@ -9,12 +9,18 @@
             {!! Form::model($otsukai, ['route' => 'otsukais.confirm_create_otsukai']) !!}
             
                 <div class="form-group">
-                    <?php $dt = new DateTime(); ?>
+                    <?php
+                        $dt = new DateTime();
+                        $hour = $dt->format('H');
+                        $minute = $dt->format('i');
+                        if($dt->format('i') > 40){ $hour = $hour+1; }
+                        
+                    ?>
                     {!! Form::label('deadline', '受け入れ期限：') !!}
-                    {{Form::selectRange('from_hour', $dt->format('H'), 23, ['placeholder' => ''])}}時
-                    <select name="from_minutes">
+                    {{Form::selectRange('from_hour', $hour, 23, $hour)}}時
+                    <select name="from_minutes">[
                         @for ($i = 0; $i < 12; $i++)
-                          <option value={{$i*5}}> {{$i*5}} </option>
+                            <option value={{$i*5}} <?php if(ceil($minute/5) == $i-3){ echo 'selected'; } else if(ceil($minute/5)-9 == $i){ echo 'selected'; } ?> > {{$i*5}} </option>
                         @endfor
                     </select>
                     分
@@ -31,11 +37,11 @@
                 
                 <div class="form-group">
                     {!! Form::label('capacity', '最大：') !!}
-                    {{Form::selectRange('capacity', 1, 10, '', ['placeholder' => ''])}}個
+                    {{Form::selectRange('capacity', 1, 10, 1)}}個
                 </div>
                 <div class="form-group">
                     {!! Form::label('deliverPlace', '受け渡し場所：') !!}
-                    Cabinet{{Form::selectRange('deliverPlace', 1, 11, ['selected' => ' '])}}
+                    Cabinet{{Form::selectRange('deliverPlace', 1, 11, 1)}}
                 </div>
                 
                 {!! Form::submit('登録', ['class' => 'btn btn-success']) !!}
