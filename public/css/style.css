@@ -56,19 +56,6 @@ body {
     font-size:25px;
 }
 
-/* body-footer */
-
-
-.navbar-default .navbar-right  {
-    color:#fff;
-}
-
-.nav {
-    display:inline-block;
-}
-
-
-
 /*show_otsukai*/
 .row .buttons form{
     display: inline-block;
@@ -92,43 +79,6 @@ table.table-bordered th{
 }
 .iraisha{
     text-align: left;
-}
-
-/*timeline*/
-table, th, td {
-  text-align: center;
-  border-collapse: collapse;
-  border: 1px solid #ccc;
-  line-height: 1.5;
-}
-
-table.medialist th {
-  text-align: center;
-  width: 150px;
-  padding: 10px;
-  font-weight: bold;
-  vertical-align: top;
-  background: #C0C0C0;
-  color: #ffffff;
-}
-table.table-hover th {
-    text-align: center;
-    width: 150px;
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    background: #008D56;
-    color: #fff;
-}
-
-table.type06 td {
-  text-align: center;
-  width: 350px;
-  padding: 10px;
-  vertical-align: top;
-}
-table.type06 .media-left{
-   text-align: center; 
 }
 
 /*welcome スライドショー*/
