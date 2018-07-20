@@ -243,19 +243,14 @@ class OtsukaisController extends Controller
     
     public function pay($id)
     {
-        $user = \Auth::id();
-        $otsukai = new Otsukai();
-        $otsukais = $otsukai->where('user_id', '=', \Auth::id())->orderBy('deadline', 'asc')->paginate(10);
-
-        $otsukai_giant = new OtsukaiGiant();
-        $otsukai_giants = $otsukai_giant->where('user_id', '=', \Auth::id())->orderBy('created_at', 'asc')->paginate(10);
-
+        $user = User::find($id);
+        $otsukai_giant = OtsukaiGiant::find($id);
+        $item = Item::find($otsukai_giant->item_id);
         $data = [
             'user' => $user,
-            'otsukais' => $otsukais,
-            'otsukai_giants' => $otsukai_giants
+            'otsukai_giant' => $otsukai_giant,
+            'item' => $item
         ];
-        
         return view('requests.pay_request', $data);
     }
     

@@ -21,6 +21,7 @@
             <td>キャビネット {{ $otsukai->deliverPlace }}</td>
             <td>
                  {!! link_to_route('otsukais.show', '編集', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                 {!! link_to_route('line.notify', '到着をお知らせする', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
             </td>
        </tbody>
     @endforeach
