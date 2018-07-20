@@ -6,16 +6,13 @@ body {
     font-family: "Rounded Mplus 1c";
     top:0px;
 }
-
 /* navbar */
 .navbar {
     background-color: #008D56;
 }
-
 .navbar-default{
     border-color:green;
 }
-
 /*kanban*/
 .kanban img {
     display: inline-block;
@@ -26,7 +23,6 @@ body {
 .navbar-default .navbar-brand{
     color: #fff;
 }
-
 .navbar-default .navbar-nav>li>a{
     color: #fff;
 }
@@ -50,7 +46,6 @@ body {
     text-align: right;
     margin: 0 5px;
 }
-
 table.table-bordered th{
     background: #C0C0C0;
     color: #ffffff;
@@ -68,7 +63,6 @@ table.table-hover th {
     background: #008D56;
     color: #fff;
 }
-
 table.type06 td {
   text-align: center;
   width: 350px;
@@ -78,7 +72,6 @@ table.type06 td {
 table.type06 .media-left{
    text-align: center; 
 }
-
 /*welcome スライドショー*/
 div.slide-show {
     width: 1000px; /* スライドショーの幅 */
@@ -119,24 +112,20 @@ div.slide-show {
 .slide-show img:nth-of-type(4) {
     animation-delay: 10s;
 }
-
 /*mypage*/
 .tab-box{
     padding: 20px;
     border: 1px solid #DDD;
     border-top: 0;
 }
-
 .tab-content{
     width: 100%;
     text-align: center;
     margin: auto;
 }
-
 .table-hover{
     margin: 0 auto;
 }
-
 .type05 td{
     height: 100px;
 }
