@@ -26,18 +26,22 @@ body {
 .navbar-default .navbar-nav>li>a{
     color: #fff;
 }
+
 .name{
     font-size:250%;
 }
+
 /*show_otsukai*/
 .row .buttons form{
     display: inline-block;
     margin: 0 5px;
 }
+
 .row .editbutton form{
     display: inline-block;
     margin: 0 5px;
 }
+
 .row .requestbutton{
     text-align: right;
     margin: 0 5px;
@@ -49,6 +53,7 @@ table.table-bordered th{
 .iraisha{
     text-align: left;
 }
+
 table.table-hover th {
     text-align: center;
     width: 150px;
@@ -124,6 +129,7 @@ div.slide-show {
 .type05 td{
     height: 100px;
 }
+
 .confirm-button form{
     display: inline-block;
     margin: 0 5px;

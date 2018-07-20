@@ -13,9 +13,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
-                    
-                    <li class="name">{{ Auth::user()->name }}さん</li>
-                            <li>{!! link_to_route('users.show','MyPage',['id' => Auth::id()],['class' => 'fas fa-home fa-lg']) !!}</li>
+                            <li>{!! link_to_route('users.show',Auth::user()->name.'さんのPage',['id' => Auth::id()],['class' => 'fas fa-home fa-lg']) !!}</li>
                             <li>{!! link_to_route('otsukais.create','買い物にいく',null,['class' => 'fas fas fa-shopping-cart fa-lg']) !!}</li>
                             <li>{!! link_to_route('otsukais.index','一覧',null,['class' => 'fas fa-list-alt fa-lg']) !!}</li>
                             <li>{!! link_to_route('logout.get','Logout',null,['class' => 'fas fa-sign-out-alt fa-lg']) !!}</li>
