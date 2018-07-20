@@ -17,7 +17,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">{!! link_to_route('users.show','MyPage',['id' => Auth::id()]) !!}</a></li>
-                                <li><a href="#">{!! link_to_route('otsukais.create','買い物に行く',null) !!}</a></li>
+                                <li><a href="#">{!! link_to_route('otsukais.create','おつかいに行く',null) !!}</a></li>
                                 <li><a href="#">{!! link_to_route('otsukais.index','おつかい一覧',null) !!}</a></li>
                                 <li>{!! link_to_route('logout.get','ログアウト',null) !!}</li>
                             </ul>
