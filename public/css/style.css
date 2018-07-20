@@ -20,6 +20,7 @@ body {
 
 .navbar-brand{
   font-size: 25px;
+  font-family: "Rounded Mplus 1c";
 }
 
 /*kanban*/
@@ -52,7 +53,7 @@ body {
 
 
 .name{
-    font-size:250%;
+    font-size:25px;
 }
 
 /* body-footer */
@@ -207,3 +208,7 @@ div.slide-show {
     margin: 0 5px;
 }
 
+.dropdown-toggle {
+    font-family: "Rounded Mplus 1c";
+    font-size: 16px;
+}

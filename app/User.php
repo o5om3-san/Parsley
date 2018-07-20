@@ -34,7 +34,7 @@ class User extends Authenticatable
     
     public function otsukai_giant()
     {
-        return $this->belongsToMany(Otsukai::class,'otsukai_giant','user_id','otsukai_id')->withPivot('item_id','amount','comment');
+        return $this->belongsToMany(Otsukai::class,'otsukai_giant','user_id','otsukai_id')->withPivot('item_id','amount','comment')->withTimestamps();
     }
     
     public function request($otsukaiId, $itemId, $amount, $comment)
