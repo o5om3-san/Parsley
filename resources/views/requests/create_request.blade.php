@@ -4,7 +4,7 @@
 
 <h1>注文画面</h1>
 
-{!! Form::open( ['route' => ['requests.store', $otsukai->id], 'method' => 'post']) !!}
+{!! Form::open( ['route' => ['requests.confirm_create_request', $otsukai->id]]) !!}
 
     <div class="form-group">
         {!! Form::label('name', '商品名:') !!}
@@ -26,7 +26,7 @@
     </div>
     
     <a href="#">{{ $user->name }}</a>さんに
-    {!! Form::submit('おつかいを頼む', ['class' => 'btn btn-success']) !!}
+    {!! Form::submit('注文確認', ['class' => 'btn btn-success']) !!}
 
 {!! Form::close() !!}
 

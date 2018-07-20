@@ -7,20 +7,22 @@ body {
     top:0px;
 }
 
-footer {
-    margin-top: 40px;
-}
 /* navbar */
 .navbar {
     background-color: #008D56;
 }
 
+.navbar-default{
+    border-color:green;
+}
+
 /*kanban*/
 .kanban img {
+    display: inline-block;
     top: 0px;
     margin: 30px;
 }
-
+ 
 .navbar-default .navbar-brand{
     color: #fff;
 }
@@ -70,9 +72,20 @@ table.table-bordered th{
 
 /*timeline*/
 table, th, td {
-    text-align: center;
-    border-collapse: collapse;
-    line-height: 1.5;
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+}
+
+table.medialist th {
+  text-align: center;
+  width: 150px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  background: #C0C0C0;
+  color: #ffffff;
 }
 
 table.table-hover th {
@@ -86,15 +99,13 @@ table.table-hover th {
 }
 
 table.type06 td {
-    text-align: center;
-    width: 350px;
-    padding: 10px;
-    vertical-align: top;
+  text-align: center;
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
 }
-
-.media-object{
-    height: 100px;
-    width: 100px;
+table.type06 .media-left{
+   text-align: center; 
 }
 
 /*welcome スライドショー*/

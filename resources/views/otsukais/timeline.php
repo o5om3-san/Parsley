@@ -1,17 +1,14 @@
-
-
-
 <table class="table-hover">
-　<thead>
-    <tr>
-    　<th>ショッパー</th>
-      <th>受け入れ期限</th>
-      <th>お店</th>
-    　<th>最大個数</th>
-    　<th>受け渡し場所</th>
-    　<th> </th>
-    </tr>
-　</thead>
+    <thead>
+        <tr>
+            <th>ショッパー</th>
+            <th>受け入れ期限</th>
+            <th>お店</th>
+            <th>最大個数</th>
+            <th>受け渡し場所</th>
+            <th> </th>
+        </tr>
+    </thead>
 　
 @foreach ($otsukais as $key => $otsukai)
     <?php $user = $otsukai->user; ?>

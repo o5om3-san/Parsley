@@ -11,6 +11,7 @@
             </li>
         </ul>
     </div>
+    
     <div class="tab-content">
         <div id="tab1" class="tab-pane active tab-box">
             @include('users.giant', ['otsukai_giants' => $otsukai_giants])

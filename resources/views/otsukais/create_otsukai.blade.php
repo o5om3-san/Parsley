@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<body>
    <div class="row">
         <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-offset-8 col-lg-offset-3 col-lg-6">
             <h1>新しいおつかい</h1>
@@ -38,9 +38,14 @@
                 Cabinet{{Form::selectRange('deliverPlace', 1, 11, ['selected' => ' '])}}
             </div>
             
-            {!! Form::submit('登録', ['class' => 'btn btn-success']) !!}
-            
+            {!! Form::submit('登録', ['class' => 'btn btn-success', 'onclick' => 'clickEvent()']) !!}
+            <script>
+                function clickEvent() {
+                    alert('おつかいを作成しました');
+                }
+            </script>            
             {!! Form::close() !!}
         </div>
     </div>
+</body>
 @endsection
