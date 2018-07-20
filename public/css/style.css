@@ -160,13 +160,23 @@ div.slide-show {
     margin: auto;
 }
 
-.table-hover{
+table.table-hover th {
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    background: #C0C0C0;
+    color: #ffffff;
     margin: 0 auto;
 }
 
-.type05 td{
+table.type05 td {
+    text-align: center;
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
     height: 100px;
-
 }
 
 .confirm-button form{

@@ -18,7 +18,7 @@
             <td>{{ $otsukai_giant->item->price }}</td>
             <td>キャビネット{{ $otsukai_giant->otsukai->deliverPlace }}</td>
             <td>{{ substr($otsukai_giant->created_at, 0, 16) }}</td>
-            <td>{!! link_to_route('requests.edit', '編集', ['id' => $otsukai_giant->id], ['class' => 'btn btn-default btn-xs']) !!}</td>
+            <td>{!! link_to_route('requests.pay', '支払う', ['id' => $otsukai_giant->id], ['class' => 'btn btn-default btn-xs']) !!}</td>
         </tbody>
     @endforeach
 </table>

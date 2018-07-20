@@ -11,16 +11,16 @@
                         <br>
                         CodeWars
                         <br>
-                        <abbr title="Phone">P:</abbr> (0120) 444-444
+                        <abbr title="Phone" class= 'fas fa-phone'></abbr> (0120) 444-444
                     </address>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 text-right">
                     <p>
-                        <em>Date: 1st November, 2013</em>
+                        <em></em>
                     </p>
                     <p>
-                        <em>Receipt #: 34522677W</em>
-                    </p>
+                        <em></em>
+                    </p>    
                 </div>
             </div>
             <div class="row">

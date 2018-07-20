@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class='row order_card'>                    
+            <div class='row order_card'>   
                 <table>
                     <tr>
                         <td class='d_left'>商品：</td>
