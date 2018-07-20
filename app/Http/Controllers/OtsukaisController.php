@@ -71,9 +71,11 @@ class OtsukaisController extends Controller
     {
         $otsukai = Otsukai::find($id);
         $onegais = $otsukai->request;
+        $amount = $this->count_amount($otsukai);
         $data = [
             'otsukai' => $otsukai,
             'onegais' => $onegais,
+            'amount' => $amount
         ];
         
         return view('otsukais.show_otsukai', $data);
@@ -206,7 +208,7 @@ class OtsukaisController extends Controller
         return redirect('/');
     }
     
-        public function mypage()
+    public function mypage()
     { 
         if (\Auth::check()) {
             $otsukai = new Otsukai();
@@ -214,8 +216,66 @@ class OtsukaisController extends Controller
             $data = ['otsukais' => $otsukais];
             
             return view('otsukais.index', $data);
-        } else {
+        }
+        else {
             return view('welcome');
         }
+    }
+    
+    public function pay($id)
+    {
+        $user = \Auth::id();
+        $otsukai = new Otsukai();
+        $otsukais = $otsukai->where('user_id', '=', \Auth::id())->orderBy('deadline', 'asc')->paginate(10);
+
+        $otsukai_giant = new OtsukaiGiant();
+        $otsukai_giants = $otsukai_giant->where('user_id', '=', \Auth::id())->orderBy('created_at', 'asc')->paginate(10);
+
+        $data = [
+            'user' => $user,
+            'otsukais' => $otsukais,
+            'otsukai_giants' => $otsukai_giants
+        ];
+        
+        return view('requests.pay_request', $data);
+    }
+    
+    public function confirm_create_request(request $request, $id)
+    {
+        $otsukai = Otsukai::find($id);
+        $item_id = $request->item;
+        $amount = $request->amount;
+        $comment = $request->comment;
+        $item = Item::find($item_id);
+        
+        $data = [
+            'otsukai' => $otsukai,
+            'item' => $item,  
+            'amount' =>$amount,
+            'comment' =>$comment,
+            'item_id' =>$item_id,
+         ];
+        return view('requests.confirm_create_request', $data);
+    
+    }
+    
+    public function confirm_edit_request(request $request, $id)
+    {
+        $onegai = OtsukaiGiant::find($id);
+        $item_id = $request->item;
+        $amount = $request->amount;
+        $comment = $request->comment;
+        $item = Item::find($item_id);
+        
+        $data = [
+            'onegai' => $onegai,
+            'item' => $item,  
+            'amount' =>$amount,
+            'comment' =>$comment,
+            'item_id' =>$item_id,
+         ];
+         
+        return view('requests.confirm_edit_request', $data);
+    
     }
 }
