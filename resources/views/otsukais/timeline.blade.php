@@ -59,7 +59,6 @@
         </div>
     @endforeach
     
-    <?php $user = $otsukai->user; ?>
     <div class='col-sm-4'>
         <div class='row shopWrapper new-create-card'>
             <div class='row'>
@@ -93,7 +92,7 @@
             </table>    
         </div>
         <div class="row card_button">
-            {!! link_to_route('otsukais.create', 'つくる', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+            {!! link_to_route('otsukais.create', 'つくる', ['class' => 'btn btn-default btn-xs']) !!}
         </div>
     </div>>
 </div>
