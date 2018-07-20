@@ -49,7 +49,7 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $otsukai = new Otsukai();
-        $otsukais = $otsukai->where('user_id', '=', \Auth::id())->orderBy('deadline', 'asc')->paginate(10);
+        $otsukais = $otsukai->where('user_id', '=', \Auth::id())->orderBy('deadline', 'desc')->paginate(10);
 
         $otsukai_giant = new OtsukaiGiant();
         $otsukai_giants = $otsukai_giant->where('user_id', '=', \Auth::id())->orderBy('created_at', 'asc')->paginate(10);

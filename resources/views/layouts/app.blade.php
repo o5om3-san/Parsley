@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
         <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet">
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <link href="/css/timeline.css" rel="stylesheet" type="text/css">
 
     </head>
 

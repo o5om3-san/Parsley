@@ -15,7 +15,7 @@
     　　<tbody="type05">
             <td>
             <div>{{ $otsukai->user->name }}</td>
-            <td>{{ $otsukai->deadline }}</td>
+            <td>{{ substr($otsukai->deadline, 0, 16) }}</td>
             <td>{{ $otsukai->shop->name }}</td>
             <td>{{ $otsukai->capacity }}</td>
             <td>キャビネット {{ $otsukai->deliverPlace }}</td>

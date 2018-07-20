@@ -6,13 +6,23 @@ body {
     font-family: "Rounded Mplus 1c";
     top:0px;
 }
+
 /* navbar */
 .navbar {
     background-color: #008D56;
+    bottom:5px;
+    
 }
+
 .navbar-default{
     border-color:green;
 }
+
+.navbar-brand{
+  font-size: 25px;
+  font-family: "Rounded Mplus 1c";
+}
+
 /*kanban*/
 .kanban img {
     display: inline-block;
@@ -23,12 +33,26 @@ body {
 .navbar-default .navbar-brand{
     color: #fff;
 }
+
 .navbar-default .navbar-nav>li>a{
     color: #fff;
 }
 
+.navbar-default{
+    border-color:white;
+}
+
+.navbar-default .navbar-brand:hover{
+    color: #FFC7AF;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+    color: #FFC7AF;
+}
+
+
 .name{
-    font-size:250%;
+    font-size:25px;
 }
 
 /*show_otsukai*/
@@ -46,6 +70,7 @@ body {
     text-align: right;
     margin: 0 5px;
 }
+
 table.table-bordered th{
     background: #C0C0C0;
     color: #ffffff;
@@ -110,27 +135,46 @@ div.slide-show {
 }
  
 .slide-show img:nth-of-type(4) {
-    animation-delay: 10s;
+    animation-delay: 9s;
 }
+
+/*welcome*/
+.parsley-button{
+    text-align: center;
+}
+.parsley-button a {
+    display: inline-block;
+    margin: 40px;
+}
+
 /*mypage*/
 .tab-box{
     padding: 20px;
     border: 1px solid #DDD;
     border-top: 0;
 }
+
 .tab-content{
     width: 100%;
     text-align: center;
     margin: auto;
 }
+
 .table-hover{
     margin: 0 auto;
 }
+
 .type05 td{
     height: 100px;
+
 }
 
 .confirm-button form{
     display: inline-block;
     margin: 0 5px;
+}
+
+.dropdown-toggle {
+    font-family: "Rounded Mplus 1c";
+    font-size: 16px;
 }
