@@ -31,28 +31,17 @@ body {
     color: #fff;
 }
 
-.navbar-default{
-    border-color:white;
-}
-
 .name{
     font-size:250%;
 }
 
-/* body-footer */
-
-
-.navbar-default .navbar-right  {
-    color:#fff;
-}
-
-.nav {
-    display:inline-block;
-}
-
-
 /*show_otsukai*/
 .row .buttons form{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.row .editbutton form{
     display: inline-block;
     margin: 0 5px;
 }
@@ -68,24 +57,6 @@ table.table-bordered th{
 }
 .iraisha{
     text-align: left;
-}
-
-/*timeline*/
-table, th, td {
-  text-align: center;
-  border-collapse: collapse;
-  border: 1px solid #ccc;
-  line-height: 1.5;
-}
-
-table.medialist th {
-  text-align: center;
-  width: 150px;
-  padding: 10px;
-  font-weight: bold;
-  vertical-align: top;
-  background: #C0C0C0;
-  color: #ffffff;
 }
 
 table.table-hover th {
@@ -168,4 +139,9 @@ div.slide-show {
 
 .type05 td{
     height: 100px;
+}
+
+.confirm-button form{
+    display: inline-block;
+    margin: 0 5px;
 }
