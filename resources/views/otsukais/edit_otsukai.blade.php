@@ -26,7 +26,7 @@
             
             <div class="form-group">
                 {!! Form::label('capacity', 'Capacity:') !!}
-                {{Form::selectRange('capacity', 1, 10, $otsukai->capacity, ['placeholder' => ''])}}個
+                {{Form::selectRange('capacity', 1, 10, $otsukai->capacity)}}個
             </div>
             
             <div class="form-group">
