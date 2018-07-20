@@ -71,9 +71,11 @@ class OtsukaisController extends Controller
     {
         $otsukai = Otsukai::find($id);
         $onegais = $otsukai->request;
+        $amount = $this->count_amount($otsukai);
         $data = [
             'otsukai' => $otsukai,
             'onegais' => $onegais,
+            'amount' => $amount
         ];
         
         return view('otsukais.show_otsukai', $data);
