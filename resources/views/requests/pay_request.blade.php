@@ -49,7 +49,7 @@
                             <td>   </td>
                             <td class="text-right">
                             <p>
-                                <strong>合計:</strong>
+                                <strong>小計:</strong>
                             </p>
                             </td>
                             <td class="text-center">
@@ -61,7 +61,7 @@
                         <tr>
                             <td>   </td>
                             <td>   </td>
-                            <td class="text-right"><h4><strong>小計:</strong></h4></td>
+                            <td class="text-right"><h4><strong>合計:</strong></h4></td>
                             <td class="text-center text-danger"><h4><strong>￥{{ ceil($item->price * $otsukai_giant->amount *1.1)  }}</strong></h4></td>
                         </tr>
                     </tbody>

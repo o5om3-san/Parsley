@@ -220,3 +220,34 @@ table.type06 td {
 table.type06 .media-left{
    text-align: center; 
 }
+
+/*confirm_edit_request*/
+.row .confirm-button form{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+table.table-bordered th{
+    background: #fff;
+    color: #ffffff;
+}
+
+table.table-hover th {
+    text-align: center;
+    width: 150px;
+    padding: 0px;
+    font-weight: bold;
+    vertical-align: top;
+    background: #008D56;
+    color: #fff;
+}
+table.type06 td {
+  text-align: center;
+  width: 150px;
+  padding: 0px;
+  vertical-align: top;
+}
+
+table.type06 .media-left{
+   text-align: center; 
+}

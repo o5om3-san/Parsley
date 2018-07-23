@@ -305,6 +305,7 @@ public function store_otsukai(Request $request)
     
     public function complete($id){
         
+        if (\Auth::check()) {
         $otsukai = Otsukai::find($id);
         $onegais = $otsukai->request;
         $amount = $this->count_amount($otsukai);
@@ -316,5 +317,9 @@ public function store_otsukai(Request $request)
         ];
         
         return view('otsukais.complete', $data);
+    }
+        else {
+            return view ('otsukais.index');
+        }
     }
 }
