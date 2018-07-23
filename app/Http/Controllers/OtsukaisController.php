@@ -340,11 +340,11 @@ public function store_otsukai(Request $request)
         $onegai = OtsukaiGiant::find($id);
         
             if (\Auth::user()->id === $onegai->user_id) {
-                $onegai->update([
+                $onegai->where('id', $id)->update([
                     'paid' => 1,
                 ]);
             }
-            
+        
             return redirect('https://viber.co.jp/');
     }       
 }
