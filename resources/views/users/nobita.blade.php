@@ -17,9 +17,11 @@
             <td>{{ $otsukai->capacity }}</td>
             <td>キャビネット {{ $otsukai->deliverPlace }}</td>
             <td>
-                 {!! link_to_route('otsukais.show', '編集', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
-                 {!! link_to_route('line.notify', '到着をお知らせする', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
-                 {!! link_to_route('otsukais.complete', '状態の確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                {!! link_to_route('otsukais.show', '編集', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                {!! link_to_route('line.notify', '到着をお知らせする', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                @if ($otsukai->closed == 0)
+                    {!! link_to_route('otsukais.complete', '状態の確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                @endif
             </td>
        </tbody>
     @endforeach

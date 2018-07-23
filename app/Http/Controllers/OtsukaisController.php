@@ -300,7 +300,6 @@ public function store_otsukai(Request $request)
          ];
          
         return view('requests.confirm_edit_request', $data);
-    
     }
     
     public function complete($id){
@@ -338,9 +337,9 @@ public function store_otsukai(Request $request)
     
     public function pay_update(Request $request, $id){
         
-        $otsukai = Otsukai::find($id);
+        $onegai = OtsukaiGiant::find($id);
         
-            if (\Auth::user()->id === $otsukai->user_id) {
+            if (\Auth::user()->id === $onegai->user_id) {
                 $request->user()->otsukai_giant()->where('id', $id)->update([
                     'paid' => 1,
                 ]);
