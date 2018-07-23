@@ -43,11 +43,11 @@ body {
 }
 
 .navbar-default .navbar-brand:hover{
-    color: #FFC7AF;
+    color: #ffc;
 }
 
 .navbar-default .navbar-nav>li>a:hover{
-    color: #FFC7AF;
+    color: #ffc;
 }
 
 
