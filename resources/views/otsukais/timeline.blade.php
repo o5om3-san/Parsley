@@ -17,7 +17,7 @@
                         </div>
                     </div>
                 </div>
-            <div class='row'>                    
+            <div class='card_row'>                    
                 <table>
                     <tr>
                         <td class='d_left'><i class="far fa-clock"></i></td>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </div>                 
-                <div class='row order_card'>                    
+                <div class='card_row order_card'>                    
                     <table>
                         <tr>
                             <td class='d_left'><i class="far fa-clock"></i></td>
