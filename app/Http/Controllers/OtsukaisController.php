@@ -83,7 +83,7 @@ class OtsukaisController extends Controller
             'deliverPlace' => $request->deliverPlace,
         ]);
 
-        return redirect('/');
+        return redirect('user/'.\Auth::id());
     }
 
     public function show_otsukai($id)
