@@ -69,7 +69,15 @@
                         </tr>
                         <tr>
                             <td class='d_left'><i class="fas fa-shopping-cart"></i></td>
-                            <td class='d_right'>　{{ $amounts[$key] }}／{{ $otsukai->capacity }}</td>
+                            <td class='d_right'>
+                                <span class="nokori">　
+                                    @if($otsukai->capacity-$amounts[$key]==0)
+                                        受付終了
+                                    @else
+                                        残り{{$otsukai->capacity-$amounts[$key]}}個
+                                    @endif
+                                </span>
+                            </td>
                         </tr>
                          <tr>
                             <td class='d_left'><i class="fas fa-map-marker-alt"></i></td>
@@ -82,6 +90,8 @@
                         {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                         @if ($otsukai->capacity-$amounts[$key] > 0)
                             {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                        @else
+                            <div class='btn btn-danger'>　　受付終了　　</div>
                         @endif
                     @endif
                 </div>

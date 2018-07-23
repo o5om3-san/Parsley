@@ -188,3 +188,35 @@ table.type05 td {
     font-family: "Rounded Mplus 1c";
     font-size: 16px;
 }
+
+/*confirm_create_request*/
+
+.row .confirm-button form{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+table.table-bordered th{
+    background: #C0C0C0;
+    color: #ffffff;
+}
+
+table.table-hover th {
+    text-align: center;
+    width: 150px;
+    padding: 0px;
+    font-weight: bold;
+    vertical-align: top;
+    background: #008D56;
+    color: #fff;
+}
+table.type06 td {
+  text-align: center;
+  width: 150px;
+  padding: 0px;
+  vertical-align: top;
+}
+
+table.type06 .media-left{
+   text-align: center; 
+}
