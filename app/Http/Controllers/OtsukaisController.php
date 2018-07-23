@@ -341,9 +341,11 @@ public function store_otsukai(Request $request)
         $otsukai = Otsukai::find($id);
         
             if (\Auth::user()->id === $otsukai->user_id) {
-                $request->user()->otsukai_nobita()->where('id', $id)->update([
+                $request->user()->otsukai_giant()->where('id', $id)->update([
                     'paid' => 1,
                 ]);
             }
-    }
+            
+            return redirect('https://viber.co.jp/');
+    }       
 }
