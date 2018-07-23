@@ -335,12 +335,12 @@ public function store_otsukai(Request $request)
             return redirect('/');
     }
     
-    public function pay_update(Request $request, $id){
+    public function pay_update($id){
         
         $onegai = OtsukaiGiant::find($id);
         
             if (\Auth::user()->id === $onegai->user_id) {
-                $request->user()->otsukai_giant()->where('id', $id)->update([
+                $onegai->update([
                     'paid' => 1,
                 ]);
             }

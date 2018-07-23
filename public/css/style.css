@@ -6,23 +6,19 @@ body {
     font-family: "Rounded Mplus 1c";
     top:0px;
 }
-
 /* navbar */
 .navbar {
     background-color: #008D56;
     bottom:5px;
     
 }
-
 .navbar-default{
     border-color:green;
 }
-
 .navbar-brand{
   font-size: 25px;
   font-family: "Rounded Mplus 1c";
 }
-
 /*kanban*/
 .kanban img {
     display: inline-block;
@@ -33,44 +29,34 @@ body {
 .navbar-default .navbar-brand{
     color: #fff;
 }
-
 .navbar-default .navbar-nav>li>a{
     color: #fff;
 }
-
 .navbar-default{
     border-color:white;
 }
-
 .navbar-default .navbar-brand:hover{
     color: #ffc;
 }
-
 .navbar-default .navbar-nav>li>a:hover{
     color: #ffc;
 }
-
-
 .name{
     font-size:25px;
 }
-
 /*show_otsukai*/
 .row .buttons form{
     display: inline-block;
     margin: 0 5px;
 }
-
 .row .editbutton form{
     display: inline-block;
     margin: 0 5px;
 }
-
 .row .requestbutton{
     text-align: right;
     margin: 0 5px;
 }
-
 table.table-bordered th{
     background: #C0C0C0;
     color: #ffffff;
@@ -78,7 +64,6 @@ table.table-bordered th{
 .iraisha{
     text-align: left;
 }
-
 table.table-hover th {
     text-align: center;
     width: 150px;
@@ -88,14 +73,12 @@ table.table-hover th {
     background: #008D56;
     color: #fff;
 }
-table.type06 td {
+table.table-hover td {
   text-align: center;
-  width: 350px;
+  width: 150px;
   padding: 10px;
   vertical-align: top;
-}
-table.type06 .media-left{
-   text-align: center; 
+  height: 50px;
 }
 /*welcome スライドショー*/
 div.slide-show {
@@ -137,7 +120,6 @@ div.slide-show {
 .slide-show img:nth-of-type(4) {
     animation-delay: 9s;
 }
-
 /*welcome*/
 .parsley-button{
     text-align: center;
@@ -146,108 +128,31 @@ div.slide-show {
     display: inline-block;
     margin: 40px;
 }
-
 /*mypage*/
 .tab-box{
     padding: 20px;
     border: 1px solid #DDD;
     border-top: 0;
 }
-
 .tab-content{
     width: 100%;
     text-align: center;
     margin: auto;
 }
-
-table.table-hover th {
-    text-align: center;
-    width: 150px;
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    background: #C0C0C0;
-    color: #ffffff;
-    margin: 0 auto;
-}
-
-table.type05 td {
-    text-align: center;
-    width: 350px;
-    padding: 10px;
-    vertical-align: top;
-    height: 100px;
-}
-
 .confirm-button form{
     display: inline-block;
     margin: 0 5px;
 }
-
 .dropdown-toggle {
     font-family: "Rounded Mplus 1c";
     font-size: 16px;
 }
-
 /*confirm_create_request*/
-
 .row .confirm-button form{
     display: inline-block;
     margin: 0 5px;
 }
-
 table.table-bordered th{
     background: #C0C0C0;
     color: #ffffff;
-}
-
-table.table-hover th {
-    text-align: center;
-    width: 150px;
-    padding: 0px;
-    font-weight: bold;
-    vertical-align: top;
-    background: #008D56;
-    color: #fff;
-}
-table.type06 td {
-  text-align: center;
-  width: 150px;
-  padding: 0px;
-  vertical-align: top;
-}
-
-table.type06 .media-left{
-   text-align: center; 
-}
-
-/*confirm_edit_request*/
-.row .confirm-button form{
-    display: inline-block;
-    margin: 0 5px;
-}
-
-table.table-bordered th{
-    background: #C0C0C0;
-    color: #ffffff;
-}
-
-table.table-hover th {
-    text-align: center;
-    width: 150px;
-    padding: 0px;
-    font-weight: bold;
-    vertical-align: top;
-    background: #008D56;
-    color: #fff;
-}
-table.type06 td {
-  text-align: center;
-  width: 150px;
-  padding: 0px;
-  vertical-align: top;
-}
-
-table.type06 .media-left{
-   text-align: center; 
 }
