@@ -1,7 +1,6 @@
 <table class="table-hover">
 　<thead>
     <tr>
-    　<th>ショッパー</th>
       <th>受付期限</th>
       <th>お店</th>
     　<th>最大個数</th>
@@ -13,8 +12,6 @@
     @foreach ($otsukais as $otsukai)
         <?php $user = $otsukai->user; ?>
     　　<tbody="type05">
-            <td>
-            <div>{{ $otsukai->user->name }}</td>
             <td>{{ substr($otsukai->deadline, 0, 16) }}</td>
             <td>{{ $otsukai->shop->name }}</td>
             <td>{{ $otsukai->capacity }}</td>
@@ -22,6 +19,7 @@
             <td>
                  {!! link_to_route('otsukais.show', '編集', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                  {!! link_to_route('line.notify', '到着をお知らせする', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                 {!! link_to_route('otsukais.complete', '状態の確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
             </td>
        </tbody>
     @endforeach

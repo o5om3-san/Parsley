@@ -8,6 +8,7 @@ Route::post('otsukais/', 'OtsukaisController@store_otsukai')->name('otsukais.sto
 Route::get('otsukais/{id}/', 'OtsukaisController@show_otsukai')->name('otsukais.show');
 Route::get('otsukais/{id}/edit/', 'OtsukaisController@edit_otsukai')->name('otsukais.edit');
 Route::put('/otsukais/{id}/', 'OtsukaisController@update_otsukai')->name('otsukais.update');
+Route::get('otsukais/{id}/complete', 'OtsukaisController@complete')->name('otsukais.complete');
 Route::delete('otsukais/{id}/delete', 'OtsukaisController@destroy_otsukai')->name('otsukais.destroy');
 
 // request

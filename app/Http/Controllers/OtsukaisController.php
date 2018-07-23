@@ -65,25 +65,29 @@ class OtsukaisController extends Controller
         return view('otsukais.confirm_create_otsukai', $data);
     }
 
-    public function store_otsukai(Request $request)
+public function store_otsukai(Request $request)
     {
         $dt = new DateTime();
-        $time = $dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00';
+        $deadline = new DateTime($dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00');
         
-        $this->validate($request, [
-            'shop_id' => 'required|max:191', 
-            'capacity' => 'required|max:191',
-            'deliverPlace' => 'required|max:191',
-        ]);
+        if ($dt < $deadline){
+            $this->validate($request, [
+                'shop_id' => 'required|max:191',
+                'capacity' => 'required|max:191',
+                'deliverPlace' => 'required|max:191',
+            ]);
        
-        $request->user()->otsukai_nobita()->create([
-            'deadline' => $time,
-            'shop_id' => $request->shop_id,
-            'capacity' => $request->capacity,
-            'deliverPlace' => $request->deliverPlace,
-        ]);
-
-        return redirect('user/'.\Auth::id());
+            $request->user()->otsukai_nobita()->create([
+                'deadline' => $deadline,
+                'shop_id' => $request->shop_id,
+                'capacity' => $request->capacity,
+                'deliverPlace' => $request->deliverPlace,
+            ]);
+            
+            return redirect('/');
+        }
+        
+        return redirect()->back();
     }
 
     public function show_otsukai($id)
@@ -121,22 +125,28 @@ class OtsukaisController extends Controller
     {
         $otsukai = Otsukai::find($id);
         $dt = new DateTime();
-        $time = $dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00';
+        $deadline = new DateTime($dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00');
         
-        $this->validate($request, [
-            'deliverPlace' => 'required|max:191',
-        ]);
-        
-        if (\Auth::user()->id === $otsukai->user_id) {
-            $request->user()->otsukai_nobita()->where('id', $id)->update([
-                'deadline' => $time,
-                'shop_id' => $request->shop_id,
-                'capacity' => $request->capacity,
-                'deliverPlace' => $request->deliverPlace,
+        if ($dt < $deadline){
+            $this->validate($request, [
+                'shop_id' => 'required|max:191',
+                'capacity' => 'required|max:191',
+                'deliverPlace' => 'required|max:191',
             ]);
+            
+            if (\Auth::user()->id === $otsukai->user_id) {
+                $request->user()->otsukai_nobita()->where('id', $id)->update([
+                    'deadline' => $deadline,
+                    'shop_id' => $request->shop_id,
+                    'capacity' => $request->capacity,
+                    'deliverPlace' => $request->deliverPlace,
+                ]);
+            }
+            
+            return redirect('/');
         }
         
-        return redirect('/');
+        return redirect()->back();
     }
 
     public function destroy_otsukai($id)
@@ -291,5 +301,20 @@ class OtsukaisController extends Controller
          
         return view('requests.confirm_edit_request', $data);
     
+    }
+    
+    public function complete($id){
+        
+        $otsukai = Otsukai::find($id);
+        $onegais = $otsukai->request;
+        $amount = $this->count_amount($otsukai);
+        
+        $data = [
+            'otsukai' => $otsukai,
+            'onegais' => $onegais,
+            'amount' => $amount
+        ];
+        
+        return view('otsukais.complete', $data);
     }
 }

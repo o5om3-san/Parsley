@@ -85,7 +85,7 @@
                     
                     
                     <span class="glyphicon glyphicon-chevron-right"></span>
-                </button></td>
+                </button>
             </div>
         </div>
     </div></div>
