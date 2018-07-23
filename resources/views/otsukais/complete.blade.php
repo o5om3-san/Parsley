@@ -28,7 +28,7 @@
                     支払い済み
                 @endif
             </td>
-            <td></td>
+            <td><button></button></td>
        </tbody>
     @endforeach
 </table>

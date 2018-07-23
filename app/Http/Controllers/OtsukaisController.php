@@ -253,7 +253,7 @@ public function store_otsukai(Request $request)
     
     public function pay($id)
     {
-        $user = User::find($id);
+        $user = Auth::user();
         $otsukai_giant = OtsukaiGiant::find($id);
         $item = Item::find($otsukai_giant->item_id);
         $data = [
