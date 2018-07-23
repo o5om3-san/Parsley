@@ -2,7 +2,7 @@
 @section('content')
 
 
-    {!! Form::model($otsukai, ['route' => 'otsukais.update']) !!}
+    {!! Form::model($otsukai, ['route' => ['otsukais.update', $otsukai->id], 'method' => 'put']) !!}
     <div class='col-sm-4'> 
         <div class='row shopWrapper new-create-card'>
             <div class='row'>
