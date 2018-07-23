@@ -28,7 +28,11 @@
                     支払い済み
                 @endif
             </td>
-            <td><button></button></td>
+            <td>
+                {!! Form::model($otsukai, ['route' => ['otsukais.complete_update', $otsukai->id], 'method' => 'put']) !!}
+                    {!! Form::submit('取引終了', ['class' => 'btn btn-danger']) !!}
+                {!! Form::close() !!}
+            </td>
        </tbody>
     @endforeach
 </table>

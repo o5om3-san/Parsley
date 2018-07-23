@@ -253,7 +253,7 @@ public function store_otsukai(Request $request)
     
     public function pay($id)
     {
-        $user = Auth::user();
+        $user =\Auth::user();
         $otsukai_giant = OtsukaiGiant::find($id);
         $item = Item::find($otsukai_giant->item_id);
         $data = [
@@ -321,5 +321,29 @@ public function store_otsukai(Request $request)
         else {
             return view ('otsukais.index');
         }
+    }
+    
+    public function complete_update(Request $request, $id){
+        
+        $otsukai = Otsukai::find($id);
+        
+            if (\Auth::user()->id === $otsukai->user_id) {
+                $request->user()->otsukai_nobita()->where('id', $id)->update([
+                    'closed' => 1,
+                ]);
+            }
+            
+            return redirect('/');
+    }
+    
+    public function pay_update(Request $request, $id){
+        
+        $otsukai = Otsukai::find($id);
+        
+            if (\Auth::user()->id === $otsukai->user_id) {
+                $request->user()->otsukai_nobita()->where('id', $id)->update([
+                    'paid' => 1,
+                ]);
+            }
     }
 }
