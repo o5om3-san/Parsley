@@ -2,8 +2,8 @@
 @section('content')
 
 
-    {!! Form::model($otsukai, ['route' => 'otsukais.store']) !!}
-    <div class='col-sm-4'>    
+    {!! Form::model($otsukai, ['route' => 'otsukais.update']) !!}
+    <div class='col-sm-4'> 
         <div class='row shopWrapper new-create-card'>
             <div class='row'>
                 <div class='col-xs-3'>
@@ -22,12 +22,12 @@
                         <td class='d_left'>受付期限：</td>
                         <td class='d_right'>
                             <span class="memo-deadline">
-                            {{Form::selectRange('from_hour', $dt->format('H'), 23, ['placeholder' => ''])}}時                                <select name="from_minutes">
+                                {{Form::selectRange('from_hour', $dt->format('H'), 23, substr($otsukai->deadline, 11, 2))}}時
+                                <select name="from_minutes">
                                     @for ($i = 0; $i < 12; $i++)
-                                         <option value={{$i*5}}> {{$i*5}} </option>
+                                         <option value={{$i*5}} <?php if(substr($otsukai->deadline, 14, 2) == $i*5){ echo 'selected'; }?> > {{$i*5}} </option>
                                     @endfor
-                                </select>
-                                分
+                                </select>分
                             </span>
                         </td>
                     </tr>
@@ -36,7 +36,7 @@
                         <td class='d_right'>
                             <select name="shop_id">
                                 @foreach ($shops as $shop)
-                                    <option value={{$shop->id}}> {{$shop->name}} </option>
+                                    <option value={{$shop->id}} <?php if($otsukai->shop_id == $shop->id){ echo 'selected'; }?> > {{$shop->name}} </option>
                                 @endforeach
                             </select>
                         </td>
@@ -44,26 +44,21 @@
                     <tr>
                         <td class='d_left'>最大個数：</td>
                         <td class='d_right'>
-                            {{Form::selectRange('capacity', 1, 10, '', ['placeholder' => ''])}}個
+                            {{Form::selectRange('capacity', 1, 10, $otsukai->capacity)}}個
                         </td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td class='d_left'>受け渡し：</td>
                         <td class='d_right'>
-                            キャビネット {{Form::selectRange('deliverPlace', 1, 11, ['selected' => ' '])}}
+                            キャビネット {{Form::selectRange('deliverPlace', 1, 11, $otsukai->deliverPlace)}}
                         </td>
                     </tr>                   
                 </table>    
-                </div>     
-                <div class="row card_buttons">
+            </div>     
+            <div class="row card_buttons">
                     {!! Form::submit('更新', ['class' => 'btn btn-success', 'onclick' => 'clickEvent()']) !!}
-                </div>
-                
-            <div class="form-group">
-                {!! Form::label('capacity', 'Capacity:') !!}
-                {{Form::selectRange('capacity', 1, 10, $otsukai->capacity)}}個
+                    {!! Form::close() !!}
             </div>
-            
-         </div>   
-    {!! Form::close() !!}
+        </div>
+    </div>
 @endsection
