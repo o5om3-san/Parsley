@@ -18,6 +18,7 @@ class OtsukaisController extends Controller
         if (\Auth::check()) {
             $dt = new DateTime();
             $otsukai = new Otsukai();
+            $shops = Shop::all();
             $otsukais1 = $otsukai->where('deadline','>',$dt)->orderBy('deadline', 'asc')->get();
             $otsukais = [];
             
@@ -28,7 +29,9 @@ class OtsukaisController extends Controller
             }
             $amounts = $this->count_amounts($otsukais);
             $data = [
+                'otsukai' => $otsukai,
                 'otsukais' => $otsukais,
+                'shops' => $shops,
                 'amounts' => $amounts,
             ];
             
