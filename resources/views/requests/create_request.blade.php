@@ -39,17 +39,13 @@
                      <tr>
                         <td class='d_left'>コメント：</td>
                         <td class='d_right'>
-                            {!! Form::textarea('comment', null, ['size' => '25x1']) !!}
+                            {!! Form::textarea('comment', null, ['size' => '30x3', 'placeholder' => '例：砂糖、ミルクは不要']) !!}
                         </td>
                     </tr>                   
                 </table>    
                 </div>     
             <div class="row card_buttons">
-<<<<<<< HEAD
                 {!! Form::submit('注文確認', ['class' => 'btn btn-default btn_link requestpage_button']) !!}
-=======
-                {!! Form::submit('注文確認', ['class' => 'btn btn-success request_button']) !!}
->>>>>>> 18acf05862411b4a79bd05796747e634ccbc9339
             </div>
         </div>
     </div>

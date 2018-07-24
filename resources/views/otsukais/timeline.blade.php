@@ -28,7 +28,7 @@
                         $minute = $dt->format('i');
                         if($dt->format('i') > 40){ $hour = $hour+1; }
                         ?>
-                        <td class='d_left'>受付期限：</td>
+                        <td class='d_left'>出発時間：</td>
                         <td class='d_right'>
                             <span class="memo-deadline">
                             {{Form::selectRange('from_hour', $hour, 23, $hour)}}時
@@ -42,7 +42,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class='d_left'>お店：</td>
+                        <td class='d_left'>買いに行く店：</td>
                         <td class='d_right'>
                             <select name="shop_id">
                                 @foreach ($shops as $shop)
@@ -52,13 +52,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class='d_left'>最大個数：</td>
+                        <td class='d_left'>受付個数：</td>
                         <td class='d_right'>
                             {{Form::selectRange('capacity', 1, 10, 1)}}個
                         </td>
                     </tr>
                     <tr>
-                        <td class='d_left'>受け渡し：</td>
+                        <td class='d_left'>手渡す場所：</td>
                         <td class='d_right'>
                             キャビネット {{Form::selectRange('deliverPlace', 1, 11, 1)}}
                         </td>
@@ -101,7 +101,7 @@
                             <td class='d_right'>　{{ $otsukai->shop->name }}</td>
                         </tr>
                         <tr>
-                            <td class='d_left'>　受け付け個数：</td>
+                            <td class='d_left'>　受付個数：</td>
                             <td class='d_right'>
                                 <span class="nokori">　
                                     @if($otsukai->capacity-$amounts[$key]==0)

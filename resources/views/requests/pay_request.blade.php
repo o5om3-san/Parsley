@@ -66,8 +66,8 @@
                         </tr>
                     </tbody>
                 </table>
-                    <div class = 'pay_button btn btn-lg btn-block' onClick = 'viber()'>
-                        Viberを起動する
+                    <div class = 'pay_button btn btn-m' onClick = 'viber()'>
+                        Viberで支払う
                         <script>
                             function viber(){
                                 var res = confirm("Viberに移行します");
@@ -85,7 +85,7 @@
                         </script>
                     </div>
                     {!! Form::model($otsukai_giant, ['route' => ['requests.pay_update', $otsukai_giant->id], 'method' => 'put']) !!}
-                    {!! Form::submit('支払い連絡', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
+                    {!! Form::submit('支払い完了', ['class' => 'btn btn-primary btn-m']) !!}
             </div>
         </div>
     </div></div>
