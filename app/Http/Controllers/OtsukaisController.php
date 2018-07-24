@@ -220,7 +220,8 @@ class OtsukaisController extends Controller
             \Auth::user()->request($otsukai_id, $request->item, $request->amount, $request->comment);
         }
         
-        return redirect('/');
+        $id = \Auth::id();
+        return redirect('user/'.$id);
     }
     
     public function destroy_request($id)
@@ -329,7 +330,8 @@ class OtsukaisController extends Controller
                 ]);
             }
             
-            return redirect('/');
+            $id = \Auth::id();
+            return redirect('user/'.$id);
     }
     
     public function pay_update($id){
@@ -341,7 +343,8 @@ class OtsukaisController extends Controller
                     'paid' => 1,
                 ]);
             }
-        
-            return redirect('/');
+            
+            $id = \Auth::id();
+            return redirect('user/'.$id);
     }       
 }
