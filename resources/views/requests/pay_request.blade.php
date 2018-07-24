@@ -74,7 +74,7 @@
                             function viber(btnNo){
                                 if (btnNo == 1){
                                     link = "Viber";
-                                    href = "viber://";
+                                    href = "viber:";
                                 }
                                 ret = confirm(link + "へ飛びます。宜しいですか？");
                                 if (ret == true){
