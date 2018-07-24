@@ -18,9 +18,11 @@
             <td>キャビネット {{ $otsukai->deliverPlace }}</td>
             <td>
                 @if ($otsukai->closed == 0)
-                    {!! link_to_route('otsukais.show', '編集', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
-                    {!! link_to_route('line.notify', '到着をお知らせする', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
-                    {!! link_to_route('otsukais.complete', '状態の確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                    <div class=mypage-button>
+                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                        {!! link_to_route('line.notify', '到着通知', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                        {!! link_to_route('otsukais.complete', '状態確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                    </div>
                 @endif
             </td>
        </tbody>

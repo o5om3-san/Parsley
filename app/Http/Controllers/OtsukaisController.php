@@ -18,7 +18,7 @@ class OtsukaisController extends Controller
         if (\Auth::check()) {
             $dt = new DateTime();
             $otsukai = new Otsukai();
-            $otsukais = $otsukai->where('deadline','>',$dt)->orderBy('deadline', 'asc')->paginate(10);
+            $otsukais = $otsukai->where('deadline','>',$dt)->orderBy('deadline', 'asc')->paginate(8);
             $amounts = $this->count_amounts($otsukais);
             $data = [
                 'otsukais' => $otsukais,

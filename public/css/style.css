@@ -156,3 +156,6 @@ table.table-bordered th{
     background: #C0C0C0;
     color: #ffffff;
 }
+.mypage-button{
+    display: inline-flex;
+}
