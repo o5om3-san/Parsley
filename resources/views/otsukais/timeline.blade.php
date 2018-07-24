@@ -44,9 +44,14 @@
     </div>     
    
     @foreach ($otsukais as $key => $otsukai)
-        <?php $user = $otsukai->user; ?>
+        <?php
+            $user = $otsukai->user;
+            if ($otsukai->user_id == \Auth::id()){
+                echo "<style> .card_items".$otsukai->id."{ background-color: pink; } </style>";
+            }
+        ?>
         <div class='col-sm-4'>
-            <div class='shopWrapper'>
+            <div class='shopWrapper card_items<?= $otsukai->id ?>'>
                 <div class='row'>
                     <div class='col-xs-3'>
                         <img class='shop-image' src="images/532.png"  alt="" width='80'>
@@ -103,7 +108,5 @@
             </div>
         </div>
     @endforeach
-
-<p class='clearfixed'><center>{!! $otsukais->render() !!}</center></p>
 
 @endsection

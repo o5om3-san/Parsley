@@ -12,7 +12,6 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     
     public function count_amount($otsukai) {
-        $amounts = [];
         $amount = 0;
         $requests = $otsukai->request;
         foreach ($requests as $request) {
