@@ -104,6 +104,6 @@
         </div>
     @endforeach
 
-{!! $otsukais->render() !!}
+<p class='clearfixed'><center>{!! $otsukais->render() !!}</center></p>
 
 @endsection
