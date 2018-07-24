@@ -23,7 +23,7 @@ class OtsukaisController extends Controller
             $otsukais = [];
             
             foreach ($otsukais1 as $otsukai){
-                if ($otsukai->capacity-$this->count_amount($otsukai)){
+                if ($otsukai->capacity-$this->count_amount($otsukai)>0){
                     array_push($otsukais, $otsukai);
                 }
             }
@@ -80,7 +80,8 @@ class OtsukaisController extends Controller
                 'deliverPlace' => $request->deliverPlace,
             ]);
             
-            return redirect('/');
+            $id = \Auth::id();
+            return redirect('user/'.$id);
         }
         
         return redirect()->back();

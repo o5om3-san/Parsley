@@ -30,6 +30,6 @@
     </body>
     <footer class ='global text-center'>
         Powered by
-        <img class ='codewars center block' src='images/codewars.png' /><br>
+        <img class ='codewars center block' src='images/codewars.png'><br>
     </footer>
 </html>
