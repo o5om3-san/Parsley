@@ -93,9 +93,9 @@
                 </div>     
                 <div class="row card_buttons">
                     @if (Auth::user()->id != $otsukai->user_id)
-                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
                         @if ($otsukai->capacity-$amounts[$key] > 0)
-                            {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                            {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
                         @else
                             <div class='btn btn-danger'>　　受付終了　　</div>
                         @endif
@@ -103,7 +103,7 @@
                 </div>
                 @if (Auth::user()->id == $otsukai->user_id)
                     <div class="card_button">
-                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
                     </div>
                 @endif
             </div>
