@@ -175,3 +175,11 @@ table.table-bordered th{
 .menue {
     color:green;
 }
+
+/*show.users　タブの色*/
+.mypagenav ul.nav-tabs>li.active>a{
+    background:#cfc;
+}
+.tab-pane{
+    background:#cfc;
+}
