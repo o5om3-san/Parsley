@@ -356,6 +356,6 @@ class OtsukaisController extends Controller
                 ]);
             }
         
-            return redirect('https://viber.co.jp/');
+            return redirect('/');
     }       
 }

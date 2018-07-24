@@ -158,8 +158,8 @@ table.table-bordered th{
 }
 
 /*pay_request*/
-.btn-group-lg>.btn, .btn-lg {
-    background-color: 	#8f5db7;
+div.pay_button {
+    background-color:#8f5db7;
     color:white;
 }
 
