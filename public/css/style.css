@@ -163,3 +163,11 @@ table.table-bordered th{
     background-color: 	#8f5db7;
     color:white;
 }
+
+.mypage-button{
+    display: inline-flex;
+}
+
+.clearfixed{
+    clear: both;
+}
