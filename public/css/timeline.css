@@ -96,6 +96,10 @@ a.btn.tl_buttons:hover{
   margin-left:85px;
 }
 
+.request_button{
+  margin-left:70px;
+}
+
 .auth{
   background-color: #008d56;
 }

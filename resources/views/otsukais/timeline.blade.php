@@ -103,8 +103,6 @@
             </div>
         </div>
     @endforeach
-        <a href = fb192454074134796://>Viber</a>
-                   <a href = Viber://> Viver</a>
 
 {!! $otsukais->render() !!}
 

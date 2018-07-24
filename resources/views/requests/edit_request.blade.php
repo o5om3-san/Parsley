@@ -45,7 +45,7 @@
                 </table>    
             </div>     
             <div class="row card_buttons">
-                    {!! Form::submit('更新', ['class' => 'btn btn-success']) !!}
+                    {!! Form::submit('更新', ['class' => 'btn btn-success .request_button']) !!}
                     {!! Form::close() !!}
             </div>
         </div>
