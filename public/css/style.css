@@ -152,7 +152,14 @@ div.slide-show {
     display: inline-block;
     margin: 0 5px;
 }
+
 table.table-bordered th{
     background: #C0C0C0;
     color: #ffffff;
+}
+
+/*pay_request*/
+.btn-group-lg>.btn, .btn-lg {
+    background-color: 	#8f5db7;
+    color:white;
 }

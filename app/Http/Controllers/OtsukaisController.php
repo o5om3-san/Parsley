@@ -84,7 +84,9 @@ public function store_otsukai(Request $request)
                 'deliverPlace' => $request->deliverPlace,
             ]);
             
-            return redirect('/');
+            $id = \Auth::id();
+            return redirect('user/'.$id);        
+            
         }
         
         return redirect()->back();

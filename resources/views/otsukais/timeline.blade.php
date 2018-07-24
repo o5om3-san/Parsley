@@ -4,6 +4,7 @@
 
 <link href="css/timeline.css" rel="stylesheet" type="text/css">
 
+　<h1>おつかいに行く人一覧</h1>
     <div class="row">
        <div class='col-sm-4'>
             <div class='shopWrapper new-create-card'>
@@ -21,7 +22,7 @@
                 <table>
                     <tr>
                         <td class='d_left'><i class="far fa-clock"></i></td>
-                        <td class='d_right new-card'>　受付締め切り</td>
+                        <td class='d_right new-card'>　出発時間</td>
                     </tr>
                     <tr>
                         <td class='d_left'><i class="fas fa-coffee"></i></td>
