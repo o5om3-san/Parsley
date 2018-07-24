@@ -6,7 +6,7 @@
 
 　<h1>おつかいに行く人一覧</h1>
     <div class="row">
-       <div class='col-sm-4'>
+        <div class='col-sm-4'>
             <div class='shopWrapper new-create-card'>
                 <div class='row'>
                     <div class='col-xs-3'>
@@ -18,36 +18,68 @@
                         </div>
                     </div>
                 </div>
-            <div class='card_row'>                    
+            <div class='card_row'>
+                {!! Form::model($otsukai, ['route' => 'otsukais.store']) !!}                
                 <table>
                     <tr>
-                        <td class='d_left'><i class="far fa-clock"></i></td>
-                        <td class='d_right new-card'>　出発時間</td>
+                        <?php
+                        $dt = new DateTime();
+                        $hour = $dt->format('H');
+                        $minute = $dt->format('i');
+                        if($dt->format('i') > 40){ $hour = $hour+1; }
+                        ?>
+                        <td class='d_left'>受付期限：</td>
+                        <td class='d_right'>
+                            <span class="memo-deadline">
+                            {{Form::selectRange('from_hour', $hour, 23, $hour)}}時
+                                <select name="from_minutes">
+                                    @for ($i = 0; $i < 12; $i++)
+                                         <option value={{$i*5}} <?php if(ceil($minute/5) == $i-3){ echo 'selected'; } else if(ceil($minute/5)-9 == $i){ echo 'selected'; } ?> > {{$i*5}} </option>
+                                    @endfor
+                                </select>
+                                分
+                            </span>
+                        </td>
                     </tr>
                     <tr>
-                        <td class='d_left'><i class="fas fa-coffee"></i></td>
-                        <td class='d_right new-card'>　買いに行く店</td>
+                        <td class='d_left'>お店：</td>
+                        <td class='d_right'>
+                            <select name="shop_id">
+                                @foreach ($shops as $shop)
+                                    <option value={{$shop->id}}> {{$shop->name}} </option>
+                                @endforeach
+                            </select>
+                        </td>
                     </tr>
                     <tr>
-                        <td class='d_left'><i class="fas fa-shopping-cart"></i></td>
-                        <td class='d_right new-card'>　受け付け個数</td>
+                        <td class='d_left'>最大個数：</td>
+                        <td class='d_right'>
+                            {{Form::selectRange('capacity', 1, 10, 1)}}個
+                        </td>
                     </tr>
                     <tr>
-                        <td class='d_left'><i class="fas fa-map-marker-alt"></i></td>
-                        <td class='d_right new-card'>　手渡す場所</td>
+                        <td class='d_left'>受け渡し：</td>
+                        <td class='d_right'>
+                            キャビネット {{Form::selectRange('deliverPlace', 1, 11, 1)}}
+                        </td>
                     </tr>                   
                 </table>    
             </div>
             <div class="row card_button">
-                {!! link_to_route('otsukais.create', 'つくる', null, ['class' => 'btn btn-default btn-xs']) !!}
+                {!! Form::submit('登録', ['class' => 'btn btn-success otsukai_button', 'onclick' => 'clickEvent()']) !!}
             </div>
         </div>
     </div>     
    
     @foreach ($otsukais as $key => $otsukai)
-        <?php $user = $otsukai->user; ?>
+        <?php
+            $user = $otsukai->user;
+            if ($otsukai->user_id == \Auth::id()){
+                echo "<style> .card_items".$otsukai->id."{ background-color: pink; } </style>";
+            }
+        ?>
         <div class='col-sm-4'>
-            <div class='shopWrapper'>
+            <div class='shopWrapper card_items<?= $otsukai->id ?>'>
                 <div class='row'>
                     <div class='col-xs-3'>
                         <img class='shop-image' src="images/532.png"  alt="" width='80'>
@@ -61,15 +93,15 @@
                 <div class='card_row order_card'>                    
                     <table>
                         <tr>
-                            <td class='d_left'><i class="far fa-clock"></i></td>
+                            <td class='d_left'>　出発時間：</td>
                             <td class='d_right'>　<span class="memo-deadline"><?php echo date ("H:i", strtotime($otsukai->deadline)); ?></span> まで</td>
                         </tr>
                         <tr>
-                            <td class='d_left'><i class="fas fa-coffee"></i></td>
+                            <td class='d_left'>　買いに行く店：</td>
                             <td class='d_right'>　{{ $otsukai->shop->name }}</td>
                         </tr>
                         <tr>
-                            <td class='d_left'><i class="fas fa-shopping-cart"></i></td>
+                            <td class='d_left'>　受け付け個数：</td>
                             <td class='d_right'>
                                 <span class="nokori">　
                                     @if($otsukai->capacity-$amounts[$key]==0)
@@ -81,16 +113,16 @@
                             </td>
                         </tr>
                          <tr>
-                            <td class='d_left'><i class="fas fa-map-marker-alt"></i></td>
+                            <td class='d_left'>　手渡す場所：</td>
                             <td class='d_right'>　キャビネット {{ $otsukai->deliverPlace }}</td>
                         </tr>                   
                     </table>    
                 </div>     
                 <div class="row card_buttons">
                     @if (Auth::user()->id != $otsukai->user_id)
-                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
                         @if ($otsukai->capacity-$amounts[$key] > 0)
-                            {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                            {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
                         @else
                             <div class='btn btn-danger'>　　受付終了　　</div>
                         @endif
@@ -98,14 +130,11 @@
                 </div>
                 @if (Auth::user()->id == $otsukai->user_id)
                     <div class="card_button">
-                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
                     </div>
                 @endif
             </div>
         </div>
     @endforeach
- 
-
-{!! $otsukais->render() !!}
-
+    
 @endsection

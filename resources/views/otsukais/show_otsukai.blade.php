@@ -54,7 +54,6 @@
                         {!! link_to_route('requests.create', '注文する', ['id' => $otsukai->id], ['class' => 'btn btn-success']) !!}
                     @endif
                 @endif
-                {!! link_to_route('otsukais.index', '戻る', [], ['class' => 'btn btn-default']) !!}
             </div>
         </div>
     </div>

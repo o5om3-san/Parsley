@@ -10,6 +10,7 @@ use App\Otsukai;
 use App\OtsukaiGiant;
 use App\User;
 use App\Shop;
+use DateTime;
 
 class LineNotifyController extends Controller
 {
@@ -18,12 +19,13 @@ class LineNotifyController extends Controller
         $otsukai = Otsukai::find($id);
         $message = $this->makeMessage($otsukai);
         $this->sendToLine($message);
-        return redirect('/');
+        return redirect()->back();
     }
     
     public function makeMessage($otsukai)
     {
-        $title = 'おつかい No.'.$otsukai->id."\n\n".'【商品到着のご連絡】'."\n";
+        $dt = new DateTime();
+        $title = $dt->format('Y/m/d H:i')."\n\n".'【商品到着のご連絡】'."\n";
         $orders = '';
         $giants = '';
         
@@ -48,7 +50,7 @@ class LineNotifyController extends Controller
         $client->post($uri, [
             'headers' => [
                 'Content-Type'  => 'application/x-www-form-urlencoded',
-                'Authorization' => 'Bearer '.env('LINE_ACCESS_TOKEN'),
+                'Authorization' => 'Bearer Q6IkrG7XOcn4wLNxpdz8IyPvfE65jaY0LaMNt0dZziU',
             ],
             'form_params' => [
                 'message' => $message,

@@ -18,10 +18,20 @@ class OtsukaisController extends Controller
         if (\Auth::check()) {
             $dt = new DateTime();
             $otsukai = new Otsukai();
-            $otsukais = $otsukai->where('deadline','>',$dt)->orderBy('deadline', 'asc')->paginate(8);
+            $shops = Shop::all();
+            $otsukais1 = $otsukai->where('deadline','>',$dt)->orderBy('deadline', 'asc')->get();
+            $otsukais = [];
+            
+            foreach ($otsukais1 as $otsukai){
+                if ($otsukai->capacity-$this->count_amount($otsukai)){
+                    array_push($otsukais, $otsukai);
+                }
+            }
             $amounts = $this->count_amounts($otsukais);
             $data = [
+                'otsukai' => $otsukai,
                 'otsukais' => $otsukais,
+                'shops' => $shops,
                 'amounts' => $amounts,
             ];
             
@@ -65,7 +75,7 @@ class OtsukaisController extends Controller
         return view('otsukais.confirm_create_otsukai', $data);
     }
 
-public function store_otsukai(Request $request)
+    public function store_otsukai(Request $request)
     {
         $dt = new DateTime();
         $deadline = new DateTime($dt->format('Y-m-d').' '.$request->from_hour.':'.$request->from_minutes.':00');
@@ -85,8 +95,7 @@ public function store_otsukai(Request $request)
             ]);
             
             $id = \Auth::id();
-            return redirect('user/'.$id);        
-            
+            return redirect('user/'.$id);
         }
         
         return redirect()->back();
