@@ -4,6 +4,7 @@
 
 <link href="css/timeline.css" rel="stylesheet" type="text/css">
 
+　<h1>おつかいに行く人一覧</h1>
     <div class="row">
        <div class='col-sm-4'>
             <div class='shopWrapper new-create-card'>
@@ -21,7 +22,7 @@
                 <table>
                     <tr>
                         <td class='d_left'><i class="far fa-clock"></i></td>
-                        <td class='d_right new-card'>　受付締め切り</td>
+                        <td class='d_right new-card'>　出発時間</td>
                     </tr>
                     <tr>
                         <td class='d_left'><i class="fas fa-coffee"></i></td>
@@ -92,21 +93,19 @@
                 </div>     
                 <div class="row card_buttons">
                     @if (Auth::user()->id != $otsukai->user_id)
-                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
+                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                         @if ($otsukai->capacity-$amounts[$key] > 0)
-                            {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
+                            {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                         @else
-                            <div class='btn btn-danger uketsuke'>　　受付終了　　</div>
+                            <div class='btn btn-danger'>　　受付終了　　</div>
                         @endif
                     @endif
                 </div>
                 @if (Auth::user()->id == $otsukai->user_id)
                     <div class="card_button">
-                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
+                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                     </div>
                 @endif
             </div>
         </div>
     @endforeach
-
-@endsection

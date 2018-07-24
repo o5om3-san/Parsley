@@ -47,11 +47,21 @@
                 <div class="row card_buttons">
                     {!! Form::submit('注文確認', ['class' => 'btn btn-success request_button']) !!}
                 </div>
-            
-            
-            
-            
          </div> 
-
-
+{!! Form::close() !!}
+<div class = "col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+        <h2>メニュー表</h2>
+        <table class="table table-striped table-bordered">
+         <tr>
+         <th>商品名</th>
+         <th>価格</th>
+         </tr>
+        @foreach($items as $item)
+         <tr>
+         <td>{{ $item->name }}</td>
+         <td>{{ $item->price }}</td>
+         </tr>
+        @endforeach
+        </table>
+    </div>
 @endsection

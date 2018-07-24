@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    {!! Form::model($otsukai, ['route' => 'otsukais.store']) !!}
+{!! Form::model($otsukai, ['route' => 'otsukais.store']) !!}
     <div class='col-sm-4'>    
         <div class='row shopWrapper new-create-card'>
             <div class='row'>

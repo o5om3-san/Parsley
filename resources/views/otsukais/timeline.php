@@ -1,8 +1,7 @@
-
 <table class="table-hover">
     <thead>
         <tr>
-            <th>ショッパー</th>
+            <th>おつかいに行く人</th>
             <th>受け入れ期限</th>
             <th>お店</th>
             <th>最大個数</th>
