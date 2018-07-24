@@ -88,3 +88,19 @@ a.btn {
 a.btn.tl_buttons{
   background-color: #CC9933;
 }
+a.btn.tl_buttons:hover{
+  background-color: #E4E4E4;
+}
+
+.otsukai_button{
+  margin-left:85px;
+}
+
+.auth{
+  background-color: #008d56;
+}
+
+.auth:hover{
+  background-color: #E4E4E4;
+  color: black;
+}
