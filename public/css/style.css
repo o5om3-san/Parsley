@@ -170,3 +170,6 @@ table.table-bordered th{
 .clearfixed{
     clear: both;
 }
+.requestpage_button{
+    margin-left:150px;
+}

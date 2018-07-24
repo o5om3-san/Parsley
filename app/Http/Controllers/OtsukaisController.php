@@ -42,20 +42,6 @@ class OtsukaisController extends Controller
     }
     
     /*のび太(N)の機能*/
-    public function create_otsukai()
-    {
-        $otsukai = new Otsukai();
-        $shops = Shop::all();
-        $dt = new DateTime();
-        $data = [
-            'otsukai' => $otsukai,
-            'shops' => $shops,
-            'dt' => $dt,
-        ];
-        
-        return view('otsukais.create_otsukai', $data);
-    }
-    
     public function confirm_create_otsukai(request $request)
     {
         $otsukai = new Otsukai();
