@@ -185,7 +185,11 @@ div.pay_button {
     background: #fff;
 }
 
+.global {
+    bottom: 0;
+}
 .codewars {
     height:50px;
+    border-radius: 30px;
     
 }
