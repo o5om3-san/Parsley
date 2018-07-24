@@ -68,17 +68,19 @@
                 </table>
                     <div class ='pay_button'>
                     {!! Form::model($otsukai_giant, ['route' => ['requests.pay_update', $otsukai_giant->id], 'method' => 'put']) !!}
-                    {!! Form::submit('Viberで支払い', ['class' => 'btn btn-lg btn-block', 'onClick' => 'viber(1)' ]) !!}
+                    {!! Form::submit('Viberで支払い', ['class' => 'btn btn-lg btn-block', 'onClick' => 'viber()' ]) !!}
                         
                         <script>
-                            function viber(btnNo){
-                                if (btnNo == 1){
-                                    link = "Viber";
-                                    href = "viber:";
+                            function viber(){
+                                var res = confirm("Viberに移行します");
+                                if( res == true ) {
+                                    // OKなら移動
+                                    window.location.href = "viber:";
                                 }
-                                ret = confirm(link + "へ飛びます。宜しいですか？");
-                                if (ret == true){
-                                    location.href = href;
+                                else {
+                                    // キャンセルならアラートボックスを表示
+                                    alert("キャンセルしました");
+                                    return false;
                                 }
                             }
                         </script>

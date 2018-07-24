@@ -1,13 +1,12 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="mypagenav">
         <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a href="#tab1" class="nav-link navbar-default active" data-toggle="tab">リクエスト履歴</a>
+            <li class="active">
+                <a href="#tab1" data-toggle="tab">リクエスト履歴</a>
             </li>
-            <li class="nav-item">
-                <a href="#tab2" class="nav-link navbar-default" data-toggle="tab">おつかい履歴</a>
+            <li>
+                <a href="#tab2" data-toggle="tab">おつかい履歴</a>
             </li>
         </ul>
     </div>

@@ -45,7 +45,11 @@
                 </table>    
                 </div>     
             <div class="row card_buttons">
+<<<<<<< HEAD
                 {!! Form::submit('注文確認', ['class' => 'btn btn-default btn_link requestpage_button']) !!}
+=======
+                {!! Form::submit('注文確認', ['class' => 'btn btn-success request_button']) !!}
+>>>>>>> 18acf05862411b4a79bd05796747e634ccbc9339
             </div>
         </div>
     </div>

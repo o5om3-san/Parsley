@@ -173,3 +173,11 @@ table.table-bordered th{
 .requestpage_button{
     margin-left:150px;
 }
+
+/*show.users　タブの色*/
+.mypagenav ul.nav-tabs>li.active>a{
+    background:#cfc;
+}
+.tab-pane{
+    background:#cfc;
+}
