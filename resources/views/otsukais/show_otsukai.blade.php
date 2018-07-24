@@ -18,7 +18,7 @@
                     <td>キャビネット{{ $otsukai->deliverPlace }}</td>
                 </tr>
             </table>
-            <table class="table table-bordered">
+             <table class="table table-bordered">
                 <tr>
                     <th>依頼者</th>
                     @foreach ($onegais as $onegai)
@@ -33,7 +33,7 @@
                                 @if (Auth::user()->id == $onegai->user_id)
                                     {!! link_to_route('requests.edit', '編集', ['id' => $onegai->id], ['class' => 'btn btn-default btn-xs']) !!}
                                     {!! Form::open(['route' => ['requests.destroy', $onegai->id], 'method' => 'delete']) !!}
-                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                                        {!! Form::submit('削除', ['class' => 'btn btn-danger btn-sm']) !!}
                                     {!! Form::close() !!}
                                 @endif
                             </div>
