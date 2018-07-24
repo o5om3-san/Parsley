@@ -42,20 +42,6 @@ class OtsukaisController extends Controller
     }
     
     /*のび太(N)の機能*/
-    public function create_otsukai()
-    {
-        $otsukai = new Otsukai();
-        $shops = Shop::all();
-        $dt = new DateTime();
-        $data = [
-            'otsukai' => $otsukai,
-            'shops' => $shops,
-            'dt' => $dt,
-        ];
-        
-        return view('otsukais.create_otsukai', $data);
-    }
-    
     public function confirm_create_otsukai(request $request)
     {
         $otsukai = new Otsukai();
@@ -94,8 +80,7 @@ class OtsukaisController extends Controller
                 'deliverPlace' => $request->deliverPlace,
             ]);
             
-            $id = \Auth::id();
-            return redirect('user/'.$id);
+            return redirect('/');
         }
         
         return redirect()->back();
@@ -195,7 +180,8 @@ class OtsukaisController extends Controller
     public function store_request(Request $request)
     {
         \Auth::user()->request($request->id, $request->item, $request->amount, $request->comment);
-        return redirect('/');
+        $id = \Auth::id();
+        return redirect('user/'.$id);
     }
     
     public function edit_request($id)

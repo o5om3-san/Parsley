@@ -2,7 +2,6 @@
 /* OtsukaisController */
 // otsukai
 Route::get('/', 'OtsukaisController@index')->name('otsukais.index');
-Route::get('otsukais/create/', 'OtsukaisController@create_otsukai')->name('otsukais.create');
 Route::post('otsukais/create/confirm', 'OtsukaisController@confirm_create_otsukai')->name('otsukais.confirm_create_otsukai');
 Route::post('otsukais/', 'OtsukaisController@store_otsukai')->name('otsukais.store');
 Route::get('otsukais/{id}/', 'OtsukaisController@show_otsukai')->name('otsukais.show');

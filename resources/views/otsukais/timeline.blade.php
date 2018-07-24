@@ -4,7 +4,7 @@
 
 <link href="css/timeline.css" rel="stylesheet" type="text/css">
 
-　<h1>おつかいに行く人一覧</h1>
+　<center><h1>おつかいを頼んでみよう！</h1></center>
     <div class="row">
         <div class='col-sm-4'>
             <div class='shopWrapper new-create-card'>
@@ -66,7 +66,7 @@
                 </table>    
             </div>
             <div class="row card_button">
-                {!! Form::submit('登録', ['class' => 'btn btn-success otsukai_button', 'onclick' => 'clickEvent()']) !!}
+                {!! Form::submit('　つくる　', ['class' => 'btn btn-default btn_link', 'onclick' => 'clickEvent()']) !!}
             </div>
         </div>
     </div>     

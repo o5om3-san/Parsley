@@ -5,8 +5,8 @@
 
 {!! Form::open( ['route' => ['requests.confirm_create_request', $otsukai->id]]) !!}
 
-    <div class='col-sm-6'>    
-        <div class='row shopWrapper new-create-card'>
+    <div class='col-sm-5'>    
+        <div class='row shopWrapper edit-card'>
             <div class='row'>
                 <div class='col-xs-3'>
                     <img class='shop-image' src="/images/532.png"  alt="" width='80'>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class='row order_card'>                    
+            <div class='card_row order_card'>                    
                 <table>
                     <tr>
                         <td class='d_left'>商品：</td>
@@ -45,7 +45,11 @@
                 </table>    
                 </div>     
             <div class="row card_buttons">
+<<<<<<< HEAD
+                {!! Form::submit('注文確認', ['class' => 'btn btn-default btn_link requestpage_button']) !!}
+=======
                 {!! Form::submit('注文確認', ['class' => 'btn btn-success request_button']) !!}
+>>>>>>> 18acf05862411b4a79bd05796747e634ccbc9339
             </div>
         </div>
     </div>

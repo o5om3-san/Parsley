@@ -170,9 +170,8 @@ div.pay_button {
 .clearfixed{
     clear: both;
 }
-
-.menue {
-    color:green;
+.requestpage_button{
+    margin-left:150px;
 }
 
 /*show.users　タブの色*/
