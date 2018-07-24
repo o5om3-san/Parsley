@@ -94,8 +94,7 @@ class OtsukaisController extends Controller
                 'deliverPlace' => $request->deliverPlace,
             ]);
             
-            $id = \Auth::id();
-            return redirect('user/'.$id);
+            return redirect('/');
         }
         
         return redirect()->back();
@@ -195,7 +194,8 @@ class OtsukaisController extends Controller
     public function store_request(Request $request)
     {
         \Auth::user()->request($request->id, $request->item, $request->amount, $request->comment);
-        return redirect('/');
+        $id = \Auth::id();
+        return redirect('user/'.$id);
     }
     
     public function edit_request($id)
