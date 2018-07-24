@@ -23,6 +23,8 @@
                         {!! link_to_route('line.notify', '到着通知', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                         {!! link_to_route('otsukais.complete', '状態確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                     </div>
+                @else
+                    取引完了
                 @endif
             </td>
        </tbody>
