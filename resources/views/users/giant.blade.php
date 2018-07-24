@@ -19,10 +19,12 @@
             <td>キャビネット{{ $otsukai_giant->otsukai->deliverPlace }}</td>
             <td>{{ substr($otsukai_giant->created_at, 0, 16) }}</td>
             <td>
-                @if($otsukai_giant->paid == 0)
-                {!! link_to_route('requests.edit', '編集', ['id' => $otsukai_giant->id], ['class' => 'btn btn-default btn-xs']) !!}
-                {!! link_to_route('requests.pay', '支払う', ['id' => $otsukai_giant->id], ['class' => 'btn btn-default btn-xs']) !!}
-                @endif
+                <div class=mypage-button>
+                    @if($otsukai_giant->paid == 0)
+                    {!! link_to_route('requests.edit', '編集', ['id' => $otsukai_giant->id], ['class' => 'btn btn-default btn-xs']) !!}
+                    {!! link_to_route('requests.pay', '支払う', ['id' => $otsukai_giant->id], ['class' => 'btn btn-default btn-xs']) !!}
+                    @endif
+                </div>
             </td>
         </tbody>
     @endforeach
