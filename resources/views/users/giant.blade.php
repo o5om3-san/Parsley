@@ -1,7 +1,7 @@
 <table class="table-hover">
     <thead>
         <tr>
-            <th>ショッパー</th>
+            <th>買いに行く人</th>
             <th>受付期限</th>
             <th>商品名</th>
             <th>価格</th>

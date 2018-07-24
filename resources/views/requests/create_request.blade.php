@@ -5,8 +5,8 @@
 
 {!! Form::open( ['route' => ['requests.confirm_create_request', $otsukai->id]]) !!}
 
-    <div class='col-sm-5'>    
-        <div class='row shopWrapper edit-card'>
+    <div class='col-sm-6'>    
+        <div class='row shopWrapper new-create-card'>
             <div class='row'>
                 <div class='col-xs-3'>
                     <img class='shop-image' src="/images/532.png"  alt="" width='80'>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class='card_row order_card'>                    
+            <div class='row order_card'>                    
                 <table>
                     <tr>
                         <td class='d_left'>商品：</td>
@@ -39,13 +39,13 @@
                      <tr>
                         <td class='d_left'>コメント：</td>
                         <td class='d_right'>
-                            {!! Form::textarea('comment', null, ['size' => '30x3', 'placeholder' => '例：砂糖、ミルクは不要']) !!}
+                            {!! Form::textarea('comment', null, ['size' => '25x1']) !!}
                         </td>
                     </tr>                   
                 </table>    
                 </div>     
             <div class="row card_buttons">
-                {!! Form::submit('注文確認', ['class' => 'btn btn-default btn_link requestpage_button']) !!}
+                {!! Form::submit('注文確認', ['class' => 'btn btn-success request_button']) !!}
             </div>
         </div>
     </div>

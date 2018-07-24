@@ -27,8 +27,9 @@
 
             @yield('content')
         </div>
-       
     </body>
-    <footer>
+    <footer class ='global pull-right'>
+        <img class ='codewars' src='images/codewars.png' /><br>
+        Powered by CODEWARS
     </footer>
 </html>

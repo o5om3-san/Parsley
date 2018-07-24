@@ -161,6 +161,7 @@ table.table-bordered th{
 div.pay_button {
     background-color:#8f5db7;
     color:white;
+    float: right;
 }
 
 .mypage-button{
@@ -176,8 +177,15 @@ div.pay_button {
 
 /*show.users　タブの色*/
 .mypagenav ul.nav-tabs>li.active>a{
-    background:#cfc;
+    background: #fff;
+    border-bottom-color: #008D56;
+    border-bottom-width: 3px;
 }
 .tab-pane{
-    background:#cfc;
+    background: #fff;
+}
+
+.codewars {
+    height:50px;
+    
 }
