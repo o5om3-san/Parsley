@@ -2,6 +2,7 @@
 .shopWrapper{
   border-radius:15px;
   width:90%;
+  height:300px;
   margin:0 auto;
   background:#ffc;
   padding-bottom: 10px;
@@ -139,7 +140,7 @@ a.btn.tl_buttons:hover{
   color: #ffffff;
   display: inline-block;
   padding: 6px 30px 8px;
-  position: relative;
+  margin-left: 1%;
   text-decoration: none;
   transition: all 0.1s 0s ease-out;
 }

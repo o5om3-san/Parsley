@@ -66,7 +66,7 @@
                 </table>    
             </div>
             <div class="row card_button">
-                {!! Form::submit('　つくる　', ['class' => 'btn btn-default btn_link', 'onclick' => 'clickEvent()']) !!}
+                {!! Form::submit('つくる', ['class' => 'btn btn-default btn_link', 'onclick' => 'clickEvent()']) !!}
             </div>
         </div>
     </div>     

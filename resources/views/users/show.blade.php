@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-<?= substr($_SERVER['HTTP_REFERER'], -7); ?>
-
-
     <div class="mypagenav">
         <ul class="nav nav-tabs">
             <li class="<?php if (substr($_SERVER['HTTP_REFERER'], -8) != "complete"){ echo "active";} ?>">
@@ -23,4 +20,5 @@
             @include('users.nobita', ['otsukais' => $otsukais])
         </div>
     </div>
+    
 @endsection
