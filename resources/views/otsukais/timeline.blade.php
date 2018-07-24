@@ -91,7 +91,7 @@
                         @if ($otsukai->capacity-$amounts[$key] > 0)
                             {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
                         @else
-                            <a><div class='btn btn-danger'>　　受付終了　　</div></a>
+                            <div class='btn btn-danger uketsuke'>　　受付終了　　</div>
                         @endif
                     @endif
                 </div>
