@@ -15,7 +15,7 @@ class UsersController extends Controller
         $otsukais = $otsukai->where('user_id', '=', \Auth::id())->orderBy('deadline', 'desc')->paginate(10);
 
         $otsukai_giant = new OtsukaiGiant();
-        $otsukai_giants = $otsukai_giant->where('user_id', '=', \Auth::id())->orderBy('created_at', 'asc')->paginate(10);
+        $otsukai_giants = $otsukai_giant->where('user_id', '=', \Auth::id())->orderBy('created_at', 'desc')->paginate(10);
 
         $data = [
             'user' => $user,
