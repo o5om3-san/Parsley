@@ -64,7 +64,7 @@
                 </table>    
             </div>
             <div class="row card_button">
-                {!! Form::submit('おつかいに行く', ['class' => 'btn btn-default btn_link', 'onclick' => 'clickEvent()']) !!}
+                {!! Form::submit('おつかいをする', ['class' => 'btn btn-default btn_link btn-lg', 'onclick' => 'clickEvent()']) !!}
             </div>
         </div>
     </div>     
@@ -118,7 +118,7 @@
                 </div>     
                 <div class="row card_button">
                 @if (Auth::user()->id !== $otsukai->user_id)
-                            {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
+                            {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-lg tl_buttons']) !!}
                 @endif
                 </div>
                 @if (Auth::user()->id == $otsukai->user_id)

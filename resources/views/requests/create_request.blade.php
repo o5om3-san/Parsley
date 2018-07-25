@@ -45,7 +45,7 @@
                 </table>    
                 </div>     
             <div class="row card_button">
-                {!! Form::submit('注文確認', ['class' => 'btn btn-default btn_link request_button']) !!}
+                {!! Form::submit('注文確認', ['class' => 'btn btn-default btn_link request_button btn-lg']) !!}
                 {!! Form::close() !!}
             </div>
         </div>

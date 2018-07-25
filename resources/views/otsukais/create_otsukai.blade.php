@@ -61,7 +61,7 @@
                 </table>    
             </div>     
             <div class="row card_buttons">
-                {!! Form::submit('登録', ['class' => 'btn btn-success otsukai_button', 'onclick' => 'clickEvent()']) !!}
+                {!! Form::submit('登録', ['class' => 'btn btn-success otsukai_button btn-lg', 'onclick' => 'clickEvent()']) !!}
             </div>
         </div>
     </div>
