@@ -20,6 +20,7 @@
         $request = 'active';
     }
 ?>
+<h2>マイページ</h2>
     <div class="mypagenav">
         <ul class="nav nav-tabs">
             <li class="<?= $request ?>">

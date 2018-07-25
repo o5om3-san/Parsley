@@ -23,6 +23,7 @@
                         <td class='d_left'>商品：</td>
                         <td class='d_right'>
                                 <select name='item'>
+                                        <option value=''>　　　　　　　　　　　　　</option>
                                     @foreach ($items as $item)
                                         <option value={{$item->id}}> {{ $item->name }} </option>
                                     @endforeach
@@ -37,19 +38,19 @@
                         </td>
                     </tr>
                      <tr>
-                        <td class='d_left'>コメント：</td>
+                        <td class='d_left'>備考：</td>
                         <td class='d_right'>
-                            {!! Form::textarea('comment', null, ['size' => '25x3']) !!}
+                            {!! Form::textarea('comment', null, ['size' => '30x2', 'placeholder' => '例：砂糖、ミルクは不要']) !!}
                         </td>
                     </tr>                   
                 </table>    
                 </div>     
             <div class="row card_button">
-                {!! Form::submit('注文確認', ['class' => 'btn btn-default btn_link request_button']) !!}
+                {!! Form::submit('注文確認', ['class' => 'btn btn-default btn_link request_button btn-lg']) !!}
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
-{!! Form::close() !!}
     <div class = 'menue col-sm-6 pull-right'>
         <h3>メニュー表</h3>
             <table class="table table-striped table-bordered">

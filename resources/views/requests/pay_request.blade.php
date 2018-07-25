@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+<div class="container">
     <div class="row">
         <div class="well col-xs-10 col-sm-10 col-md-8 col-xs-offset-1 col-sm-offset-1 col-md-offset-2">
             <div class="row">
@@ -11,7 +11,7 @@
                         <br>
                         CodeWars
                         <br>
-                        <abbr title="Phone" class= 'fas fa-phone'></abbr> (0120) 444-444
+                        <abbr title="Phone" class= 'fas fa-phone'></abbr> (0120) xxx-xxx
                     </address>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 text-right">
@@ -68,7 +68,7 @@
                 </table>
                     <div class ='pay_button'>
                     {!! Form::model($otsukai_giant, ['route' => ['requests.pay_update', $otsukai_giant->id], 'method' => 'put']) !!}
-                    {!! Form::submit('支払い完了', ['class' => 'btn btn-primary btn-m']) !!}
+                    {!! Form::submit('支払い完了報告する', ['class' => 'btn btn-primary btn-m']) !!}
                     </div>
                     <div class = 'pay_button btn btn-m' onClick = 'viber()'>
                         Viberで支払う
@@ -88,8 +88,10 @@
                             }
                         </script>
                     </div>
+                </div>
+                支払いを済ませてから支払い完了報告をしてください。
             </div>
         </div>
-    </div></div>
     </div>
+</div>
 @endsection

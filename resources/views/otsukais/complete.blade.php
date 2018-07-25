@@ -25,7 +25,7 @@
                     @if ($onegai->paid == 0)
                         未払い
                     @else
-                        支払い済み
+                        支払い済
                     @endif
                 </td>
             </tbody>
