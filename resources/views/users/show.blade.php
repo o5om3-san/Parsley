@@ -3,26 +3,31 @@
 <?php
     $request = '';
     $otsukai = '';
+
+    echo substr($_SERVER['HTTP_REFERER'], -4);
     
     if (isset($_SERVER['HTTP_REFERER'])){
         switch (substr($_SERVER['HTTP_REFERER'], -4)){
-            case 'com/': //おつかい作成後
-            case 'dit/': //おつかい編集後
-            case 'ete/': //おつかい取引終了後
-            case 'irm/': //
-            case 'pay/': //
+            case 'firm': //リクエスト編集後
+                $request = 'active';
+                break;
+            case '/pay': //支払い完了後
+                $request = 'active';
+                break;
+            default: //その他
+                $otsukai = 'active';
+                break;
         }
+    } else {
+        $request = 'active';
     }
-    
-    if(isset($_SERVER['HTTP_REFERER'])){if (substr($_SERVER['HTTP_REFERER'], -8) != "complete" && substr($_SERVER['HTTP_REFERER'], -4) != "com/"){ echo "active";}}
-    if(isset($_SERVER['HTTP_REFERER'])){if (substr($_SERVER['HTTP_REFERER'], -8) == "complete" || substr($_SERVER['HTTP_REFERER'], -4) == "com/"){ echo "active";}}
 ?>
     <div class="mypagenav">
         <ul class="nav nav-tabs">
             <li class="<?= $request ?>">
                 <a href="#tab1" data-toggle="tab">リクエスト履歴</a>
             </li>
-            <li class="<?php $otsukai ?>">
+            <li class="<?= $otsukai ?>">
                 <a href="#tab2" data-toggle="tab">おつかい履歴</a>
             </li>
         </ul>
