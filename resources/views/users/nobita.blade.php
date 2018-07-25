@@ -22,7 +22,7 @@
                     <div class=mypage-button>
                         {!! link_to_route('otsukais.show', '詳細/編集', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                         {!! link_to_route('line.notify', '到着通知', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
-                        {!! link_to_route('otsukais.complete', 支払確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
+                        {!! link_to_route('otsukais.complete', '支払確認', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs']) !!}
                     </div>
                 @else
                     取引完了
