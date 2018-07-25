@@ -33,7 +33,7 @@ class LineNotifyController extends Controller
         foreach ($onegais as $onegai){
             $orders .= "\n".'▼'.$onegai->user->name.'さん'."\n";
             $orders .= '・'.$onegai->item->name." ×".$onegai->amount."\n";
-            $orders .= '　= '.$onegai->item->price * $onegai->amount.'円'."\n";
+            $orders .= '　= '.$onegai->item->price * $onegai->amount * 1.1.'円'."\n";
             $giants .= '・'.$onegai->user->name.'さん'."\n";
         }
         $line = 'ーーーーーーーーーー';
