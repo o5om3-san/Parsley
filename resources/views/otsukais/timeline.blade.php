@@ -4,7 +4,7 @@
 
 <link href="css/timeline.css" rel="stylesheet" type="text/css">
 
-　<center><h1>おつかいを頼んでみよう！</h1></center>
+　<center><h1>おつかいに行く？おつかいを頼む？</h1></center>
     <div class="row">
         <div class='col-sm-4'>
             <div class='shopWrapper new-create-card'>
@@ -14,7 +14,7 @@
                     </div>
                     <div class='col-xs-9'>
                         <div class='shopdetail'>
-                            <h2>NEW</h2>
+                            <h3>自分が買いに行く</h3><span class ='time'>　　　　　</span>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                 </table>    
             </div>
             <div class="row card_button">
-                {!! Form::submit('つくる', ['class' => 'btn btn-default btn_link', 'onclick' => 'clickEvent()']) !!}
+                {!! Form::submit('おつかいに行く', ['class' => 'btn btn-default btn_link', 'onclick' => 'clickEvent()']) !!}
             </div>
         </div>
     </div>     
@@ -86,7 +86,11 @@
                     </div>
                     <div class='col-xs-9'>
                         <div class='shopdetail'>
-                           <h2>{{ $otsukai->user->name }}</h2>
+                            @if ($otsukai->user_id == \Auth::id())
+                               <h2>{{ $otsukai->user->name }}</h2><span class ='time'>　　　　　</span>
+                            @else 
+                               <h2>{{ $otsukai->user->name }}</h2><span class ='time'>さんに頼む</span>
+                            @endif
                         </div>
                     </div>
                 </div>                 
@@ -94,7 +98,7 @@
                     <table>
                         <tr>
                             <td class='d_left'>　出発時間：</td>
-                            <td class='d_right'>　<span class="memo-deadline"><?php echo date ("H:i", strtotime($otsukai->deadline)); ?></span> まで</td>
+                            <td class='d_right'>　<span class="memo-deadline"><?php echo date ("H:i", strtotime($otsukai->deadline)); ?></span></td>
                         </tr>
                         <tr>
                             <td class='d_left'>　買いに行く店：</td>
@@ -104,11 +108,7 @@
                             <td class='d_left'>　受付個数：</td>
                             <td class='d_right'>
                                 <span class="nokori">　
-                                    @if($otsukai->capacity-$amounts[$key]==0)
-                                        受付終了
-                                    @else
-                                        残り{{$otsukai->capacity-$amounts[$key]}}個
-                                    @endif
+                                    {{$otsukai->capacity-$amounts[$key]}}個まで
                                 </span>
                             </td>
                         </tr>
@@ -118,15 +118,10 @@
                         </tr>                   
                     </table>    
                 </div>     
-                <div class="row card_buttons">
-                    @if (Auth::user()->id != $otsukai->user_id)
-                        {!! link_to_route('otsukais.show', '詳細', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
-                        @if ($otsukai->capacity-$amounts[$key] > 0)
+                <div class="row card_button">
+                @if (Auth::user()->id !== $otsukai->user_id)
                             {!! link_to_route('requests.create', 'おつかいを頼む', ['id' => $otsukai->id], ['class' => 'btn btn-default btn-xs tl_buttons']) !!}
-                        @else
-                            <div class='btn btn-danger'>　　受付終了　　</div>
-                        @endif
-                    @endif
+                @endif
                 </div>
                 @if (Auth::user()->id == $otsukai->user_id)
                     <div class="card_button">

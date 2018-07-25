@@ -2,7 +2,7 @@
 .shopWrapper{
   border-radius:15px;
   width:90%;
-  height:300px;
+  height:330px;
   margin:0 auto;
   background:#ffc;
   padding-bottom: 10px;
@@ -80,11 +80,9 @@ a.btn {
 .new-card{
   width:150px;
 }
-.card_buttons{
-  margin-left: 46px;
-}
+
 .card_button{
-  margin-left: 115px;
+  text-align: center;
 }
 a.btn.tl_buttons{
   background-color: #CC9933;
@@ -143,4 +141,10 @@ a.btn.tl_buttons:hover{
   margin-left: 1%;
   text-decoration: none;
   transition: all 0.1s 0s ease-out;
+}
+
+.time{
+  font-size: 18px;
+  margin-left: 55%;
+
 }
