@@ -51,6 +51,9 @@ a.btn {
   font-size: 1.5em;
   background: linear-gradient(transparent 40%, #ffff66 40%);
 }
+.memo-deadline-create {
+  font-size: 1.5em;
+}
 .nokori{
   font-weight: bold;
   color: red;
@@ -146,5 +149,4 @@ a.btn.tl_buttons:hover{
 .time{
   font-size: 18px;
   margin-left: 55%;
-
 }

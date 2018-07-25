@@ -37,7 +37,7 @@ class LineNotifyController extends Controller
             $giants .= '・'.$onegai->user->name.'さん'."\n";
         }
         $line = 'ーーーーーーーーーー';
-        $url = '商品受け取り後、下記URLより受け取り報告をお願いいたします。'."\n".'http://test-parsley.herokuapp.com/otsukais/'.$otsukai->id.'/payment';
+        $url = '商品受け取り後、下記URLより受け取り報告をお願いいたします。'."\n".'http://parsley-coffee.herokuapp.com/otsukais/'.$otsukai->id.'/payment';
         $announce = "\n".'下記の方は、キャビネット'.$otsukai->deliverPlace.'まで商品を受け取りにきてください。'."\n".$giants."\n".$url."\n\n".'よろしくお願いいたします。';
         $message = $title.$line.$orders.$line.$announce;
         return $message;

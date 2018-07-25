@@ -11,7 +11,7 @@
                         <br>
                         CodeWars
                         <br>
-                        <abbr title="Phone" class= 'fas fa-phone'></abbr> (0120) 444-444
+                        <abbr title="Phone" class= 'fas fa-phone'></abbr> (0120) xxx-xxx
                     </address>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 text-right">
