@@ -46,10 +46,10 @@
                 </div>     
             <div class="row card_button">
                 {!! Form::submit('注文確認', ['class' => 'btn btn-default btn_link request_button']) !!}
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
-{!! Form::close() !!}
     <div class = 'menue col-sm-6 pull-right'>
         <h3>メニュー表</h3>
             <table class="table table-striped table-bordered">
