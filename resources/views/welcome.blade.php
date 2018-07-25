@@ -1,6 +1,5 @@
 <link href="css/style.css" rel="stylesheet" type="text/css">
 @extends('layouts.app')
-
 @section('content')
   <div class="slide-show">
     <img src="/images/kainiikenai.png" /> <!-- スペーサー画像のURL -->
@@ -10,7 +9,7 @@
   </div>
   
   <div class="parsley-button">
-    <a href="/login"><img src="images/midorilogin.png" width=280 alt="signup" class="img-responsive"></a>
-    <a href="/register"><img src="images/midorisignup.png" width=320 alt="signup" class="img-responsive"></a>
+    <a href="/register"><img src="images/touroku.png" width=320 alt="signup" class="img-responsive"></a>
+    <a href="/login"><img src="images/roguin.png" width=380 alt="signup" class="img-responsive"></a>
   </div>
 @endsection

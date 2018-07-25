@@ -29,7 +29,6 @@
         </div>
     </body>
     <footer class ='global text-center'>
-        Powered by
-        <img class ='codewars center block' src='images/codewars.png' /><br>
+        Powered by　<img class ='codewars center block' src={{ secure_asset('images/codewars.png') }} /><br>
     </footer>
 </html>
