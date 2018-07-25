@@ -28,7 +28,9 @@
             @yield('content')
         </div>
     </body>
-    <footer class ='global text-center'>
-        Powered by　<img class ='codewars center block' src={{ secure_asset('images/codewars.png') }} /><br>
+    <footer>
+        <div class ='footer'>
+        <strong>Powered by　</strong><img class ='codewars' src={{ secure_asset('images/codewars.png') }} /><br>
+        </div>
     </footer>
 </html>
