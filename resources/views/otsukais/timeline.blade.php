@@ -31,18 +31,17 @@
                         <td class='d_left'>出発時間：</td>
                         <td class='d_right'>
                             <span class="memo-deadline">
-                            {{Form::selectRange('from_hour', $hour, 23, $hour)}}時
+                            {{Form::selectRange('from_hour', $hour, 23, $hour)}}：
                                 <select name="from_minutes">
                                     @for ($i = 0; $i < 12; $i++)
                                          <option value={{$i*5}} <?php if(ceil($minute/5) == $i-3){ echo 'selected'; } else if(ceil($minute/5)-9 == $i){ echo 'selected'; } ?> > {{$i*5}} </option>
                                     @endfor
                                 </select>
-                                分
                             </span>
                         </td>
                     </tr>
                     <tr>
-                        <td class='d_left'>買いに行く店：</td>
+                        <td class='d_left'>行き先：</td>
                         <td class='d_right'>
                             <select name="shop_id">
                                 @foreach ($shops as $shop)
@@ -101,7 +100,7 @@
                             <td class='d_right'>　<span class="memo-deadline"><?php echo date ("H:i", strtotime($otsukai->deadline)); ?></span></td>
                         </tr>
                         <tr>
-                            <td class='d_left'>　買いに行く店：</td>
+                            <td class='d_left'>　行き先：</td>
                             <td class='d_right'>　{{ $otsukai->shop->name }}</td>
                         </tr>
                         <tr>
