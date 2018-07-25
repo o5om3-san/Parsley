@@ -42,7 +42,7 @@
                             <div>　手渡す場所　　：キャビネット{{ $otsukai_giant->otsukai->deliverPlace }}</div>
                             <div>　リクエスト日時:{{ substr($otsukai_giant->created_at, 0, 16) }}</div>
                             <div>
-                                @if ($otsukai_giant->closed == 0)
+                                @if ($otsukai_giant->paid == 0)
                                     <div class='mypage-button giant_button'>
                                         {!! link_to_route('requests.edit', '編集', ['id' => $otsukai_giant->id], ['class' => 'btn btn-default btn-xs']) !!}
                                         {!! link_to_route('requests.pay', '支払う', ['id' => $otsukai_giant->id], ['class' => 'btn btn-default btn-xs']) !!}
