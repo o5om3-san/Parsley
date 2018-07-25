@@ -21,7 +21,7 @@
                 <th>コメント</th><td>{{ $comment }}</td>
              </tr>
         </table>
-            <!--LINEに通知が来たら、受け渡し場所に行ってください。-->
+            <h4>LINEに通知が来たら、受け渡し場所に行ってください。</h4>
         <div class=confirm-button>
             <tr>
             
