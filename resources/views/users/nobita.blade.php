@@ -17,7 +17,6 @@
             <td>{{ $otsukai->shop->name }}</td>
             <td>{{ $otsukai->capacity }}</td>
             <td>キャビネット {{ $otsukai->deliverPlace }}</td>
-            <td>　</td>
             <td>
                 @if ($otsukai->closed == 0)
                     <div class=mypage-button>
