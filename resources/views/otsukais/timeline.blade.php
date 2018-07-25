@@ -30,8 +30,8 @@
                         ?>
                         <td class='d_left'>出発時間：</td>
                         <td class='d_right'>
-                            <span class="memo-deadline">
-                            {{Form::selectRange('from_hour', $hour, 23, $hour)}}：
+                            <span class="memo-deadline-create">
+                            {{Form::selectRange('from_hour', $hour, 23, $hour)}} : 
                                 <select name="from_minutes">
                                     @for ($i = 0; $i < 12; $i++)
                                          <option value={{$i*5}} <?php if(ceil($minute/5) == $i-3){ echo 'selected'; } else if(ceil($minute/5)-9 == $i){ echo 'selected'; } ?> > {{$i*5}} </option>
