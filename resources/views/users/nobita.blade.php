@@ -34,10 +34,10 @@
             <div class = 'row_nobita'>
                 <div class='card_row order_card visible-sm visible-xs'>
                     @foreach ($otsukais as $otsukai)<hr>
-                            <div>　受付時間　:<span class="memo-deadline"><?php echo date ("H:i", strtotime($otsukai->deadline)); ?></span></div>
-                            <div>　お店　　　: {{ $otsukai->shop->name }}</div>
-                            <div>　最大個数　:{{$otsukai->capacity}}個まで</div>
-                            <div>　手渡す場所: キャビネット {{ $otsukai->deliverPlace }}</div>
+                            <div>　受付時間　：<span class="memo-deadline"><?php echo date ("H:i", strtotime($otsukai->deadline)); ?></span></div>
+                            <div>　お店　　　： {{ $otsukai->shop->name }}</div>
+                            <div>　最大個数　：{{$otsukai->capacity}}個まで</div>
+                            <div>　手渡す場所： キャビネット {{ $otsukai->deliverPlace }}</div>
                             <div>
                                 @if ($otsukai->closed == 0)
                                     <div class='mypage-button nobita_button'>

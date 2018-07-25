@@ -35,11 +35,11 @@
 <div class = 'row_giant'>
                 <div class='card_row order_card visible-sm visible-xs'>
                     @foreach ($otsukai_giants as $otsukai_giant)<hr>
-                            <div>　買いに行く人　:{{ $otsukai_giant->otsukai->user->name }}</div>
-                            <div>　受付期限　　　:{{ substr($otsukai_giant->otsukai->deadline, 0, 16) }}</div>
-                            <div>　商品名　　　　:{{ $otsukai_giant->item->name }}</div>
-                            <div>　価格　　　　　:{{ $otsukai_giant->item->price }}</div>
-                            <div>　手渡す場所　　:キャビネット{{ $otsukai_giant->otsukai->deliverPlace }}</div>
+                            <div>　買いに行く人　：{{ $otsukai_giant->otsukai->user->name }}</div>
+                            <div>　受付期限　　　：{{ substr($otsukai_giant->otsukai->deadline, 0, 16) }}</div>
+                            <div>　商品名　　　　：{{ $otsukai_giant->item->name }}</div>
+                            <div>　価格　　　　　：{{ $otsukai_giant->item->price }}</div>
+                            <div>　手渡す場所　　：キャビネット{{ $otsukai_giant->otsukai->deliverPlace }}</div>
                             <div>　リクエスト日時:{{ substr($otsukai_giant->created_at, 0, 16) }}</div>
                             <div>
                                 @if ($otsukai_giant->closed == 0)
