@@ -23,6 +23,7 @@
                         <td class='d_left'>商品：</td>
                         <td class='d_right'>
                                 <select name='item'>
+                                        <option value=''>　　　　　　　　　　　　　</option>
                                     @foreach ($items as $item)
                                         <option value={{$item->id}}> {{ $item->name }} </option>
                                     @endforeach
@@ -37,9 +38,9 @@
                         </td>
                     </tr>
                      <tr>
-                        <td class='d_left'>コメント：</td>
+                        <td class='d_left'>備考：</td>
                         <td class='d_right'>
-                            {!! Form::textarea('comment', null, ['size' => '30x3', 'placeholder' => '例：砂糖、ミルクは不要']) !!}
+                            {!! Form::textarea('comment', null, ['size' => '30x2', 'placeholder' => '例：砂糖、ミルクは不要']) !!}
                         </td>
                     </tr>                   
                 </table>    
