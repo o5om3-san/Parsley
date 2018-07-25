@@ -3,8 +3,6 @@
 <?php
     $request = '';
     $otsukai = '';
-
-    echo substr($_SERVER['HTTP_REFERER'], -4);
     
     if (isset($_SERVER['HTTP_REFERER'])){
         switch (substr($_SERVER['HTTP_REFERER'], -4)){
