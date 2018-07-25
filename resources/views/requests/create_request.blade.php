@@ -39,7 +39,7 @@
                      <tr>
                         <td class='d_left'>コメント：</td>
                         <td class='d_right'>
-                            {!! Form::textarea('comment', null, ['size' => '25x3']) !!}
+                            {!! Form::textarea('comment', null, ['size' => '30x3', 'placeholder' => '例：砂糖、ミルクは不要']) !!}
                         </td>
                     </tr>                   
                 </table>    
