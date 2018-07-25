@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    <h2>マイページ</h2>
     <div class="mypagenav">
         <ul class="nav nav-tabs">
             <li class="<?php if(isset($_SERVER['HTTP_REFERER'])){if (substr($_SERVER['HTTP_REFERER'], -8) != "complete" && substr($_SERVER['HTTP_REFERER'], -4) != "com/"){ echo "active";}} ?>">

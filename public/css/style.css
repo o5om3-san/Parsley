@@ -91,7 +91,7 @@ table.table-hover th {
     background: #008D56;
     color: #fff;
 }
-table.table-hover td {
+table.table-hover div {
   text-align: center;
   width: 150px;
   padding: 10px;
@@ -204,17 +204,25 @@ div.pay_button {
     background: #fff;
 }
 
-footer{
+footer {
     position: fixed;
     bottom: 0;
-}
-
-.footer{
-    text-align:center;
+    width: 100%;
+    height: 50px;
 }
 
 .codewars {
     height:45px;
     border-radius: 30px;
-    
+    margin-right: 100px;
+    margin-top:30px;
+}
+
+.row_nobita {
+    text-align:left;
+}
+
+.done {
+    text-align: center;
+    color:red;
 }

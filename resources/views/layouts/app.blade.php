@@ -28,8 +28,8 @@
             @yield('content')
         </div>
     </body>
-    <footer>
-        <div class ='footer'>
+    <foote>
+        <div class = 'footer pull-right cd-md-4'>
         <strong>Powered by　</strong><img class ='codewars' src={{ secure_asset('images/codewars.png') }} /><br>
         </div>
     </footer>

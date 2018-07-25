@@ -3,8 +3,7 @@
 @section('content')
 
 <link href="css/timeline.css" rel="stylesheet" type="text/css">
-
-　<center><h1>おつかいに行く？おつかいを頼む？</h1></center>
+　<center><h1>おつかいに行く？<br>おつかいを頼む？</h1></center>
     <div class="row">
         <div class='col-sm-4'>
             <div class='shopWrapper new-create-card'>

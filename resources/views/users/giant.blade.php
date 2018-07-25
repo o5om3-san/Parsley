@@ -7,7 +7,7 @@
             <th>価格</th>
             <th>受け取り場所</th>
             <th>リクエスト日時</th>
-            <th>　</th>
+            <th></th>
         </tr>
     </thead>
     @foreach ($otsukai_giants as $otsukai_giant)　
