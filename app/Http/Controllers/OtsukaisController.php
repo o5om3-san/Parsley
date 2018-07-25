@@ -236,20 +236,6 @@ class OtsukaisController extends Controller
         return redirect('/');
     }
     
-    public function mypage()
-    { 
-        if (\Auth::check()) {
-            $otsukai = new Otsukai();
-            $otsukais = $otsukai->where('user_id', '=', Auth::id())->orderBy('deadline', 'asc')->paginate(10);
-            $data = ['otsukais' => $otsukais];
-            
-            return view('otsukais.index', $data);
-        }
-        else {
-            return view('welcome');
-        }
-    }
-    
     public function pay($id)
     {
         $user =\Auth::user();
@@ -347,5 +333,17 @@ class OtsukaisController extends Controller
             
             $id = \Auth::id();
             return redirect('user/'.$id);
-    }       
+    }
+    
+    public function payment($id)
+    {
+        $user = \Auth::user();
+        $otsukai = Otsukai::find($id);
+        $onegais = $otsukai->request()->get();
+        foreach ($onegais as $onegai){
+            if ($onegai->user_id == $user->id){ return redirect()->to('otsukais/request/'.$onegai->id.'/pay/'); }
+        }
+        return redirect()->to('user/'.$user->id);
+    }
+    
 }

@@ -10,6 +10,7 @@ Route::put('/otsukais/{id}/', 'OtsukaisController@update_otsukai')->name('otsuka
 Route::get('otsukais/{id}/complete/', 'OtsukaisController@complete')->name('otsukais.complete');
 Route::put('otsukais/{id}/complete/', 'OtsukaisController@complete_update')->name('otsukais.complete_update');
 Route::delete('otsukais/{id}/delete', 'OtsukaisController@destroy_otsukai')->name('otsukais.destroy');
+Route::get('otsukais/{id}/payment/', 'OtsukaisController@payment')->name('otsukais.payment');
 
 // request
 Route::get('otsukais/{id}/request/create/', 'OtsukaisController@create_request')->name('requests.create');
@@ -45,6 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('otsukais/{id}/edit/', 'OtsukaisController@edit_otsukai')->name('otsukais.edit');
     Route::put('/otsukais/{id}/', 'OtsukaisController@update_otsukai')->name('otsukais.update');
     Route::delete('otsukais/{id}/delete', 'OtsukaisController@destroy_otsukai')->name('otsukais.destroy');
+    Route::get('otsukais/{id}/payment/', 'OtsukaisController@payment')->name('otsukais.payment');
     
     // request
     Route::get('otsukais/{id}/request/create/', 'OtsukaisController@create_request')->name('requests.create');
@@ -65,7 +67,7 @@ Route::group(['middleware' => 'auth'], function () {
     
     /* UsersController */
     Route::get('user/{id}', 'UsersController@show')->name('users.show');
-
+    
     // LINE Notify
     Route::get('{id}/notify', 'LineNotifyController@notify')->name('line.notify');
 });
